@@ -1,0 +1,10 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/Users/rmeyer/dev/ruby/openchime'
+let g:netrw_dirhist_2='/Users/rmeyer/dev/ruby/script_finder'
+let g:netrw_dirhist_3='/Users/rmeyer/dev/ruby/openchime'
+let g:netrw_dirhist_4='/Users/rmeyer/dev/ruby/gems/jslint_on_rails'
+let g:netrw_dirhist_5='/Users/rmeyer/dev/ruby/MediaManager'
+let g:netrw_dirhist_6='/Users/rmeyer/dev/ruby/openchime'
+let g:netrw_dirhist_7='/Users/rmeyer/dev/BashProfile'
+let g:netrw_dirhist_8='/Users/rmeyer/dev/BashProfile/lib/cmd_line/vim/.dotfiles'
