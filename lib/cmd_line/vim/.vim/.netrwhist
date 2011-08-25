@@ -1,5 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =3
-let g:netrw_dirhist_1='/Users/rmeyer/dev/ruby/openchime'
-let g:netrw_dirhist_2='/Users/rmeyer/dev/ruby/script_finder'
-let g:netrw_dirhist_3='/Users/rmeyer/dev/ruby/openchime'
