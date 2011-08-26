@@ -105,6 +105,10 @@ set shiftwidth=2  " Tabs under smart indenting
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
+
+map <F3> <Plug>GithubComment
+map <F4>> <Plug>GithubOpen
+
 "Sets the tags directory to look backwards till it finds a tags dir
 set tags=tags;/
 
@@ -115,6 +119,9 @@ au BufWritePost *.rb silent! !ctags -a --recurse -f ~/dev/tags/cuttlefish &
 "Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
 set si " smartindent (local to buffer)
+
+"JS Indent
+"set g:js_indent=~/.vim/indent/javascript.vim
 
 " Scrollbars ******************************************************************
 set sidescrolloff=2
@@ -171,6 +178,7 @@ set matchpairs+=<:>
 set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
 set nofoldenable " Turn off folding
 set noerrorbells
+set spell
 
 
 " File Stuff ******************************************************************
@@ -178,7 +186,6 @@ syntax enable
 filetype on " Enable filetype detection
 filetype indent on " Enable filetype-specific indenting
 filetype plugin on " Enable filetype-specific plugins
-"compiler ruby " Enable compiler support for ruby
 
 " Ruby stuff ******************************************************************
 compiler ruby         " Enable compiler support for ruby
@@ -193,11 +200,13 @@ autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
 autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
+
 " May require ruby compiled in
 autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete 
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 

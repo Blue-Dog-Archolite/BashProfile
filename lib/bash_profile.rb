@@ -15,7 +15,6 @@ class BashProfile
 
     puts "Setting up your vim directory"
     `rm -rf ~/.vim`
-    puts "ln -s #{gem_saved_to}/dot_files/vim .vim"
-    `ln -s #{gem_saved_to}/dot_files/vim .vim`
+    `ln -s #{gem_saved_to}/dot_files/vim ~/.vim`
   end
 end
