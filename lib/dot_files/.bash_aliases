@@ -22,6 +22,13 @@ fi
 
 alias ct="ctags -R --exclude=*.js . `gem env path | sed 's/:/ /g'`"
 
+#Stupid unset issues due to RVM
+function mvim()
+ {
+    # spawn a sub-shell, unset environment variables for the sub-shell, start mvim. 
+    (unset GEM_PATH GEM_HOME; command mvim "$@")
+ }
+
 
 #"Ruby
 alias all_tests="s cu -f progress --tags ~@wip"
