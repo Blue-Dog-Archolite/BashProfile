@@ -11,10 +11,10 @@ alias scp='rsync -e ssh -rlzvP'
 
 if [ "$OSTYPE" == 'linux-gnu' ]
   then
-  alias ctags='/usr/bin/ctags'
+  alias ctags='/opt/local/bin/ctags'
   alias vim=gvim
 else
-  alias ctags='/opt/local/bin/ctags'
+  alias ctags='/usr/local/bin/ctags'
   alias vim=mvim
   alias updatedb="sudo /usr/libexec/locate.updatedb"
 fi
@@ -42,6 +42,7 @@ alias migrate_all='rake db:migrate --trace && rake db:migrate RAILS_ENV=test --t
 #"Git
 alias git_history="git fsck --lost-found | awk '{print \"git show \" $3}' | bash | less"
 alias mkpatch='git format-patch -o ~/Desktop/ origin'
+alias commit_and_push='git commit -m $1 && git pull && git push origin'
 
 #Show all files and folders for mac
 alias show_all="defaults write com.apple.Finder AppleShowAllFiles YES"
@@ -59,5 +60,9 @@ alias seed_openchime='cd ~/dev/ruby/openchime && heroku pgbackups:capture --expi
 alias start_reddis='redis-server /usr/local/etc/redis.conf'
 alias tail_nginx='tail -fn0 /usr/local/Cellar/nginx/1.0.4/logs/*'
 alias tail_postgres='tail -f /usr/local/var/postgres/server.log'
+alias start_pgsql='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 
+alias jenkins='ssh deploy@ec2-107-20-241-229.compute-1.amazonaws.com'
+alias seed_test='bundle exec rake db:test:load'
 
+alias start_workers='cd ~/dev/ruby/openchime/ && bundle exec rake resque:work'

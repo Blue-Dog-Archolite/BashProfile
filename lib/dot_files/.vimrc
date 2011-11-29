@@ -106,9 +106,6 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 
 
-map <F3> <Plug>GithubComment
-map <F4>> <Plug>GithubOpen
-
 "Sets the tags directory to look backwards till it finds a tags dir
 set tags=tags;/
 
@@ -145,6 +142,8 @@ set incsearch  " Incremental search, search as you type
 set ignorecase " Ignore case when searching 
 set smartcase " Ignore case when searching lowercase
 map <Leader>nh :nohlsearch<CR>
+map <Leader>g :Ack 
+
 " map <F8> to reindent file
 noremap <F8> mzgg=G`z
 inoremap <F8> <ESC>mzgg=G`z<Insert>
@@ -235,6 +234,7 @@ map <Enter> o<ESC>
 :noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
 let NERDTreeMouseMode=1 " Single click for everything
+:noremap <Leader>z :NERDTreeFind<CR>
 
 
 " NERD Commenter **************************************************************
