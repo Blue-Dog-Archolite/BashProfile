@@ -1,4 +1,4 @@
-export PATH=/opt/local/bin:/opt/local/sbin:$PATH
+export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include:$PATH
 
 #xport PATH=/usr/local/mysql:/usr/local/mysql/bin:$PATH
 #export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
@@ -11,9 +11,7 @@ export PATH=/opt/local/bin:/opt/local/sbin:$PATH
 #export CATALINA_HOME=$CATALINA_BASE
 #export CATALINA_TMPDIR=$CATALINA_HOME/temp
 
-
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-
+export PATH=/usr/local/bin/android-sdk-macosx/tools:$PATH
 
 #export MAGICK_HOME="$HOME/bin/ImageMagick-6.6.4"
 #export PATH="$MAGICK_HOME/bin:$PATH"

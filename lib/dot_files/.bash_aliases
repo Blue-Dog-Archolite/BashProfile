@@ -20,7 +20,7 @@ else
 fi
 
 
-alias ct="ctags -R --exclude=*.js . `gem env path | sed 's/:/ /g'`"
+alias ct="ctags -R --exclude=*.js . `echo $GEM_HOME| sed 's/:/ /g'`"
 
 #Stupid unset issues due to RVM
 function mvim()
@@ -38,6 +38,7 @@ alias rsp='rspec -d '
 #"rake tasks
 alias migrate="rake db:migrate -trace"
 alias migrate_all='rake db:migrate --trace && rake db:migrate RAILS_ENV=test --trace'
+alias watch_sass='sass --watch app/assets/stylesheets/sass/:app/assets/stylesheets/'
 
 #"Git
 alias git_history="git fsck --lost-found | awk '{print \"git show \" $3}' | bash | less"
@@ -58,6 +59,7 @@ alias scp='rsync -e ssh -rlzvP'
 alias seed_openchime='cd ~/dev/ruby/openchime && heroku pgbackups:capture --expire && curl -o latest.dump  && pg_restore --verbose --clean --no-acl --no-owner  -d openchime_dev latest.dump'
 
 alias start_reddis='redis-server /usr/local/etc/redis.conf'
+alias empty_redis='rm -rf /usr/local/var/db/redis/*'
 alias tail_nginx='tail -fn0 /usr/local/Cellar/nginx/1.0.4/logs/*'
 alias tail_postgres='tail -f /usr/local/var/postgres/server.log'
 alias start_pgsql='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'

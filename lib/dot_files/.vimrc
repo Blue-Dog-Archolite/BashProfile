@@ -86,6 +86,16 @@ function! Tabstyle_tabs()
   autocmd User Rails set noexpandtab
 endfunction
 
+
+" Removes trailing spaces
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+:endfunction
+
+map <F2> :call TrimWhiteSpace()<CR>
+
+
 function! Tabstyle_spaces()
   " Use 2 spaces
   set softtabstop=2
@@ -104,6 +114,7 @@ set shiftwidth=2  " Tabs under smart indenting
 "***********************************************
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
+map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
 
 
 "Sets the tags directory to look backwards till it finds a tags dir
