@@ -16,3 +16,7 @@ export PATH=/usr/local/bin/android-sdk-macosx/tools:$PATH
 #export MAGICK_HOME="$HOME/bin/ImageMagick-6.6.4"
 #export PATH="$MAGICK_HOME/bin:$PATH"
 #export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
+
+#Pg sql
+export PGDATA=/usr/share/postgresql/data
+export PATH=$PGDATA:$PATH

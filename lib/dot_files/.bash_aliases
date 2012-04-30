@@ -11,10 +11,13 @@ alias scp='rsync -e ssh -rlzvP'
 
 if [ "$OSTYPE" == 'linux-gnu' ]
   then
-  alias ctags='/opt/local/bin/ctags'
+  alias ctags='/usr/bin/ctags'
   alias vim=gvim
+  alias start_reddis='redis-server /etc/redis.conf'
 else
+  #Fuck you mac
   alias ctags='/usr/local/bin/ctags'
+  alias start_reddis='redis-server /usr/local/etc/redis.conf'
   alias vim=mvim
   alias updatedb="sudo /usr/libexec/locate.updatedb"
 fi
@@ -57,10 +60,6 @@ alias scp='rsync -e ssh -rlzvP'
 
 #OpenChime stuff
 alias seed_openchime='cd ~/dev/ruby/openchime && heroku pgbackups:capture --expire && curl -o latest.dump  && pg_restore --verbose --clean --no-acl --no-owner  -d openchime_dev latest.dump'
-
-alias get_database='heroku pgbackups:capture --expire && curl -o latest.dump `heroku pgbackups:url` && pg_restore --verbose --clean --no-acl --no-owner  -d nh_dev latest.dump'
-
-
 
 alias start_reddis='redis-server /usr/local/etc/redis.conf'
 alias empty_redis='rm -rf /usr/local/var/db/redis/*'
