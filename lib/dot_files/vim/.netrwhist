@@ -1,4 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/Users/rmeyer/dev/ruby/gems/facebooker2'
-let g:netrw_dirhist_2='/Users/rmeyer/dev/ruby/pak'
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/Users/rmeyer/dev/ruby/gems/acts_as_cleo'
+let g:netrw_dirhist_2='/Users/rmeyer/dev/ruby/neighborhoods'
+let g:netrw_dirhist_3='/Users/rmeyer/dev/ruby/OnboardData'
+let g:netrw_dirhist_4='/Users/rmeyer/dev/ruby/gems/acts_as_cleo'
+let g:netrw_dirhist_5='/Users/rmeyer/dev/ruby/OnboardData'
+let g:netrw_dirhist_6='/Users/rmeyer/dev/ruby/sunset'

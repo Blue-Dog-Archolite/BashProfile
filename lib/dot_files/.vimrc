@@ -261,8 +261,7 @@ let NERDCreateDefaultMappings=0 " I turn this off to make it simple
   " cd ~/cl/etc/vim/ruby/command-t
   " ruby extconf.rb
   " make
-let g:CommandTMatchWindowAtTop = 1
-map <Leader>f :CommandT<CR>
+map <Leader>f :CtrlP<CR>
 
 
 " fuzzyfinder ********************************************************
@@ -305,3 +304,5 @@ function! DoPrettyXML()
   exe "set ft=" . l:origft
 endfunction
 command! Pxml call DoPrettyXML()
+
+call pathogen#infect()

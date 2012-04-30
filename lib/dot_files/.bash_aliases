@@ -58,6 +58,10 @@ alias scp='rsync -e ssh -rlzvP'
 #OpenChime stuff
 alias seed_openchime='cd ~/dev/ruby/openchime && heroku pgbackups:capture --expire && curl -o latest.dump  && pg_restore --verbose --clean --no-acl --no-owner  -d openchime_dev latest.dump'
 
+alias get_database='heroku pgbackups:capture --expire && curl -o latest.dump `heroku pgbackups:url` && pg_restore --verbose --clean --no-acl --no-owner  -d nh_dev latest.dump'
+
+
+
 alias start_reddis='redis-server /usr/local/etc/redis.conf'
 alias empty_redis='rm -rf /usr/local/var/db/redis/*'
 alias tail_nginx='tail -fn0 /usr/local/Cellar/nginx/1.0.4/logs/*'
