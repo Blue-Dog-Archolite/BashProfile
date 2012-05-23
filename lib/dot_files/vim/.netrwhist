@@ -1,8 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
-let g:netrw_dirhist_1='/home/thief/dev/ruby/onboard_neighborhood'
-let g:netrw_dirhist_2='/home/thief/dev/ruby/openchime/script'
-let g:netrw_dirhist_3='/home/thief/dev/ruby/onboard_neighborhood'
-let g:netrw_dirhist_4='/home/thief/dev/ruby/gems/acts_as_cleo'
-let g:netrw_dirhist_5='/home/thief/dev/ruby/onboard_neighborhood'
-let g:netrw_dirhist_6='/home/thief/dev/ruby/gems/acts_as_cleo'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/thief/dev/ruby/Sunset'
+let g:netrw_dirhist_2='/home/thief/dev/ruby/Dabble'
+let g:netrw_dirhist_3='/home/thief/dev/ruby/Sunset'
+let g:netrw_dirhist_4='/home/thief/dev/ruby/Dabble'

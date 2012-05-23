@@ -14,6 +14,7 @@ if [ "$OSTYPE" == 'linux-gnu' ]
   alias ctags='/usr/bin/ctags'
   alias vim=gvim
   alias start_reddis='redis-server /etc/redis.conf'
+  alias set_left='xrandr --output VGA2 --left-of LVDS2'
 else
   #Fuck you mac
   alias ctags='/usr/local/bin/ctags'
