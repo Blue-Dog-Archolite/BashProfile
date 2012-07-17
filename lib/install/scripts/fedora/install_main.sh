@@ -1,4 +1,3 @@
-su -
 yum update
 yum install -y yum-plugin-fastestmirror
 rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
