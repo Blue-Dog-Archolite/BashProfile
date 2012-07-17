@@ -4,6 +4,7 @@
 alias ll='clear && ls -Gal'
 alias la='ls -GA'
 alias l='ls -GCF'
+alias ls='ls --color=auto'
 alias vi=vim
 
 alias scp='rsync -e ssh -rlzvP'

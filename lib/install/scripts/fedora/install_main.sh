@@ -1,4 +1,5 @@
 yum update
+yum install bash-completion
 yum install -y yum-plugin-fastestmirror
 rpm -ivh http://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-stable.noarch.rpm
 rpm -ivh http://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-stable.noarch.rpm
