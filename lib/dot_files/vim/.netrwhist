@@ -1,7 +1,10 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/thief/dev/ruby/Sunset'
-let g:netrw_dirhist_2='/home/thief/dev/ruby/Dabble'
-let g:netrw_dirhist_3='/home/thief/dev/ruby/Sunset'
-let g:netrw_dirhist_4='/home/thief/dev/ruby/Dabble'
-let g:netrw_dirhist_5='/home/thief/bash/lib/install/scripts/fedora'
+let g:netrw_dirhist_cnt =8
+let g:netrw_dirhist_1='/home/thief/dev/ruby/dabble/relaunch'
+let g:netrw_dirhist_2='/home/thief/dev/ruby/dabble/provider'
+let g:netrw_dirhist_3='/home/thief/dev/ruby/dabble/relaunch'
+let g:netrw_dirhist_4='/home/thief/dev/dave/treebook'
+let g:netrw_dirhist_5='/home/thief/dev/ruby/dabble/relaunch'
+let g:netrw_dirhist_6='/home/thief/dev/ruby/dabble/old'
+let g:netrw_dirhist_7='/home/thief/dev/ruby/dabble/provider'
+let g:netrw_dirhist_8='/home/thief/dev/ruby/dabble/relaunch'

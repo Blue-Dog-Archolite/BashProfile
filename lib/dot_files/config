@@ -1,31 +1,26 @@
+Host dabble-old-production
+  Hostname 173.230.133.85
+  Port 22
+  User rails
+
 Host dabble-staging
-Hostname 173.230.133.85
-Port 22
-User rails
+  Hostname 173.230.133.85
+  Port 22
+  User rails
 
+Host dabble-sso-staging
+  Hostname 173.230.133.85
+  Port 22
+  User rails
+
+#these are the new procudtion servers
 Host dabble-production
-Hostname 173.230.133.85
-Port 22
-User rails
-
-Host dabble-relaunch-production
-Hostname 50.116.42.177
-User rails
-Port 22
-
-Host dabble-relaunch-staging
-Hostname 50.116.42.177
-User rails
-Port 22
-
-Host dabble-venue-production
-Hostname 50.116.42.177
-User rails
-
-Host dabble-venue-staging
-Hostname 50.116.42.177
-User rails
+  Hostname 50.116.42.177
+  Hostname 173.230.133.85
+  User rails
+  Port 22
 
 Host dabble-sso-production
-Hostname 50.116.42.177
-User rails
+  Hostname 50.116.42.177
+  Port 22
+  User rails

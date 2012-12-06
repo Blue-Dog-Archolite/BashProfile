@@ -114,7 +114,7 @@ set shiftwidth=2  " Tabs under smart indenting
 "***********************************************
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=log -R * `rvm gemdir`/gems/*<CR><CR>
+map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=public/assets --exclude=log -R *<CR><CR>
 
 
 "Sets the tags directory to look backwards till it finds a tags dir
@@ -268,7 +268,7 @@ map <Leader>f :CtrlP<CR>
 " I'm using CommandT for main searching, but it doesn't do buffers, so I'm
 " using FuzzyFinder for that
 map <Leader>b :FufBuffer<CR>
-"let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db'
+let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql'
 "
 "
 "set Directory for swap and backup files

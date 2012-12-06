@@ -6,6 +6,7 @@ alias la='ls -GA'
 alias l='ls -GCF'
 alias ls='ls --color=auto'
 alias vi=vim
+alias gti='git'
 
 alias scp='rsync -e ssh -rlzvP'
 
@@ -40,6 +41,9 @@ alias all_tests="s cu -f progress --tags ~@wip"
 alias rtest='ruby -I"lib:test"'
 alias rsp='rspec -d '
 
+#Deploy
+alias deploy_staging_with_branch="cap staging -s branch='$1' deploy"
+
 #"rake tasks
 alias migrate="rake db:migrate -trace"
 alias migrate_all='rake db:migrate --trace && rake db:migrate RAILS_ENV=test --trace'
@@ -60,16 +64,10 @@ alias reset_keyboard='sudo open /System/Library/CoreServices/KeyboardSetupAssist
 alias rvm-restart='source '\''/Users/rmeyer/.rvm/scripts/rvm'\'''
 alias scp='rsync -e ssh -rlzvP'
 
-#OpenChime stuff
-alias seed_openchime='cd ~/dev/ruby/openchime && heroku pgbackups:capture --expire && curl -o latest.dump  && pg_restore --verbose --clean --no-acl --no-owner  -d openchime_dev latest.dump'
-
 alias start_reddis='redis-server /usr/local/etc/redis.conf'
 alias empty_redis='rm -rf /usr/local/var/db/redis/*'
-alias tail_nginx='tail -fn0 /usr/local/Cellar/nginx/1.0.4/logs/*'
-alias tail_postgres='tail -f /usr/local/var/postgres/server.log'
-alias start_pgsql='pg_ctl -D /usr/local/var/postgres -l /usr/local/var/postgres/server.log start'
 
-alias jenkins='ssh deploy@ec2-107-20-241-229.compute-1.amazonaws.com'
 alias seed_test='bundle exec rake db:test:load'
 
-alias start_workers='cd ~/dev/ruby/openchime/ && bundle exec rake resque:work'
+#mysql help
+alias mysql_info="mysqladmin variables"

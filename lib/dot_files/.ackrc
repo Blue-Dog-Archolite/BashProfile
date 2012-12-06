@@ -1,2 +1,14 @@
 --type-add=ruby=.haml
 --type-add=ruby=.sass
+--type-add=ruby=.scss
+--type-add=ruby=.less
+--type-add=ruby=.god
+--type-add=ruby=.coffee
+
+--type-set=DUMB=.orig
+--type-add=DUMB=.sql
+--type-add=DUMB=.svg
+--noDUMB
+--ignore-dir=public/assets
+--ignore-dir=db/
+
