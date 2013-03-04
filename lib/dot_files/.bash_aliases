@@ -65,6 +65,7 @@ alias rvm-restart='source '\''/Users/rmeyer/.rvm/scripts/rvm'\'''
 alias scp='rsync -e ssh -rlzvP'
 
 alias start_reddis='redis-server /usr/local/etc/redis.conf'
+alias verbose_worker='QUEUE=* VVERBOSE=1 VERBOSE=1 bundle exec rake resque:work --trace'
 alias empty_redis='rm -rf /usr/local/var/db/redis/*'
 
 alias seed_test='bundle exec rake db:test:load'

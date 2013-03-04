@@ -4,6 +4,7 @@
 --type-add=ruby=.less
 --type-add=ruby=.god
 --type-add=ruby=.coffee
+--type-add=ruby=.pp
 
 --type-set=DUMB=.orig
 --type-add=DUMB=.sql
