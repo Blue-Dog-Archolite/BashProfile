@@ -11,5 +11,6 @@
 --type-add=DUMB=.svg
 --noDUMB
 --ignore-dir=public/assets
+--ignore-dir=coverage
 --ignore-dir=db/
 

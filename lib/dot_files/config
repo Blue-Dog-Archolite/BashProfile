@@ -1,9 +1,9 @@
-Host old.dabble
+Host old.dabble.co
   Hostname 173.230.133.85
   Port 22
   User rails
 
-Host staging.dabble
+Host staging.dabble.co
   Hostname 173.230.133.85
   Port 22
   User rails
@@ -13,7 +13,7 @@ Host dabble-staging
   Port 22
   User rails
 
-Host sso.staging.dabble
+Host sso.staging.dabble.co
   Hostname 173.230.133.85
   Port 22
   User rails
@@ -24,7 +24,13 @@ Host dabble-production
   User rails
   Port 22
 
-host master.dabble
+
+Host production.dabble.co
+  Hostname 50.116.42.177
+  User rails
+  Port 22
+
+host master.dabble.co
   Hostname 192.155.92.133
   User rails
   Port 22
