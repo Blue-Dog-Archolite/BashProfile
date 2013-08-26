@@ -1,3 +1,8 @@
+Host new.dabble.co
+  Hostname 198.58.112.159
+  Port 22
+  User rails
+
 Host old.dabble.co
   Hostname 173.230.133.85
   Port 22

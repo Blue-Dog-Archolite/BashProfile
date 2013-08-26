@@ -41,7 +41,7 @@ function mvim()
 #"Ruby
 alias all_tests="s cu -f progress --tags ~@wip"
 alias rtest='ruby -I"lib:test"'
-alias rsp='rspec -d '
+alias rsp='rspec -drb '
 
 #Deploy
 alias deploy_staging_with_branch="cap staging -s branch='$1' deploy"
