@@ -1,9 +1,9 @@
 let g:netrw_dirhistmax  =10
 let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/thief/Downloads/InterviewProblems/pagerduty'
-let g:netrw_dirhist_2='/home/thief/dev/ruby/dabble/relaunch'
-let g:netrw_dirhist_3='/home/thief/dev/ruby/avant-basic'
-let g:netrw_dirhist_4='/home/thief/dev/ruby/avant-credit-model'
-let g:netrw_dirhist_5='/home/thief/dev/ruby/avant-basic'
-let g:netrw_dirhist_6='/home/thief/dev/ruby/dabble/relaunch/script'
+let g:netrw_dirhist_1='/home/thief/dev/ruby/avant/basic'
+let g:netrw_dirhist_2='/home/thief/dev/ruby/avant/oculus'
+let g:netrw_dirhist_3='/home/thief/dev/ruby/avant/basic'
+let g:netrw_dirhist_4='/home/thief/dev/ruby/avant/oculus'
+let g:netrw_dirhist_5='/home/thief/dev/ruby/avant/basic'
+let g:netrw_dirhist_6='/home/thief/dev/ruby/avant/oculus'
 let g:netrw_dirhist_7='/home/thief/dev/ruby/avant/basic'
