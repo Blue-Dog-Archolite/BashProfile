@@ -48,15 +48,15 @@ parse_git_branch() {
 }
 
 parse_svn_branch() {
-parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk -F / '{print "(svn::"$1 "/" $2 ")"}'
+  parse_svn_url | sed -e 's#^'"$(parse_svn_repository_root)"'##g' | awk -F / '{print "(svn::"$1 "/" $2 ")"}'
 }
 
 parse_svn_url() {
-svn info 2>/dev/null | grep -e '^URL*' | sed -e 's#^URL: *\(.*\)#\1#g '
+  svn info 2>/dev/null | grep -e '^URL*' | sed -e 's#^URL: *\(.*\)#\1#g '
 }
 
 parse_svn_repository_root() {
-svn info 2>/dev/null | grep -e '^Repository Root:*' | sed -e 's#^Repository Root: *\(.*\)#\1\/#g '
+  svn info 2>/dev/null | grep -e '^Repository Root:*' | sed -e 's#^Repository Root: *\(.*\)#\1\/#g '
 }
 
 export PS1="$USER:\w \[\033[31m\]\$(~/.rvm/bin/rvm-prompt)\[\033[00m\]::\[\033[31m\]\$(parse_git_branch)\$(parse_svn_branch) \[\033[00m\]$\[\033[00m\] "
@@ -78,15 +78,15 @@ if [ -f ~/.bash_functions ]; then
   . ~/.bash_functions
 fi
 
+if [ -f ~/.rvm/scripts/rvm ]; then
+  . ~/.rvm/scripts/rvm
+fi
+
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
 if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
-
-set history=500000
-
-if [[ -s ~/.rvm/scripts/rvm ]] ; then source ~/.rvm/scripts/rvm ; fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
