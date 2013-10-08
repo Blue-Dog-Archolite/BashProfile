@@ -25,7 +25,7 @@ set lcs=tab:\ \ ,eol:$,trail:~,extends:>,precedes:<
 "set novisualbell  " No blinking .
 set noerrorbells  " No noise.
 set laststatus=2  " Always show status line.
-" -----------------------------------------------------------------------------  
+" -----------------------------------------------------------------------------
 " |                            VIM Settings                                   |
 " |                   (see gvimrc for gui vim settings)                       |
 " |                                                                           |
@@ -56,12 +56,12 @@ set laststatus=2  " Always show status line.
 " |  C-W C-] - Open the definition in a horizontal split                      |
 " |  C-\ - Open the definition in a new tab                                   |
 " |  A-] - Open the definition in a vertical split                            |
-" |  
+" |
 " |  After the tags are generated. You can use the following keys to tag into and tag out of functions:
 " |
 " |  Ctrl-Left_MouseClick - Go to definition                                  |
 " |  Ctrl-Right_MouseClick - Jump back from definition                        |
-" 
+"
 
 set nocompatible " We're running Vim, not Vi!
 
@@ -150,7 +150,7 @@ set cursorline
 " Searching *******************************************************************
 set hlsearch  " highlight search
 set incsearch  " Incremental search, search as you type
-set ignorecase " Ignore case when searching 
+set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 map <Leader>nh :nohlsearch<CR>
 map <Leader>g :Ack 
@@ -161,7 +161,7 @@ inoremap <F8> <ESC>mzgg=G`z<Insert>
 
 " Colors **********************************************************************
 "set t_Co=256 " 256 colors
-set background=dark 
+set background=dark
 syntax on " syntax highlighting
 colorscheme ir_black
 
@@ -185,7 +185,13 @@ set nu  " Line numbers on
 set backspace=indent,eol,start
 set number " Show line numbers
 set matchpairs+=<:>
-set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
+"set vb t_vb= " Turn off bell, this could be more annoying, but I'm not sure how
+
+set noerrorbells visualbell t_vb=
+if has('autocmd')
+  autocmd GUIEnter * set visualbell t_vb=
+endif
+
 set nofoldenable " Turn off folding
 set noerrorbells
 set spell
@@ -212,7 +218,7 @@ autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 autocmd FileType c set omnifunc=ccomplete#Complete
 
 " May require ruby compiled in
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete 
+autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
 autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
 autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
 autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
@@ -237,9 +243,9 @@ map <Enter> o<ESC>
 "set fo-=r " do not insert a comment leader after an enter, (no work, fix!!)
 
 
-" -----------------------------------------------------------------------------  
+" -----------------------------------------------------------------------------
 " |                              Plug-ins                                     |
-" -----------------------------------------------------------------------------  
+" -----------------------------------------------------------------------------
 
 " NERDTree ********************************************************************
 :noremap <Leader>n :NERDTreeToggle<CR>
@@ -255,7 +261,7 @@ let NERDCreateDefaultMappings=0 " I turn this off to make it simple
 " Toggle commenting on 1 line or all selected lines. Wether to comment or not
 " is decided based on the first line; if it's not commented then all lines
 " will be commented
-:map <Leader>c :call NERDComment(0, "toggle")<CR> 
+:map <Leader>c :call NERDComment(0, "toggle")<CR>
 
 " CommandT ********************************************************
   " To compile:
@@ -263,7 +269,6 @@ let NERDCreateDefaultMappings=0 " I turn this off to make it simple
   " ruby extconf.rb
   " make
 map <Leader>f :CtrlP<CR>
-
 
 " fuzzyfinder ********************************************************
 " I'm using CommandT for main searching, but it doesn't do buffers, so I'm
