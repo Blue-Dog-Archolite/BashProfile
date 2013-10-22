@@ -8,7 +8,7 @@ alias ls='ls --color=auto'
 alias vi=vim
 alias gti='git'
 alias vm='vagrant'
-alias cd_dev='cd dev/ruby/avant/basic'
+alias cd_dev='cd ~/dev/ruby/avant/basic'
 
 alias scp='rsync -e ssh -rlzvP'
 

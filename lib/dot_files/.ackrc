@@ -6,16 +6,18 @@
 --type-add=ruby=.coffee
 --type-add=ruby=.pp
 
---type-set=DUMB=.orig
---type-set=DUMB=.log
---type-set=DUMB=tags
+--type-add=DUMB=.orig
+--type-add=DUMB=.log
+--type-add=DUMB=tags
 --type-add=DUMB=.sql
 --type-add=DUMB=.svg
 --ignore-file=is:tags
+--ignore-file=is:*.log
 --noDUMB
 --ignore-dir=public/assets
 --ignore-dir=test/reports
 --ignore-dir=doc/
 --ignore-dir=coverage
 --ignore-dir=db/
+--ignore-dir=log/
 
