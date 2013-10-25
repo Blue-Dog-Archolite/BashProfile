@@ -5,3 +5,7 @@ if defined?(PryDebugger)
   Pry.commands.alias_command 'f', 'finish'
   Pry.commands.alias_command 'll', 'ls'
 end
+
+def clear
+  `reset`
+end

@@ -27,3 +27,7 @@ export PATH=$PATH:/usr/lib64/qt4/bin/
 #Pg sql
 export PGDATA=/usr/share/postgresql/data
 export PATH=$PGDATA:$PATH
+
+#Uincorn
+export UNICORN_OOM_MIN_MB=400
+export UNICORN_OOM_MAX_MB=600

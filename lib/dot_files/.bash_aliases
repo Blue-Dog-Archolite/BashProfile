@@ -49,6 +49,8 @@ alias deploy_staging_with_branch="cap staging -s branch='$1' deploy"
 
 #"rake tasks
 alias migrate="rake db:migrate -trace"
+
+alias seed_avant="pg_restore --clean --no-acl --no-owner -h localhost -d $1 ~/dev/ruby/avant/latest.dump -j 3"
 alias migrate_all='rake db:migrate --trace && rake db:migrate RAILS_ENV=test --trace'
 alias watch_sass='sass --watch app/assets/stylesheets/sass/:app/assets/stylesheets/'
 
