@@ -89,4 +89,8 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
+ if [ -f ~/.git-completion.bash ]; then
+   . ~/.git-completion.bash
+ fi
+
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting

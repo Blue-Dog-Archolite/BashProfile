@@ -1,3 +1,5 @@
+export PII_ENCRYPTION_KEY=01gVUsKc5SeUHBclWCdhExLgx8fk0E5/rMDb7S84/ftwoacJmkJl2OgVcFNIU32NdC4fFUL82ac7zTAX6b48KHM5Rrc+4NSE680FAWTX6kcGxGn9bTc8qQPY4edZ/ULsryi+rtfP0dJKG39vePCTWZx9y/jyBZYGIT7QLKPkKRs/KIcRd+PpSo2LpDBkSpENZEme5OOi6q/G7xdRWBYiC0zbFMZrUOI0sBeGrEmD2GMjPEuQ/IvCDUVn4oLLukGdo0sb1ymTtLQ9ZQFZMnEyl9ieqpYCJAlmg1LWjnIO7fFADYCz7GQW/eQ/eJjKioISac/KF64LjeVVF/9DdMccoQ==
+
 export PATH=/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include:$PATH
 
 #export PATH=/usr/local/mysql:/usr/local/mysql/bin:$PATH
@@ -31,3 +33,6 @@ export PATH=$PGDATA:$PATH
 #Uincorn
 export UNICORN_OOM_MIN_MB=400
 export UNICORN_OOM_MAX_MB=600
+export OCULUS_ENABLED=1
+
+export CODECLIMATE_REPO_TOKEN=28ff2ff8fee1fb0a3d4b5f980ac568a80538d4f050c67e4706f20911be59186b
