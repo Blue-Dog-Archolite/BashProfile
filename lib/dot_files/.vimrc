@@ -5,6 +5,7 @@ set clipboard+=unnamed  " Yanks go on clipboard instead.
 set history=256  " Number of things to remember in history.
 set autowrite  " Writes on make/shell commands
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+set mouse=a
 
 set nocp
 set cinoptions=:0,p0,t0
@@ -86,6 +87,8 @@ function! Tabstyle_tabs()
   autocmd User Rails set noexpandtab
 endfunction
 
+au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
+
 
 " Removes trailing spaces
 function TrimWhiteSpace()
@@ -164,6 +167,7 @@ inoremap <F8> <ESC>mzgg=G`z<Insert>
 set background=dark
 syntax on " syntax highlighting
 colorscheme ir_black
+set lazyredraw "faster processing
 
 " syntastic
 let g:syntastic_auto_loc_list=1
@@ -171,6 +175,8 @@ let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
+" makes vim super slow
+" let g:syntastic_ruby_checkers = ['mri', 'rubocop']
 
 " Status Line *****************************************************************
 set showcmd
