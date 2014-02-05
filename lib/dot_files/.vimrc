@@ -241,7 +241,6 @@ highlight Pmenu ctermbg=238 gui=bold
 
 
 " Hard to type *****************************************************************
-imap uu _
 imap hh =>
 imap aa @
 imap ;; <%= %>
