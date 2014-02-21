@@ -5,7 +5,10 @@ set clipboard+=unnamed  " Yanks go on clipboard instead.
 set history=1024 " Number of things to remember in history.
 set autowrite  " Writes on make/shell commands
 set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
-set mouse=a
+
+if has('gui_running')
+  set mouse=a
+end
 
 set nocp
 set cinoptions=:0,p0,t0
@@ -146,9 +149,14 @@ set splitbelow splitright
 :noremap <Leader>v :vsp^M^W^W<cr>
 :noremap <Leader>h :split^M^W^W<cr>
 
+:noremap <Leader>\ :TagbarToggle<CR>
+:noremap <Leader>j :TagbarToggle<CR>
+
+
+
 " Cursor highlights ***********************************************************
 set cursorline
-"set cursorcolumn
+set cursorcolumn
 
 " Searching *******************************************************************
 set hlsearch  " highlight search
@@ -249,6 +257,7 @@ imap ;; <%= %>
 " ****************************************
 let g:rails_default_file='config/database.yml'
 
+
 " Insert New Line *************************************************************
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
 map <Enter> o<ESC>
@@ -263,6 +272,8 @@ map <Enter> o<ESC>
 :noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
 let NERDTreeMouseMode=1 " Single click for everything
+let g:vroom_map_keys = 0
+
 :noremap <Leader>z :NERDTreeFind<CR>
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
 
