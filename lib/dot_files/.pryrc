@@ -6,6 +6,9 @@ if defined?(PryDebugger)
   Pry.commands.alias_command 'll', 'ls'
 end
 
+Pry.config.editor = "vim"
+
+
 def clear
   `reset`
 end

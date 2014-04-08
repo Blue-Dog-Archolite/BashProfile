@@ -1,4 +1,6 @@
 export PRY_WANTED=true
 export OCULUS_ENABLED=1
+export LIVERELOAD=1
+export GUARD_BUNDLE=1
 
 export N=8

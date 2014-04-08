@@ -11,6 +11,7 @@
 --type-add=DUMB=tags
 --type-add=DUMB=.sql
 --type-add=DUMB=.svg
+--type-add=DUMB=.txt
 --ignore-file=is:tags
 --ignore-file=is:*.log
 --noDUMB
@@ -20,4 +21,5 @@
 --ignore-dir=coverage
 --ignore-dir=db/
 --ignore-dir=log/
+--ignore-dir=tmp/
 

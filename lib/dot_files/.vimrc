@@ -8,6 +8,7 @@ set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
 
 if has('gui_running')
   set mouse=a
+  set nofoldenable " Turn off folding
 end
 
 set nocp
@@ -213,7 +214,7 @@ if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
-set nofoldenable " Turn off folding
+
 set noerrorbells
 set spell
 
@@ -272,6 +273,7 @@ map <Enter> o<ESC>
 :noremap <Leader>n :NERDTreeToggle<CR>
 let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit /foobar
 let NERDTreeMouseMode=1 " Single click for everything
+let NERDTreeShowHidden=1
 let g:vroom_map_keys = 0
 
 :noremap <Leader>z :NERDTreeFind<CR>
