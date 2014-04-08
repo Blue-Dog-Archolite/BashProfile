@@ -129,6 +129,10 @@ set tags=tags;/
 
 au BufWritePost *.rb silent! !ctags -a --recurse -f ~/dev/tags/cuttlefish &
 
+" associate  with ruby filetype
+au BufRead,BufNewFile ^M^W^W setfiletype ruby
+
+
 
 
 "Indenting *******************************************************************
