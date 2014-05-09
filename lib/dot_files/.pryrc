@@ -8,6 +8,9 @@ end
 
 Pry.config.editor = "vim"
 
+def load_blueprints
+  require "#{Rails.root}/test/load_blueprints.rb"
+end
 
 def clear
   `reset`

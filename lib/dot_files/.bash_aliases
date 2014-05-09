@@ -50,7 +50,6 @@ alias deploy_staging_with_branch="cap staging -s branch='$1' deploy"
 #"rake tasks
 alias migrate="rake db:migrate -trace"
 
-alias seed_avant="pg_restore --clean --no-acl --no-owner -h localhost -d $1 ~/dev/ruby/avant/latest.dump -j 3"
 alias migrate_all='rake db:migrate --trace && rake db:migrate RAILS_ENV=test --trace'
 alias watch_sass='sass --watch app/assets/stylesheets/sass/:app/assets/stylesheets/'
 
@@ -58,6 +57,7 @@ alias watch_sass='sass --watch app/assets/stylesheets/sass/:app/assets/styleshee
 alias git_history="git fsck --lost-found | awk '{print \"git show \" $3}' | bash | less"
 alias mkpatch='git format-patch -o ~/Desktop/ origin'
 alias commit_and_push='git commit -m $1 && git pull && git push origin'
+alias git_show_branch_history="git reflog show --no-abbrev $1" #Will show the branch history and take one argument
 
 #Show all files and folders for mac
 alias show_all="defaults write com.apple.Finder AppleShowAllFiles YES"
