@@ -12,6 +12,13 @@ def load_blueprints
   require "#{Rails.root}/test/load_blueprints.rb"
 end
 
+def load_factories
+  require 'factory_girl'
+  require 'faker'
+
+  FactoryGirl.reload
+end
+
 def clear
   `reset`
 end

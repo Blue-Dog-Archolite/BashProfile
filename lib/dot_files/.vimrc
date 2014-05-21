@@ -1,3 +1,5 @@
+call pathogen#infect()
+
 "Before merge of files these existed
 
 set cf  " Enable error files & error jumping.
@@ -191,8 +193,7 @@ let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
-" makes vim super slow
-" let g:syntastic_ruby_checkers = ['mri', 'rubocop']
+let g:syntastic_ruby_checkers = ['rubocop']
 
 " Status Line *****************************************************************
 set showcmd
@@ -312,4 +313,3 @@ let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc'
 "set Directory for swap and backup files
 set dir=/tmp
 
-call pathogen#infect()
