@@ -174,7 +174,8 @@ set incsearch  " Incremental search, search as you type
 set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 map <Leader>nh :nohlsearch<CR>
-map <Leader>g :Ack 
+map <Leader>g :Ag 
+map <Leader>k :Ack 
 
 " map <F8> to reindent file
 noremap <F8> mzgg=G`z
