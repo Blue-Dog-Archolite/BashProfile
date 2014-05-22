@@ -188,13 +188,21 @@ syntax on " syntax highlighting
 colorscheme ir_black
 set lazyredraw "faster processing
 
+"wildfire
+" This selects the next closest text object.
+let g:wildfire_fuel_map = "<TAB>"
+
+" This selects the previous closest text object.
+let g:wildfire_water_map = "<BS>"
+
 " syntastic
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
-let g:syntastic_ruby_checkers = ['rubocop']
+"This makes things quite slow as each save runs through rubocop
+"let g:syntastic_ruby_checkers = ['rubocop']
 
 " Status Line *****************************************************************
 set showcmd
