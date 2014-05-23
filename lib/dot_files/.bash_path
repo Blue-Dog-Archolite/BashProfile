@@ -3,7 +3,7 @@ export PII_ENCRYPTION_KEY=01gVUsKc5SeUHBclWCdhExLgx8fk0E5/rMDb7S84/ftwoacJmkJl2O
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include
 
 #Adding Silver Searcher
-export PATH=$PATH:/tools/BashProfile/Tools/the_silver_searcher/
+export PATH=$PATH:$HOME/tools/BashProfile/Tools/the_silver_searcher/
 
 #export PATH=/usr/local/mysql:/usr/local/mysql/bin:$PATH
 #export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH

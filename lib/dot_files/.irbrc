@@ -1,36 +1,25 @@
-require 'rubygems'
-require 'pp'
-require 'bond'
-require 'bond/completion'
-require 'map_by_method'
-require 'what_methods'
-require 'wirble'
+def safe_load_gem(gem_name, silent: true)
+  require gem_name
+rescue LoadError => e
+  puts "Can't load #{gem_name}, #{e.inspect}" unless silent
+end
+
+%w{pry-plus pry-rails irb/completion pp hirb map_by_method rubygems pry}.each{ |gem| safe_load_gem(gem) }
 
 IRB.conf[:AUTO_INDENT]=true
 
-if rails_env = ENV['RAILS_ENV']
-  rails_root = File.basename(Dir.pwd)
-  IRB.conf[:PROMPT] ||= {}
-  IRB.conf[:PROMPT][:RAILS] = {
-    :PROMPT_I => "#{rails_root}(#{ENV['RAILS_ENV'].capitalize})> ",
-    :PROMPT_S => "#{rails_root}(#{ENV['RAILS_ENV'].capitalize})* ",
-    :PROMPT_C => "#{rails_root}(#{ENV['RAILS_ENV'].capitalize})? ",
-    :RETURN   => "=> %s\n"
-  }
-  IRB.conf[:PROMPT_MODE] = :RAILS
-
-  # Called after the irb session is initialized and Rails has
-  # been loaded (props: Mike Clark).
-  IRB.conf[:IRB_RC] = Proc.new do
-    ActiveRecord::Base.logger = Logger.new(STDOUT)
-    ActiveRecord::Base.instance_eval { alias :[] :find }
-    begin
-      #console helper in rails project
-      require 'console_helper'
-    rescue Exception => e
-      puts e
+# https://github.com/carlhuda/bundler/issues/183#issuecomment-1149953
+if defined?(::Bundler)
+  global_gemset = ENV['GEM_PATH'].split(':').grep(/ruby.*@global/).first
+  if global_gemset
+    all_global_gem_paths = Dir.glob("#{global_gemset}/gems/*")
+    all_global_gem_paths.each do |p|
+      gem_path = "#{p}/lib"
+      $LOAD_PATH << gem_path
     end
   end
 end
-Wirble.init
-Wirble.colorize
+
+# Use Pry everywhere
+Pry.start if defined?(Pry)
+exit
