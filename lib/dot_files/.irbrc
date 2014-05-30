@@ -1,9 +1,4 @@
-def safe_load_gem(gem_name, silent: true)
-  require gem_name
-rescue LoadError => e
-  puts "Can't load #{gem_name}, #{e.inspect}" unless silent
-end
-
+require '~/tools/BashProfile/safe_load'
 %w{pry-plus pry-rails irb/completion pp hirb map_by_method rubygems pry}.each{ |gem| safe_load_gem(gem) }
 
 IRB.conf[:AUTO_INDENT]=true

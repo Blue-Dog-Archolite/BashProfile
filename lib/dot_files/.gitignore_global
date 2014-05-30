@@ -36,6 +36,9 @@
 ehthumbs.db
 Thumbs.db
 
+# Vim Merge files
+*.*.orig
+
 # ctags
 tags
 

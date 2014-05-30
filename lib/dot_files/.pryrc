@@ -1,3 +1,5 @@
+require '~/tools/BashProfile/safe_load'
+
 #Pry Debugger alias definitions
 safe_load_gem('pry-debugger')
 if defined?(PryDebugger)
@@ -9,8 +11,8 @@ end
 
 #Pry Alias
 Pry.commands.alias_command 'll', 'ls'
-Pry.commands.alias_command 'sm', 'show-method -b'
-Pry.commands.alias_command 'sl', 'show-method -l'
+Pry.commands.alias_command 'sm', 'show-source -b ARGV[1]'
+Pry.commands.alias_command 'sl', 'show-source -l $1'
 
 
 #easily load testing environment tools
@@ -30,7 +32,7 @@ def clear
 end
 
 #Editor configuration
-Pry.config.editor = "gvim --nofork"
+Pry.config.editor = proc { |file, line| "gvim +#{line} #{file}" }
 
 # Customer exit message
 Pry.config.hooks.add_hook(:after_session, :say_bye) do
