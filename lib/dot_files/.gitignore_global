@@ -39,6 +39,9 @@ Thumbs.db
 # Vim Merge files
 *.*.orig
 
+#Vim Scrap
+^M^W^W
+
 # ctags
 tags
 
