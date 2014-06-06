@@ -1,0 +1,5 @@
+default:
+    rackspace_username: liveworld
+    rackspace_api_key: 994c280d38ea6b76a9e081efda583558
+    digitalocean_client_id: 6snHsb_G7oYmJut3JKClgQ
+    digitalocean_api_key: 25a96170532ea37120c86254a73fc474
