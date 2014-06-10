@@ -3,6 +3,9 @@ export OCULUS_ENABLED=1
 export LIVERELOAD=1
 export GUARD_BUNDLE=1
 
+#Rvm Sudo Path setup
+export rvmsudo_secure_path=1
+
 
 export LIVEWORLD_USER=rmeyer
 
