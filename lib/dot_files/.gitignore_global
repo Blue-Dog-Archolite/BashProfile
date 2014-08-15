@@ -38,6 +38,7 @@ Thumbs.db
 
 # Vim Merge files
 *.*.orig
+*.orig
 
 #Vim Scrap
 ^M^W^W
@@ -49,3 +50,6 @@ tags
 script/branch
 script/checkout
 
+#RuboCop
+.rubocop.yml
+.rubocop_todo.yml

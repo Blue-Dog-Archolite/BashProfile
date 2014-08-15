@@ -1,12 +1,24 @@
 export PRY_WANTED=true
 export OCULUS_ENABLED=1
 export LIVERELOAD=1
+
+export STYLE_ENFORCEMENT=1
+export AUTO_MIGRATE=1
 export GUARD_BUNDLE=1
 
-#Rvm Sudo Path setup
+#export SSL_CERT_DIR=/etc/pki/tls/certs
+export SSL_CERT_FILE=/etc/pki/tls/cert.pem
+
 export rvmsudo_secure_path=1
 
 
-export LIVEWORLD_USER=rmeyer
+export JAVA_HOME=/usr/lib/jvm/java-1.7.0-openjdk-1.7.0.65-2.5.1.3.fc20.x86_64/jre
+export PATH=$PATH:$JAVA_HOME
+export JRE_HOME=$JAVA_HOME/jre
 
-export N=8
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JAVA_HOME #/jre/lib/amd64:$JAVA_HOME/jre/lib/amd64/client
+
+export LIVEWORLD_USER=rmeyer
+export DEFAULT_USER_PASSWORD=LiveWorld$1234!
+

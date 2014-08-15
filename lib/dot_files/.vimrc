@@ -1,12 +1,40 @@
-call pathogen#infect()
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+Bundle 'rking/ag.vim'
+Bundle 'vim-scripts/matchit.zip'
+Bundle 'AndrewRadev/splitjoin.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'majutsushi/tagbar'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-abolish.git'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'tpope/vim-fugitive'
+Bundle 'groenewege/vim-less'
+Bundle 'tpope/vim-rails'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'skalnik/vim-vroom'
+Bundle 'gcmt/wildfire.vim'
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
 
 "Before merge of files these existed
 
-set cf  " Enable error files & error jumping.
+set cf                  " Enable error files & error jumping.
 set clipboard+=unnamed  " Yanks go on clipboard instead.
-set history=1024 " Number of things to remember in history.
-set autowrite  " Writes on make/shell commands
-set timeoutlen=250  " Time to wait after ESC (default causes an annoying delay)
+set history=1024        " Number of things to remember in history.
+set autowrite           " Writes on make/shell commands
+set timeoutlen=250      " Time to wait after ESC (default causes an annoying delay)
 
 if has('gui_running')
   set mouse=a
@@ -188,21 +216,6 @@ syntax on " syntax highlighting
 colorscheme ir_black
 set lazyredraw "faster processing
 
-"wildfire
-" This selects the next closest text object.
-let g:wildfire_fuel_map = "<TAB>"
-
-" This selects the previous closest text object.
-let g:wildfire_water_map = "<BS>"
-
-" syntastic
-let g:syntastic_auto_loc_list=1
-let g:syntastic_disabled_filetypes=['html']
-let g:syntastic_enable_signs=1
-let g:syntastic_check_on_open=1
-let g:syntastic_enable_signs=1
-"This makes things quite slow as each save runs through rubocop
-"let g:syntastic_ruby_checkers = ['rubocop']
 
 " Status Line *****************************************************************
 set showcmd
@@ -219,7 +232,6 @@ set linebreak  " Wrap at word
 "*****************************************
 set nu  " Line numbers on
 
-
 " Misc settings ***************************************************************
 set backspace=indent,eol,start
 set number " Show line numbers
@@ -231,10 +243,8 @@ if has('autocmd')
   autocmd GUIEnter * set visualbell t_vb=
 endif
 
-
 set noerrorbells
 set spell
-
 
 " File Stuff ******************************************************************
 syntax enable
@@ -245,7 +255,6 @@ filetype plugin on " Enable filetype-specific plugins
 " Ruby stuff ******************************************************************
 compiler ruby         " Enable compiler support for ruby
 map <F5> :!ruby %<CR>
-
 
 " Omni Completion *************************************************************
 autocmd FileType html :set omnifunc=htmlcomplete#CompleteTags
@@ -265,7 +274,6 @@ autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
 
-
 " Hard to type *****************************************************************
 imap hh =>
 imap aa @
@@ -274,7 +282,6 @@ imap ;; <%= %>
 " Change which file opens after executing :Rails command
 " ****************************************
 let g:rails_default_file='config/database.yml'
-
 
 " Insert New Line *************************************************************
 map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode
@@ -295,6 +302,27 @@ let g:vroom_map_keys = 0
 
 :noremap <Leader>z :NERDTreeFind<CR>
 nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>
+
+" wildfire  ******************************************************************
+" This selects the next closest text object.
+let g:wildfire_fuel_map = "<TAB>"
+
+" This selects the previous closest text object.
+let g:wildfire_water_map = "<BS>"
+
+" SplitJoin ******************************************************************
+nmap <Leader>sj :SplitjoinJoin<cr>
+nmap <Leader>ss :SplitjoinSplit<cr>
+
+" syntastic ******************************************************************
+let g:syntastic_auto_loc_list=1
+let g:syntastic_disabled_filetypes=['html']
+let g:syntastic_enable_signs=1
+let g:syntastic_check_on_open=1
+let g:syntastic_enable_signs=1
+
+" This makes things quite slow as each save runs through rubocop
+" let g:syntastic_ruby_checkers = ['rubocop']
 
 
 " NERD Commenter **************************************************************

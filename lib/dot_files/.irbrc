@@ -16,5 +16,5 @@ if defined?(::Bundler)
 end
 
 # Use Pry everywhere
-Pry.start if defined?(Pry)
+::Pry.start if defined?(::Pry)
 exit

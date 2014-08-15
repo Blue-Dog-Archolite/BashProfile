@@ -10,14 +10,11 @@ export PATH=$PATH:$HOME/tools/phantomjs/bin/
 #export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
 
 export PATH=$PATH:/opt/vagrant/bin
-export PATH=$PATH:$JAVA_HOME
-
-#export JAVA_HOME=/etc/alternatives/java/
-export JAVA_HOME=/usr/java/latest
-export JRE_HOME=$JAVA_HOME/jre
-
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JAVA_HOME #/jre/lib/amd64:$JAVA_HOME/jre/lib/amd64/client
 export PATH=$PATH:/usr/lib64/qt4/bin/
+export PATH=$PATH:$HOME/bin/
+
+# heroku
+PATH=/usr/local/heroku/bin:$PATH
 
 
 #export CATALINA_BASE=/System/Library/Tomcat/Home

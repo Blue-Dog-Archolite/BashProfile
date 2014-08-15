@@ -12,6 +12,8 @@ alias cd_dev='cd ~/dev/ruby/avant/basic'
 
 alias scp='rsync -e ssh -rlzvP'
 
+alias safe_skype='MALLOC_CHECK_=0 skype'
+
 
 if [ "$OSTYPE" == 'linux-gnu' ]
   then
@@ -79,3 +81,6 @@ alias seed_test='bundle exec rake db:test:load'
 
 #mysql help
 alias mysql_info="mysqladmin variables"
+
+#Liveworld Logstash
+alias start_logstash="cd ~/tools/logstash/ && ./bin/logstash -f ../conf/logstash-liveworld.conf"

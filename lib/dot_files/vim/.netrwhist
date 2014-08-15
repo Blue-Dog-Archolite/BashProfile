@@ -1,9 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/home/thief/dev/ruby/avant/basic/app/assets'
-let g:netrw_dirhist_2='/home/thief/dev/ruby/avant/basic/app/assets/javascripts'
-let g:netrw_dirhist_3='/home/thief/dev/ruby/avant/basic/app/assets/javascripts/view_models'
-let g:netrw_dirhist_4='/home/thief/dev/ruby/avant/basic/app/assets/javascripts/view_models/admin'
-let g:netrw_dirhist_5='/home/thief/floobits/share/Blue-Dog-Archolite/Quartermaster'
-let g:netrw_dirhist_6='/home/thief/floobits/share/Blue-Dog-Archolite'
-let g:netrw_dirhist_7='/home/thief/floobits/share/Blue-Dog-Archolite/Quartermaster'
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/home/thief/dev/liveworld/peyote'
+let g:netrw_dirhist_2='/home/thief/dev/liveworld'
+let g:netrw_dirhist_3='/home/thief/dev/liveworld/peyote'
+let g:netrw_dirhist_4='/home/thief/dev/liveworld'
