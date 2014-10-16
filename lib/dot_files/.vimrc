@@ -19,14 +19,20 @@ Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-fugitive'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-surround'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'skalnik/vim-vroom'
 Bundle 'gcmt/wildfire.vim'
-
+Bundle 'eiginn/netrw'
+Bundle 'Valloric/YouCompleteMe'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+
+
+" Hack to fix vim-fugitive
+let g:netrw_browsex_viewer = 'gnome-open-fixed'
 
 "Before merge of files these existed
 
@@ -203,6 +209,7 @@ set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 map <Leader>nh :nohlsearch<CR>
 map <Leader>g :Ag 
+
 map <Leader>k :Ack 
 
 " map <F8> to reindent file
