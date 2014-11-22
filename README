@@ -4,6 +4,8 @@ Listed below are the files that should be symlinked into your home directory.
 
 To get to your home directory, type `cd ~`
 
+To create a symlink use the `ln -s #{path to file}/#{file name} .`
+
  .ackrc               -> #{Install Location}/BashProfile/dot_files/.ackrc
  .bash_aliases        -> #{Install Location}/BashProfile/dot_files/.bash_aliases
  .bash_env            -> #{Install Location}/BashProfile/dot_files/.bash_env
