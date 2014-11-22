@@ -4,6 +4,8 @@ require '~/tools/BashProfile/safe_load'
 safe_load_gem('pry-stack_explorer')
 safe_load_gem('pry-debugger')
 safe_load_gem('pry-rails')
+safe_load_gem('byebug')
+safe_load_gem('pry-byebug')
 
 if defined?(PryDebugger)
   Pry.commands.alias_command 'c', 'continue'
@@ -24,7 +26,7 @@ def load_blueprints
 end
 
 def load_factories
-  %w{vcr factory_girl faker}.each{|gem| safe_load_gem(gem, silent: false) }
+  %w{vcr factory_girl faker}.each{|gem| safe_load_gem(gem) }
 
   FactoryGirl.reload
 end

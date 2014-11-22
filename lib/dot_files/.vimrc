@@ -8,6 +8,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Bundle 'bling/vim-airline'
 Bundle 'rking/ag.vim'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'AndrewRadev/splitjoin.vim'
@@ -20,11 +21,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'skalnik/vim-vroom'
 Bundle 'gcmt/wildfire.vim'
 Bundle 'eiginn/netrw'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'vim-scripts/Align'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -138,6 +140,8 @@ function TrimWhiteSpace()
 
 map <F2> :call TrimWhiteSpace()<CR>
 
+" Format hash
+nnoremap <F8> $v%lohc<CR><CR><Up><C-r>"<Esc>:s/,/,\r/g<CR>:'[,']norm ==<CR>
 
 function! Tabstyle_spaces()
   " Use 2 spaces
@@ -209,8 +213,6 @@ set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 map <Leader>nh :nohlsearch<CR>
 map <Leader>g :Ag 
-
-map <Leader>k :Ack 
 
 " map <F8> to reindent file
 noremap <F8> mzgg=G`z
