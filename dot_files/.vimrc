@@ -167,10 +167,12 @@ map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=public/assets --exclu
 "Sets the tags directory to look backwards till it finds a tags dir
 set tags=tags;/
 
-au BufWritePost *.rb silent! !ctags -a --recurse -f ~/dev/tags/cuttlefish &
+" au BufWritePost *.rb silent! !ctags -a --recurse -f ~/dev/tags/cuttlefish &
 
 " associate  with ruby filetype
-au BufRead,BufNewFile ^M^W^W setfiletype ruby
+au BufRead,BufNewFile ^M^W^W    setfiletype ruby
+au BufRead,BufNewFile Guardfile setfiletype ruby
+
 
 
 
