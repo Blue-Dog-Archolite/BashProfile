@@ -1,4 +1,4 @@
-require '~/tools/BashProfile/safe_load'
+require '~/tools/BashProfile/ruby_utility/safe_load'
 
 #Pry Debugger alias definitions
 safe_load_gem('pry-stack_explorer')

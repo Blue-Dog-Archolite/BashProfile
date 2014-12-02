@@ -28,3 +28,7 @@ export LW_API_SHARED_SECRET=STUPIDFUCKINGUNDOCUMENTEDAPIKEE
 
 export IG_API_KEY='53bb8efa1ce0445e80341ce40d152802'
 export IG_API_SECRET='ceb0f881e8f249c495bc1e9b19e9d5e8'
+
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
