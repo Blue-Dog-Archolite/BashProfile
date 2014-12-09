@@ -19,16 +19,6 @@ export JRE_HOME=$JAVA_HOME/jre
 
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JAVA_HOME #/jre/lib/amd64:$JAVA_HOME/jre/lib/amd64/client
 
-export LIVEWORLD_USER=rmeyer
-export SIDEKIQ_CONCURRENCY=2
-export MODSERVER_URL='http://dev.phoenix.liveworld.com/EndPointClientAxis2/rest'
-export DEFAULT_USER_PASSWORD=LiveWorld$1234!
-export PACMAN_URL='http://dev.pacman.liveworld.com/'
-export LW_API_SHARED_SECRET=STUPIDFUCKINGUNDOCUMENTEDAPIKEE
-
-export IG_API_KEY='53bb8efa1ce0445e80341ce40d152802'
-export IG_API_SECRET='ceb0f881e8f249c495bc1e9b19e9d5e8'
-
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"

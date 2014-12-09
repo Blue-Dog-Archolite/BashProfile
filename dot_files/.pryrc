@@ -61,3 +61,6 @@ class Hash
     Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
   end
 end
+
+# Force `reload!` to work correctly
+self.send(:include, Rails::ConsoleMethods)
