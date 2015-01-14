@@ -173,10 +173,6 @@ set tags=tags;/
 au BufRead,BufNewFile ^M^W^W    setfiletype ruby
 au BufRead,BufNewFile Guardfile setfiletype ruby
 
-
-
-
-
 "Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
 set si " smartindent (local to buffer)
@@ -349,7 +345,9 @@ let NERDCreateDefaultMappings=0 " I turn this off to make it simple
   " cd ~/cl/etc/vim/ruby/command-t
   " ruby extconf.rb
   " make
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*
 map <Leader>f :CtrlP<CR>
+
 
 " fuzzyfinder ********************************************************
 " I'm using CommandT for main searching, but it doesn't do buffers, so I'm
