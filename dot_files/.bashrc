@@ -59,7 +59,7 @@ parse_svn_repository_root() {
   svn info 2>/dev/null | grep -e '^Repository Root:*' | sed -e 's#^Repository Root: *\(.*\)#\1\/#g '
 }
 
-export PS1="$USER:\w \[\033[31m\]\$(~/.rvm/bin/rvm-prompt)\[\033[00m\]::\[\033[31m\]\$(parse_git_branch)\$(parse_svn_branch) \[\033[00m\]$\[\033[00m\] "
+export PS1="\n\n$USER:\w\n\[\033[31m\]\$(~/.rvm/bin/rvm-prompt)\[\033[00m\]::\[\033[31m\]\$(parse_git_branch)\$(parse_svn_branch) \[\033[00m\]$\[\033[00m\] "
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
