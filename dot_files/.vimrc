@@ -32,10 +32,6 @@ Bundle 'vim-scripts/Align'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-
-" Hack to fix vim-fugitive
-let g:netrw_browsex_viewer = 'gnome-open-fixed'
-
 "Before merge of files these existed
 
 set cf                  " Enable error files & error jumping.
@@ -114,6 +110,35 @@ let mapleader = ","
 "Use jj as escape .. Eaiser?
 imap jj <ESC>
 
+" Hack to fix vim-fugitive
+let g:netrw_browsex_viewer = 'gnome-open-fixed'
+
+" Set you complete me options
+" Use :lopen to open list window
+ let g:EclimCompletionMethod = 'omnifunc'
+map <Leader>l :lopen<CR>
+
+" Omni Completion *************************************************************
+"autocmd FileType html :set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType python set omnifunc=pythoncomplete#Complete
+"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"autocmd FileType c set omnifunc=ccomplete#Complete
+
+"" May require ruby compiled in
+"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
+"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
+"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
+
+"improve autocomplete menu color
+highlight Pmenu ctermbg=238 gui=bold
+
+
+
+
 
 " Tabs ************************************************************************
 "set sta " a <Tab> in an indent inserts 'shiftwidth' spaces
@@ -130,7 +155,6 @@ function! Tabstyle_tabs()
 endfunction
 
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
-
 
 " Removes trailing spaces
 function TrimWhiteSpace()
@@ -263,26 +287,9 @@ filetype plugin on " Enable filetype-specific plugins
 compiler ruby         " Enable compiler support for ruby
 map <F5> :!ruby %<CR>
 
-" Omni Completion *************************************************************
-autocmd FileType html :set omnifunc=htmlcomplete#CompleteTags
-autocmd FileType python set omnifunc=pythoncomplete#Complete
-autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-autocmd FileType c set omnifunc=ccomplete#Complete
-
-" May require ruby compiled in
-autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
-
-"improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
-
 " Hard to type *****************************************************************
 imap hh =>
+imap kk ->
 imap aa @
 imap ;; <%= %>
 

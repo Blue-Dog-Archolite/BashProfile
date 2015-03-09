@@ -7,6 +7,7 @@ safe_load_gem('pry-rails')
 safe_load_gem('byebug')
 safe_load_gem('pry-byebug')
 
+=begin
 if defined?(PryDebugger)
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
@@ -63,4 +64,5 @@ class Hash
 end
 
 # Force `reload!` to work correctly
-self.send(:include, Rails::ConsoleMethods)
+#self.send(:include, Rails::ConsoleMethods)
+=end

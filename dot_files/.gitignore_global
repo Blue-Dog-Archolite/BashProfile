@@ -53,3 +53,9 @@ script/checkout
 #RuboCop
 .rubocop.yml
 .rubocop_todo.yml
+
+# Eclimd
+.buildpath
+workbench.xmi
+.metadata/
+.project
