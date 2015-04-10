@@ -1,3 +1,4 @@
+
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
@@ -11,6 +12,7 @@ Plugin 'gmarik/Vundle.vim'
 Bundle 'Raimondi/delimitMate'
 Bundle 'bling/vim-airline'
 Bundle 'rking/ag.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/matchit.zip'
 Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'scrooloose/syntastic'
@@ -19,6 +21,7 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-abolish.git'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'tpope/vim-fugitive'
+Bundle 'scrooloose/nerdtree'
 Bundle 'groenewege/vim-less'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
@@ -41,8 +44,8 @@ set autowrite           " Writes on make/shell commands
 set timeoutlen=250      " Time to wait after ESC (default causes an annoying delay)
 
 if has('gui_running')
-  set mouse=a
-  set nofoldenable " Turn off folding
+ "set mouse=a
+ "set nofoldenable " Turn off folding
 end
 
 set nocp
@@ -122,23 +125,23 @@ highlight Pmenu ctermbg=238 gui=bold
 " Tabs ************************************************************************
 "set sta " a <Tab> in an indent inserts 'shiftwidth' spaces
 function! Tabstyle_tabs()
-  " Using 4 column tabs
-  set softtabstop=4
-  set shiftwidth=4
-  set tabstop=4
-  set noexpandtab
-  autocmd User Rails set softtabstop=4
-  autocmd User Rails set shiftwidth=4
-  autocmd User Rails set tabstop=4
-  autocmd User Rails set noexpandtab
+ "" Using 4 column tabs
+ "set softtabstop=4
+ "set shiftwidth=4
+ "set tabstop=4
+ "set noexpandtab
+ "autocmd User Rails set softtabstop=4
+ "autocmd User Rails set shiftwidth=4
+ "autocmd User Rails set tabstop=4
+ "autocmd User Rails set noexpandtab
 endfunction
 
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 " Removes trailing spaces
 function TrimWhiteSpace()
-  %s/\s*$//
-  ''
+ "%s/\s*$//
+ "''
 :endfunction
 
 map <F2> :call TrimWhiteSpace()<CR>
@@ -147,11 +150,11 @@ map <F2> :call TrimWhiteSpace()<CR>
 nnoremap <F8> $v%lohc<CR><CR><Up><C-r>"<Esc>:s/,/,\r/g<CR>:'[,']norm ==<CR>
 
 function! Tabstyle_spaces()
-  " Use 2 spaces
-  set softtabstop=2
-  set shiftwidth=2
-  set tabstop=2
-  set expandtab
+ "" Use 2 spaces
+ "set softtabstop=2
+ "set shiftwidth=2
+ "set tabstop=2
+ "set expandtab
 endfunction
 
 call Tabstyle_spaces()
@@ -244,7 +247,7 @@ set matchpairs+=<:>
 
 set noerrorbells visualbell t_vb=
 if has('autocmd')
-  autocmd GUIEnter * set visualbell t_vb=
+ "autocmd GUIEnter * set visualbell t_vb=
 endif
 
 set noerrorbells
@@ -321,10 +324,10 @@ let NERDCreateDefaultMappings=0 " I turn this off to make it simple
 :map <Leader>c :call NERDComment(0, "toggle")<CR>
 
 " CommandT ********************************************************
-  " To compile:
-  " cd ~/cl/etc/vim/ruby/command-t
-  " ruby extconf.rb
-  " make
+ "" To compile:
+ "" cd ~/cl/etc/vim/ruby/command-t
+ "" ruby extconf.rb
+ "" make
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*
 map <Leader>f :CtrlP<CR>
 
