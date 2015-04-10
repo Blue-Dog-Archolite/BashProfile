@@ -7,7 +7,6 @@ safe_load_gem('pry-rails')
 safe_load_gem('byebug')
 safe_load_gem('pry-byebug')
 
-=begin
 if defined?(PryDebugger)
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
@@ -48,6 +47,9 @@ end
 # Prompt with ruby version
 Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} > " }, proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} * " }]
 
+# Name is pwd
+Pry.config.prompt_name = File.basename(Dir.pwd)
+
 
 # Toys methods
 # Stealed from https://gist.github.com/807492
@@ -65,4 +67,3 @@ end
 
 # Force `reload!` to work correctly
 #self.send(:include, Rails::ConsoleMethods)
-=end

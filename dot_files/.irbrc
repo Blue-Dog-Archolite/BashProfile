@@ -1,5 +1,4 @@
 require '~/tools/BashProfile/ruby_utility/safe_load'
-%w{pry-plus pry-rails irb/completion pp hirb map_by_method rubygems pry pry-byebug}.each{ |gem| safe_load_gem(gem) }
 
 IRB.conf[:AUTO_INDENT]=true
 
@@ -14,6 +13,9 @@ if defined?(::Bundler)
     end
   end
 end
+
+%w{pry pry-plus pry-rails irb/completion pp hirb map_by_method rubygems}.each{ |gem| safe_load_gem(gem) }
+#%w{pry pry-plus pry-rails irb/completion pp hirb map_by_method rubygems pry-byebug}.each{ |gem| safe_load_gem(gem) }
 
 # Use Pry everywhere
 ::Pry.start if defined?(::Pry)

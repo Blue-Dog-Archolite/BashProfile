@@ -8,6 +8,7 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+Bundle 'Raimondi/delimitMate'
 Bundle 'bling/vim-airline'
 Bundle 'rking/ag.vim'
 Bundle 'vim-scripts/matchit.zip'
@@ -33,7 +34,6 @@ call vundle#end()            " required
 filetype plugin indent on    " required
 
 "Before merge of files these existed
-
 set cf                  " Enable error files & error jumping.
 set clipboard+=unnamed  " Yanks go on clipboard instead.
 set history=1024        " Number of things to remember in history.
@@ -102,8 +102,6 @@ set laststatus=2  " Always show status line.
 " |  Ctrl-Right_MouseClick - Jump back from definition                        |
 "
 
-set nocompatible " We're running Vim, not Vi!
-
 "Set Mapping to ,
 "**********************************************************
 let mapleader = ","
@@ -115,30 +113,11 @@ let g:netrw_browsex_viewer = 'gnome-open-fixed'
 
 " Set you complete me options
 " Use :lopen to open list window
- let g:EclimCompletionMethod = 'omnifunc'
+"" let g:EclimCompletionMethod = 'omnifunc'
 map <Leader>l :lopen<CR>
-
-" Omni Completion *************************************************************
-"autocmd FileType html :set omnifunc=htmlcomplete#CompleteTags
-"autocmd FileType python set omnifunc=pythoncomplete#Complete
-"autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
-"autocmd FileType c set omnifunc=ccomplete#Complete
-
-"" May require ruby compiled in
-"autocmd FileType ruby,eruby set omnifunc=rubycomplete#Complete
-"autocmd FileType ruby,eruby let g:rubycomplete_buffer_loading = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_rails = 1
-"autocmd FileType ruby,eruby let g:rubycomplete_classes_in_global = 1
 
 "improve autocomplete menu color
 highlight Pmenu ctermbg=238 gui=bold
-
-
-
-
 
 " Tabs ************************************************************************
 "set sta " a <Tab> in an indent inserts 'shiftwidth' spaces
@@ -187,11 +166,8 @@ map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
 map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=public/assets --exclude=log -R *<CR><CR>
 
-
 "Sets the tags directory to look backwards till it finds a tags dir
 set tags=tags;/
-
-" au BufWritePost *.rb silent! !ctags -a --recurse -f ~/dev/tags/cuttlefish &
 
 " associate  with ruby filetype
 au BufRead,BufNewFile ^M^W^W    setfiletype ruby
@@ -200,9 +176,6 @@ au BufRead,BufNewFile Guardfile setfiletype ruby
 "Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
 set si " smartindent (local to buffer)
-
-"JS Indent
-"set g:js_indent=~/.vim/indent/javascript.vim
 
 " Scrollbars ******************************************************************
 set sidescrolloff=2
