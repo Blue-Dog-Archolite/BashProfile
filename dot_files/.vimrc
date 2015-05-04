@@ -9,6 +9,13 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" Color Scheme
+"Plugin 'wesgibbs/vim-irblack'
+Plugin 'twerth/ir_black'
+
+" Floobits
+Plugin 'floobits/floobits-neovim'
+
 Bundle 'Raimondi/delimitMate'
 Bundle 'bling/vim-airline'
 Bundle 'rking/ag.vim'
@@ -33,6 +40,8 @@ Bundle 'eiginn/netrw'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'jlanzarotta/bufexplorer'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -141,10 +150,11 @@ endfunction
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 " Removes trailing spaces
-function TrimWhiteSpace()
- "%s/\s*$//
- "''
-:endfunction
+autocmd BufWritePre *.rb :%s/\s\+$//e
+"function TrimWhiteSpace()
+"" %s/\s*$//
+"''
+"":endfunction
 
 map <F2> :call TrimWhiteSpace()<CR>
 
@@ -181,6 +191,13 @@ au BufRead,BufNewFile Guardfile setfiletype ruby
 "Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
 set si " smartindent (local to buffer)
+
+" Indents
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+" for html
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+" for css or scss
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
 
 " Scrollbars ******************************************************************
 set sidescrolloff=2
@@ -222,6 +239,9 @@ inoremap <F8> <ESC>mzgg=G`z<Insert>
 "set t_Co=256 " 256 colors
 set background=dark
 syntax on " syntax highlighting
+
+" Trying New Color Scheme
+" colorscheme ir_black
 colorscheme ir_black
 set lazyredraw "faster processing
 

@@ -1,11 +1,11 @@
 require '~/tools/BashProfile/ruby_utility/safe_load'
 
 #Pry Debugger alias definitions
-safe_load_gem('pry-stack_explorer')
-safe_load_gem('pry-debugger')
-safe_load_gem('pry-rails')
-safe_load_gem('byebug')
-safe_load_gem('pry-byebug')
+#safe_load_gem('pry-stack_explorer')
+#safe_load_gem('pry-debugger')
+#safe_load_gem('pry-rails')
+#safe_load_gem('byebug')
+#safe_load_gem('pry-byebug')
 
 if defined?(PryDebugger)
   Pry.commands.alias_command 'c', 'continue'
