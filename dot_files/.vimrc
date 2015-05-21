@@ -10,15 +10,20 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 " Color Scheme
-"Plugin 'wesgibbs/vim-irblack'
 Plugin 'twerth/ir_black'
+Plugin 'vim-scripts/Wombat'
+Plugin 'freeo/vim-kalisi'
+Plugin 'w0ng/vim-hybrid'
+Plugin 'chriskempson/base16-vim'
 
 " Floobits
 Plugin 'floobits/floobits-neovim'
 
 Bundle 'Raimondi/delimitMate'
 Bundle 'bling/vim-airline'
-Bundle 'rking/ag.vim'
+Bundle 'gabesoft/vim-ags'
+Bundle 'rhysd/committia.vim'
+"Bundle 'rking/ag.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/FuzzyFinder'
@@ -49,15 +54,41 @@ filetype plugin indent on    " required
 
 "Before merge of files these existed
 set cf                  " Enable error files & error jumping.
-set clipboard+=unnamed  " Yanks go on clipboard instead.
+
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+  "set clipboard+=unnamed  " Yanks go on clipboard instead.
+endif
+
 set history=1024        " Number of things to remember in history.
 set autowrite           " Writes on make/shell commands
 set timeoutlen=250      " Time to wait after ESC (default causes an annoying delay)
 
-if has('gui_running')
- "set mouse=a
- "set nofoldenable " Turn off folding
-end
+
+" #######################################################################
+" Airline Vim Tagbar Setup
+let g:airline#extensions#default#section_truncate_width = {
+      \ 'b': 150,
+      \ 'x': 100,
+      \ 'c': 0,
+      \ 'y': 100,
+      \ 'z': 10,
+      \ }
+  let g:airline#extensions#default#layout = [
+      \ [ 'a', 'b', 'c'],
+      \ [ 'x', 'z', 'warning' ]
+      \ ]
+
+"  let g:airline_section_a       (mode, paste, iminsert)
+"  let g:airline_section_b       (hunks, branch)
+"  let g:airline_section_c       (bufferline or filename)
+"  let g:airline_section_gutter  (readonly, csv)
+"  let g:airline_section_x       (tagbar, filetype, virtualenv)
+"  let g:airline_section_y       (fileencoding, fileformat)
+"  let g:airline_section_z       (percentage, line number, column number)
+"  let g:airline_section_warning (syntastic, whitespace)
+"
+" #######################################################################
 
 set nocp
 set cinoptions=:0,p0,t0
@@ -136,25 +167,25 @@ highlight Pmenu ctermbg=238 gui=bold
 " Tabs ************************************************************************
 "set sta " a <Tab> in an indent inserts 'shiftwidth' spaces
 function! Tabstyle_tabs()
- "" Using 4 column tabs
- "set softtabstop=4
- "set shiftwidth=4
- "set tabstop=4
- "set noexpandtab
- "autocmd User Rails set softtabstop=4
- "autocmd User Rails set shiftwidth=4
- "autocmd User Rails set tabstop=4
- "autocmd User Rails set noexpandtab
+  "" Using 4 column tabs
+  "set softtabstop=4
+  "set shiftwidth=4
+  "set tabstop=4
+  "set noexpandtab
+  "autocmd User Rails set softtabstop=4
+  "autocmd User Rails set shiftwidth=4
+  "autocmd User Rails set tabstop=4
+  "autocmd User Rails set noexpandtab
 endfunction
 
 au FileType xml exe ":silent 1,$!xmllint --format --recover - 2>/dev/null"
 
 " Removes trailing spaces
 autocmd BufWritePre *.rb :%s/\s\+$//e
-"function TrimWhiteSpace()
-"" %s/\s*$//
-"''
-"":endfunction
+function TrimWhiteSpace()
+  %s/\s*$//
+  ''
+:endfunction
 
 map <F2> :call TrimWhiteSpace()<CR>
 
@@ -162,11 +193,11 @@ map <F2> :call TrimWhiteSpace()<CR>
 nnoremap <F8> $v%lohc<CR><CR><Up><C-r>"<Esc>:s/,/,\r/g<CR>:'[,']norm ==<CR>
 
 function! Tabstyle_spaces()
- "" Use 2 spaces
- "set softtabstop=2
- "set shiftwidth=2
- "set tabstop=2
- "set expandtab
+  "" Use 2 spaces
+  "set softtabstop=2
+  "set shiftwidth=2
+  "set tabstop=2
+  "set expandtab
 endfunction
 
 call Tabstyle_spaces()
@@ -219,9 +250,9 @@ nnoremap Q <nop>
 
 
 
-" Cursor highlights ***********************************************************
-set cursorline
-set cursorcolumn
+" Cursor cross-hairs highlights ***********************************************************
+" set cursorline
+" set cursorcolumn
 
 " Searching *******************************************************************
 set hlsearch  " highlight search
@@ -229,7 +260,9 @@ set incsearch  " Incremental search, search as you type
 set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 map <Leader>nh :nohlsearch<CR>
-map <Leader>g :Ag 
+" for different plugin
+"map <Leader>g :Ag 
+map <Leader>g :Ags 
 
 " map <F8> to reindent file
 noremap <F8> mzgg=G`z
@@ -240,10 +273,18 @@ inoremap <F8> <ESC>mzgg=G`z<Insert>
 set background=dark
 syntax on " syntax highlighting
 
-" Trying New Color Scheme
-" colorscheme ir_black
-colorscheme ir_black
-set lazyredraw "faster processing
+if has('gui_running')
+  colorscheme ir_black
+  set mouse=a
+  set nofoldenable " Turn off folding
+  set lazyredraw "faster processing
+else
+"" colorscheme kalisi
+"  colorscheme wombat
+"  colorscheme hybrid
+  colorscheme ir_black
+end
+
 
 
 " Status Line *****************************************************************
@@ -269,7 +310,7 @@ set matchpairs+=<:>
 
 set noerrorbells visualbell t_vb=
 if has('autocmd')
- "autocmd GUIEnter * set visualbell t_vb=
+  "autocmd GUIEnter * set visualbell t_vb=
 endif
 
 set noerrorbells
@@ -346,10 +387,10 @@ let NERDCreateDefaultMappings=0 " I turn this off to make it simple
 :map <Leader>c :call NERDComment(0, "toggle")<CR>
 
 " CommandT ********************************************************
- "" To compile:
- "" cd ~/cl/etc/vim/ruby/command-t
- "" ruby extconf.rb
- "" make
+"" To compile:
+"" cd ~/cl/etc/vim/ruby/command-t
+"" ruby extconf.rb
+"" make
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*
 map <Leader>f :CtrlP<CR>
 

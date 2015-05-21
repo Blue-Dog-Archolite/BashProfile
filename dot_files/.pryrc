@@ -1,12 +1,3 @@
-require '~/tools/BashProfile/ruby_utility/safe_load'
-
-#Pry Debugger alias definitions
-#safe_load_gem('pry-stack_explorer')
-#safe_load_gem('pry-debugger')
-#safe_load_gem('pry-rails')
-#safe_load_gem('byebug')
-#safe_load_gem('pry-byebug')
-
 if defined?(PryDebugger)
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
@@ -15,9 +6,11 @@ if defined?(PryDebugger)
 end
 
 #Pry Alias
-Pry.commands.alias_command 'll', 'ls'
-Pry.commands.alias_command 'sm', 'show-source -b ARGV[1]'
-Pry.commands.alias_command 'sl', 'show-source -l $1'
+if defined?(Pry)
+  Pry.commands.alias_command 'll', 'ls'
+  Pry.commands.alias_command 'sm', 'show-source -b ARGV[1]'
+  Pry.commands.alias_command 'sl', 'show-source -l $1'
+end
 
 
 #easily load testing environment tools
@@ -36,6 +29,12 @@ def clear
   `reset`
 end
 
+def associated_with(object_or_class)
+  klass = object_or_class.is_a?(ActiveRecord::Base) ? object_or_class.class : object_or_class
+
+  klass.reflect_on_all_associations.map(&:name).sort
+end
+
 #Editor configuration
 Pry.config.editor = proc { |file, line| "gvim +#{line} #{file}" }
 
@@ -50,20 +49,5 @@ Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} >
 # Name is pwd
 Pry.config.prompt_name = File.basename(Dir.pwd)
 
-
-# Toys methods
-# Stealed from https://gist.github.com/807492
-class Array
-  def self.toy(n=10, &block)
-    block_given? ? Array.new(n,&block) : Array.new(n) {|i| i+1}
-  end
-end
-
-class Hash
-  def self.toy(n=10)
-    Hash[Array.toy(n).zip(Array.toy(n){|c| (96+(c+1)).chr})]
-  end
-end
-
 # Force `reload!` to work correctly
-#self.send(:include, Rails::ConsoleMethods)
+self.send(:include, Rails::ConsoleMethods)

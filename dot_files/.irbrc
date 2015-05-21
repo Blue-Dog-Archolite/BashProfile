@@ -1,7 +1,6 @@
 require '~/tools/BashProfile/ruby_utility/safe_load'
 
 IRB.conf[:AUTO_INDENT]=true
-
 # https://github.com/carlhuda/bundler/issues/183#issuecomment-1149953
 if defined?(::Bundler)
   global_gemset = ENV['GEM_PATH'].split(':').grep(/ruby.*@global/).first
@@ -14,8 +13,12 @@ if defined?(::Bundler)
   end
 end
 
-%w{pry pry-plus pry-rails irb/completion pp hirb map_by_method rubygems}.each{ |gem| safe_load_gem(gem) }
-#%w{pry pry-plus pry-rails irb/completion pp hirb map_by_method rubygems pry-byebug}.each{ |gem| safe_load_gem(gem) }
+case `RUBY_VERSION`
+when "2.0.0"
+  %w{pry pry-plus pry-rails irb/completion pp hirb map_by_method rubygems pry-byebug}.each{ |gem| safe_load_gem(gem) }
+else
+  %w{pry pry-plus pry-rails irb/completion pp hirb map_by_method rubygems}.each{ |gem| safe_load_gem(gem) }
+end
 
 # Use Pry everywhere
 ::Pry.start if defined?(::Pry)

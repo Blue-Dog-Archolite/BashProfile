@@ -1,8 +1,2 @@
-export PRY_WANTED=true
-export OCULUS_ENABLED=1
-export LIVERELOAD=1
-
-#Uincorn
-export UNICORN_OOM_MIN_MB=400
-export UNICORN_OOM_MAX_MB=600
-export OCULUS_ENABLED=1
+# Force fedora to never run ruby-mri
+export RUBYPICK=_jruby_
