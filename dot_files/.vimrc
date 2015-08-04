@@ -9,12 +9,17 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
 
+" markdown
+Plugin 'greyblake/vim-preview'
+
 " Color Scheme
 Plugin 'twerth/ir_black'
 Plugin 'vim-scripts/Wombat'
 Plugin 'freeo/vim-kalisi'
-Plugin 'w0ng/vim-hybrid'
+Plugin 'Blue-Dog-Archolite/vim-hybrid'
 Plugin 'chriskempson/base16-vim'
+Plugin 'altercation/solarized'
+Plugin 'chriskempson/tomorrow-theme'
 
 " Floobits
 Plugin 'floobits/floobits-neovim'
@@ -32,13 +37,16 @@ Bundle 'AndrewRadev/splitjoin.vim'
 Bundle 'scrooloose/syntastic'
 Bundle 'majutsushi/tagbar'
 Bundle 'tomtom/tlib_vim'
-Bundle 'tpope/vim-abolish.git'
 Bundle 'kchmck/vim-coffee-script'
-Bundle 'tpope/vim-fugitive'
 Bundle 'scrooloose/nerdtree'
 Bundle 'groenewege/vim-less'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-abolish.git'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-haml'
+Bundle 'tpope/vim-endwise'
 Bundle 'skalnik/vim-vroom'
 Bundle 'gcmt/wildfire.vim'
 Bundle 'eiginn/netrw'
@@ -55,20 +63,23 @@ filetype plugin indent on    " required
 "Before merge of files these existed
 set cf                  " Enable error files & error jumping.
 
-if has('unnamedplus')
-  set clipboard=unnamed,unnamedplus
+"if has('unnamedplus')
+  "set clipboard=unnamed,unnamedplus
   "set clipboard+=unnamed  " Yanks go on clipboard instead.
-endif
+"endif
 
 set history=1024        " Number of things to remember in history.
 set autowrite           " Writes on make/shell commands
 set timeoutlen=250      " Time to wait after ESC (default causes an annoying delay)
 
 
+" Status Bar
+set laststatus=2  " Always show status line.
+
 " #######################################################################
 " Airline Vim Tagbar Setup
 let g:airline#extensions#default#section_truncate_width = {
-      \ 'b': 150,
+      \ 'b': 110,
       \ 'x': 100,
       \ 'c': 0,
       \ 'y': 100,
@@ -108,7 +119,6 @@ set list
 set lcs=tab:\ \ ,eol:$,trail:~,extends:>,precedes:<
 "set novisualbell  " No blinking .
 set noerrorbells  " No noise.
-set laststatus=2  " Always show status line.
 " -----------------------------------------------------------------------------
 " |                            VIM Settings                                   |
 " |                   (see gvimrc for gui vim settings)                       |
@@ -153,6 +163,16 @@ let mapleader = ","
 "Use jj as escape .. Eaiser?
 imap jj <ESC>
 
+nnoremap <Leader>w :w<CR>
+nnoremap <Leader>r :edit!<CR>
+
+vmap <Leader>y "+y
+vmap <Leader>d "+d
+nmap <Leader>p "+p
+nmap <Leader>P "+P
+vmap <Leader>p "+p
+vmap <Leader>P "+P
+
 " Hack to fix vim-fugitive
 let g:netrw_browsex_viewer = 'gnome-open-fixed'
 
@@ -162,7 +182,7 @@ let g:netrw_browsex_viewer = 'gnome-open-fixed'
 map <Leader>l :lopen<CR>
 
 "improve autocomplete menu color
-highlight Pmenu ctermbg=238 gui=bold
+" highlight Pmenu ctermbg=238 gui=bold
 
 " Tabs ************************************************************************
 "set sta " a <Tab> in an indent inserts 'shiftwidth' spaces
@@ -251,6 +271,9 @@ nnoremap Q <nop>
 
 
 " Cursor cross-hairs highlights ***********************************************************
+au WinLeave * set nocursorline nocursorcolumn
+au WinEnter * set cursorline cursorcolumn
+set cursorline cursorcolumn
 " set cursorline
 " set cursorcolumn
 
@@ -279,10 +302,10 @@ if has('gui_running')
   set nofoldenable " Turn off folding
   set lazyredraw "faster processing
 else
-"" colorscheme kalisi
-"  colorscheme wombat
-"  colorscheme hybrid
-  colorscheme ir_black
+ "colorscheme kalisi
+ " colorscheme wombat
+  colorscheme hybrid
+""  colorscheme ir_black
 end
 
 

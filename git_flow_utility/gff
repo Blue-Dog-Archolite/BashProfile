@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+command = "git flow feature finish"
+
+puts `#{command}`
+puts `git push origin`

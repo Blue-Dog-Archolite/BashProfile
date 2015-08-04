@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+story_id = ARGV.shift.gsub('#','')
+
+story_name = ARGV.join('_')
+
+command = "git flow feature start #{story_id}-#{story_name}"
+
+puts `#{command}`
+puts `git push origin`
+

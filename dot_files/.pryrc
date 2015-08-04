@@ -1,3 +1,5 @@
+require '~/tools/BashProfile/ruby_utility/safe_load'
+
 if defined?(PryDebugger)
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
@@ -19,9 +21,13 @@ def load_blueprints
 end
 
 def load_factories
-  %w{vcr factory_girl faker}.each{|gem| safe_load_gem(gem) }
+  %w{vcr factory_girl faker ffaker}.each{|gem| safe_load_gem(gem) }
 
   FactoryGirl.reload
+end
+
+def set_school(id=5)
+  SchoolInstance.current_school = SchoolInstance.find(id)
 end
 
 #hack to clear the screen
@@ -36,7 +42,7 @@ def associated_with(object_or_class)
 end
 
 #Editor configuration
-Pry.config.editor = proc { |file, line| "gvim +#{line} #{file}" }
+Pry.config.editor = proc { |file, line| "nvim +#{line} #{file}" }
 
 # Customer exit message
 Pry.config.hooks.add_hook(:after_session, :say_bye) do
@@ -51,3 +57,8 @@ Pry.config.prompt_name = File.basename(Dir.pwd)
 
 # Force `reload!` to work correctly
 self.send(:include, Rails::ConsoleMethods)
+
+def reload!
+  FactoryGirl.reload if defined?(FactoryGirl)
+  super
+end

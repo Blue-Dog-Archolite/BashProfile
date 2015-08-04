@@ -3,3 +3,8 @@ Host devtest.myflighttrain.com
   user deploy
   IdentityFile ~/.ssh/flying_software_labs.pub
 
+Host testing.myflighttrain.com
+  HostName testing.myflighttrain.com
+  user deploy
+  IdentityFile ~/.ssh/flying_software_labs.pub
+

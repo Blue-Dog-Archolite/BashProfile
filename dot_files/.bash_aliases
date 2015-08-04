@@ -9,7 +9,7 @@ alias gti='git'
 alias vm='vagrant'
 
 alias vi=vim
-alias vim=gvim
+alias vim=nvim
 
 alias start_eclim='. ~/.eclim/eclimd'
 
@@ -31,6 +31,9 @@ alias git_history="git fsck --lost-found | awk '{print \"git show \" $3}' | bash
 alias mkpatch='git format-patch -o ~/Desktop/ origin'
 alias commit_and_push='git commit -m $1 && git pull && git push origin'
 alias git_show_branch_history="git reflog show --no-abbrev $1" #Will show the branch history and take one argument
+
+#tail
+alias tail_log='tail -fn0 log/*.log'
 
 #mysql help
 alias mysql_info="mysqladmin variables"
