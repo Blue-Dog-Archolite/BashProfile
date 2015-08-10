@@ -1,0 +1,14 @@
+#!/usr/bin/env ruby
+
+current_branch = `git rev-parse --abbrev-ref HEAD`
+
+puts `git checkout servers/devtest`
+puts `git pull`
+puts `git merge #{current_branch}`
+puts `git push`
+
+
+puts "Merged to servers/devtest"
+puts `git checkout #{current_branch}`
+
+puts "Deploy! cap devtest deploy"

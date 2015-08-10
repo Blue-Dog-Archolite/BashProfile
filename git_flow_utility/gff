@@ -1,6 +1,12 @@
 #!/usr/bin/env ruby
 
+current_branch = `git rev-parse --abbrev-ref HEAD`
 command = "git flow feature finish"
+
+
+puts `git checkout development`
+puts `git pull`
+puts `git checkout #{current_branch}`
 
 puts `#{command}`
 puts `git push origin`
