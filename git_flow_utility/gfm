@@ -4,9 +4,9 @@ current_branch = `git rev-parse --abbrev-ref HEAD`
 
 puts `git checkout servers/devtest`
 puts `git pull`
-unmerge = `git merge #{current_branch}`
+unmerged = `git merge #{current_branch}`
 
-if unmerged=~ /unmerged/i
+if unmerged =~ /unmerged/i
   puts unmerged
 else
   puts `git push`
