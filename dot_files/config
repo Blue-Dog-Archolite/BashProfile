@@ -8,3 +8,14 @@ Host testing.myflighttrain.com
   user deploy
   IdentityFile ~/.ssh/flying_software_labs.pub
 
+
+Host review.myflighttrain.com
+  HostName review.myflighttrain.com
+  user deploy
+  IdentityFile ~/.ssh/flying_software_labs.pub
+
+
+Host 1.myflighttrain.com
+  HostName 54.145.220.144
+  user deploy
+  IdentityFile ~/.ssh/flying_software_labs.pub
