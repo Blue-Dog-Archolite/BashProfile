@@ -2,9 +2,9 @@
 
 current_branch = `git rev-parse --abbrev-ref HEAD`
 
-exec `git checkout servers/devtest`
-exec `git pull`
-exec `git merge #{current_branch}`
+puts `git checkout servers/devtest`
+puts `git pull`
+puts `git merge #{current_branch}`
 
 
 unmerged = `git status`
@@ -12,10 +12,10 @@ unmerged = `git status`
 if unmerged =~ /unmerged/i
   puts unmerged
 else
-  exec `git push`
+  puts `git push`
 
   puts "Merged to servers/devtest"
-  exec `git checkout #{current_branch}`
+  puts `git checkout #{current_branch}`
 
   puts "Deploy! cap devtest deploy"
   exec "cap devtest deploy && date"

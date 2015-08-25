@@ -11,7 +11,10 @@ alias vm='vagrant'
 alias vi=vim
 alias vim=nvim
 
-alias start_eclim='. ~/.eclim/eclimd'
+alias edit=vim
+alias fix_reslove='sudo cp /etc/resolv.conf.bak /etc/resolv.conf'
+
+alias start_eclim='. /opt/eclipse/eclimd'
 
 alias scp='rsync -e ssh -rlzvP'
 alias ctags='/usr/bin/ctags'

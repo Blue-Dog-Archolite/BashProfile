@@ -28,7 +28,10 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'bling/vim-airline'
 Bundle 'gabesoft/vim-ags'
 Bundle 'rhysd/committia.vim'
-"Bundle 'rking/ag.vim'
+Bundle 'slim-template/vim-slim'
+Bundle 'ervandew/eclim'
+" Bundle 'rking/ag.vim'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'kien/ctrlp.vim'
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/FuzzyFinder'
@@ -50,7 +53,6 @@ Bundle 'tpope/vim-endwise'
 Bundle 'skalnik/vim-vroom'
 Bundle 'gcmt/wildfire.vim'
 Bundle 'eiginn/netrw'
-Bundle 'Valloric/YouCompleteMe'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align'
 Bundle 'maksimr/vim-jsbeautify'
@@ -63,10 +65,10 @@ filetype plugin indent on    " required
 "Before merge of files these existed
 set cf                  " Enable error files & error jumping.
 
-"if has('unnamedplus')
-  "set clipboard=unnamed,unnamedplus
-  "set clipboard+=unnamed  " Yanks go on clipboard instead.
-"endif
+if has('unnamedplus')
+  set clipboard=unnamed,unnamedplus
+  set clipboard+=unnamed  " Yanks go on clipboard instead.
+endif
 
 set history=1024        " Number of things to remember in history.
 set autowrite           " Writes on make/shell commands
@@ -178,11 +180,11 @@ let g:netrw_browsex_viewer = 'gnome-open-fixed'
 
 " Set you complete me options
 " Use :lopen to open list window
-"" let g:EclimCompletionMethod = 'omnifunc'
+let g:EclimCompletionMethod = 'omnifunc'
 map <Leader>l :lopen<CR>
 
 "improve autocomplete menu color
-" highlight Pmenu ctermbg=238 gui=bold
+highlight Pmenu ctermbg=238 gui=bold
 
 " Tabs ************************************************************************
 "set sta " a <Tab> in an indent inserts 'shiftwidth' spaces
