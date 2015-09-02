@@ -28,6 +28,7 @@ Bundle 'Raimondi/delimitMate'
 Bundle 'bling/vim-airline'
 Bundle 'gabesoft/vim-ags'
 Bundle 'rhysd/committia.vim'
+Bundle 'tpope/vim-commentary'
 Bundle 'slim-template/vim-slim'
 Bundle 'ervandew/eclim'
 " Bundle 'rking/ag.vim'
@@ -403,13 +404,7 @@ let g:syntastic_enable_signs=1
 " let g:syntastic_ruby_checkers = ['rubocop']
 
 
-" NERD Commenter **************************************************************
-let NERDCreateDefaultMappings=0 " I turn this off to make it simple
-
-" Toggle commenting on 1 line or all selected lines. Wether to comment or not
-" is decided based on the first line; if it's not commented then all lines
-" will be commented
-:map <Leader>c :call NERDComment(0, "toggle")<CR>
+:map <Leader>c :Commentary<CR>
 
 " CommandT ********************************************************
 "" To compile:
@@ -429,4 +424,3 @@ let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc'
 "
 "set Directory for swap and backup files
 set dir=/tmp
-

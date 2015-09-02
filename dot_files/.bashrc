@@ -59,7 +59,23 @@ parse_svn_repository_root() {
   svn info 2>/dev/null | grep -e '^Repository Root:*' | sed -e 's#^Repository Root: *\(.*\)#\1\/#g '
 }
 
-export PS1="\n\n$USER:\w\n\[\033[31m\]\$(~/.rvm/bin/rvm-prompt)\[\033[00m\]::\[\033[31m\]\$(parse_git_branch)\$(parse_svn_branch) \[\033[00m\]$\[\033[00m\] "
+parse_ruby_prompt(){
+  version_string=$(rbenv version-name)
+  [ -f "$(pwd)/.rbenv-gemsets" ] && gemset_string=" ⟡ $(rbenv gemset active | cut -d' ' -f1)"
+  if [ ! $version_string = '' ]; then
+    echo "$version_string$gemset_string"
+  fi
+
+  if [ -d "$HOME/.rvm" ]; then
+    # Control will enter here if $DIRECTORY exists.
+    rvm_prompt=$(~/.rvm/bin/rvm-prompt)
+    if [ rvm_prompt ]; then
+      echo "$rvm_prompt"
+    fi
+  fi
+}
+
+export PS1="\n\n$USER:\w\n\[\033[31m\]\$(parse_ruby_prompt)\[\033[00m\]::\[\033[31m\]\$(parse_git_branch) \[\033[00m\]$\[\033[00m\] "
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -102,3 +118,4 @@ PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 #source ~/.nvm/nvm.sh
 export NVM_DIR="/home/thief/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+eval "$(rbenv init -)"

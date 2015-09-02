@@ -9,12 +9,12 @@ alias gti='git'
 alias vm='vagrant'
 
 alias vi=vim
-alias vim=nvim
+#alias vim=nvim
 
 alias edit=vim
 alias fix_reslove='sudo cp /etc/resolv.conf.bak /etc/resolv.conf'
 
-alias start_eclim='. /opt/eclipse/eclimd'
+alias start_eclim='. /home/thief/.eclipse/org.eclipse.platform_793567567_linux_gtk_x86_64/eclimd'
 
 alias scp='rsync -e ssh -rlzvP'
 alias ctags='/usr/bin/ctags'

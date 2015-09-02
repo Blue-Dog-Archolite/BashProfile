@@ -59,3 +59,6 @@ script/checkout
 workbench.xmi
 .metadata/
 .project
+
+#rbenv
+.rbenv-gemsets

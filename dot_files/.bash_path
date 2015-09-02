@@ -1,7 +1,7 @@
 export PII_ENCRYPTION_KEY=01gVUsKc5SeUHBclWCdhExLgx8fk0E5/rMDb7S84/ftwoacJmkJl2OgVcFNIU32NdC4fFUL82ac7zTAX6b48KHM5Rrc+4NSE680FAWTX6kcGxGn9bTc8qQPY4edZ/ULsryi+rtfP0dJKG39vePCTWZx9y/jyBZYGIT7QLKPkKRs/KIcRd+PpSo2LpDBkSpENZEme5OOi6q/G7xdRWBYiC0zbFMZrUOI0sBeGrEmD2GMjPEuQ/IvCDUVn4oLLukGdo0sb1ymTtLQ9ZQFZMnEyl9ieqpYCJAlmg1LWjnIO7fFADYCz7GQW/eQ/eJjKioISac/KF64LjeVVF/9DdMccoQ==
 
 # Adding git flow feature shit to global path
-export PATH=$PATH:/home/thief/tools/BashProfile/git_flow_utility/
+export PATH=$PATH:/home/thief/tools/BashProfile/git_flow_utility
 
 # Usr Local Bin
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include
@@ -51,3 +51,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JAVA_HOME #/jre/lib/amd64:$JAVA_HOME/jr
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+export PATH="$HOME/.rbenv/shims:$PATH"
