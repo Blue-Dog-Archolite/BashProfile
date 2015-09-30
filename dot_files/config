@@ -19,3 +19,8 @@ Host 1.myflighttrain.com
   HostName 54.145.220.144
   user deploy
   IdentityFile ~/.ssh/flying_software_labs.pub
+
+Host 3.myflighttrain.com
+  HostName 54.196.140.11
+  user deploy
+  IdentityFile ~/.ssh/flying_software_labs.pub

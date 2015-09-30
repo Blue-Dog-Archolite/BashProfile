@@ -51,6 +51,7 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-bundler'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-endwise'
+Bundle 'thoughtbot/vim-rspec'
 Bundle 'skalnik/vim-vroom'
 Bundle 'gcmt/wildfire.vim'
 Bundle 'eiginn/netrw'
@@ -176,8 +177,16 @@ nmap <Leader>P "+P
 vmap <Leader>p "+p
 vmap <Leader>P "+P
 
+" Rspec
+map <Leader>t :call RunCurrentSpecFile()<CR>
+map <Leader>s :call RunNearestSpec()<CR>
+map <Leader>l :call RunLastSpec()<CR>
+map <Leader>a :call RunAllSpecs()<CR>
+
+let g:rspec_command = "bundle exec rspec --drb {spec}"
+
 " Hack to fix vim-fugitive
-let g:netrw_browsex_viewer = 'gnome-open-fixed'
+"" let g:netrw_browsex_viewer = 'gnome-open-fixed'
 
 " Set you complete me options
 " Use :lopen to open list window

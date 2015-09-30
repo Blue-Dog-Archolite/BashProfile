@@ -1,2 +1,3 @@
 # Force fedora to never run ruby-mri
 export RUBYPICK=_jruby_
+export EDITOR=vim

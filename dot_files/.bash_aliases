@@ -27,7 +27,7 @@ alias seed_test='bundle exec rake db:test:load'
 #"Ruby
 alias all_tests="s cu -f progress --tags ~@wip"
 alias rtest='ruby -I"lib:test"'
-alias rsp='rspec -drb '
+alias rsp='bundle exec rspec '
 
 #"Git
 alias git_history="git fsck --lost-found | awk '{print \"git show \" $3}' | bash | less"

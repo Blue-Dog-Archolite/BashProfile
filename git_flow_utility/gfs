@@ -6,8 +6,10 @@ story_id = ARGV.shift.gsub('#','')
 
 story_name = ARGV.join('_')
 
-command = "git flow feature start #{story_id}-#{story_name}"
+branch_name = "#{story_id}-#{story_name}"
+command = "git flow feature start #{branch_name}"
 
 puts `#{command}`
 puts `git push origin`
 
+puts `git branch --set-upstream-to=origin/feature/#{branch_name} feature/#{branch_name}`

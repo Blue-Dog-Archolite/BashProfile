@@ -8,38 +8,28 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include
 
 #Adding Silver Searcher
 export PATH=$PATH:$HOME/tools/BashProfile/Tools/the_silver_searcher
-export PATH=$PATH:$HOME/tools/phantomjs/bin
+#export PATH=$PATH:$HOME/tools/phantomjs/bin
 
 #export PATH=/usr/local/mysql:/usr/local/mysql/bin:$PATH
 #export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
 
-export PATH=$PATH:/opt/vagrant/bin
-export PATH=$PATH:/usr/lib64/qt4/bin
-export PATH=$PATH:$HOME/bin
+#export PATH=$PATH:/opt/vagrant/bin
+#export PATH=$PATH:/usr/lib64/qt4/bin
+#export PATH=$PATH:$HOME/bin
 
 # heroku
 PATH=/usr/local/heroku/bin:$PATH
 
 
-#export CATALINA_BASE=/System/Library/Tomcat/Home
-#export CATALINA_HOME=$CATALINA_BASE
-#export CATALINA_TMPDIR=$CATALINA_HOME/temp
+export PATH=$PATH:$HOME/tools/arcanist/bin/
 
-#export PATH=/usr/local/bin/android-sdk-macosx/tools:$PATH
-
-#export MAGICK_HOME="$HOME/bin/ImageMagick-6.6.4"
-#export PATH="$MAGICK_HOME/bin:$PATH"
-#export DYLD_LIBRARY_PATH="$MAGICK_HOME/lib"
 
 #Pg sql
-export PGDATA=/usr/share/postgresql/data
-export PATH=$PATH:$PGDATA
+#export PGDATA=/usr/share/postgresql/data
+#export PATH=$PATH:$PGDATA
 
 #export SSL_CERT_DIR=/etc/pki/tls/certs
-export SSL_CERT_FILE=/etc/pki/tls/cert.pem
-
-export rvmsudo_secure_path=1
-
+#export SSL_CERT_FILE=/etc/pki/tls/cert.pem
 
 export JAVA_HOME=/usr/lib/jvm/jre
 export PATH=$PATH:$JAVA_HOME
