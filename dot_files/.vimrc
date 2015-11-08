@@ -186,7 +186,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "bundle exec rspec --drb {spec}"
 
 " Hack to fix vim-fugitive
-"" let g:netrw_browsex_viewer = 'gnome-open-fixed'
+let g:netrw_browsex_viewer = 'gnome-open'
 
 " Set you complete me options
 " Use :lopen to open list window

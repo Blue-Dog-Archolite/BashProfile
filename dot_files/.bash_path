@@ -8,6 +8,7 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include
 
 #Adding Silver Searcher
 export PATH=$PATH:$HOME/tools/BashProfile/Tools/the_silver_searcher
+export PATH=$PATH:$HOME/tools/BashProfile/Tools/gnome-open/
 #export PATH=$PATH:$HOME/tools/phantomjs/bin
 
 #export PATH=/usr/local/mysql:/usr/local/mysql/bin:$PATH
@@ -21,6 +22,7 @@ export PATH=$PATH:$HOME/tools/BashProfile/Tools/the_silver_searcher
 PATH=/usr/local/heroku/bin:$PATH
 
 
+# Phabricator
 export PATH=$PATH:$HOME/tools/arcanist/bin/
 
 
@@ -30,6 +32,8 @@ export PATH=$PATH:$HOME/tools/arcanist/bin/
 
 #export SSL_CERT_DIR=/etc/pki/tls/certs
 #export SSL_CERT_FILE=/etc/pki/tls/cert.pem
+#export SSL_CERT_FILE=/etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
+#export SSL_CERT_DIR=/etc/pki/ca-trust/extracted/openssl/
 
 export JAVA_HOME=/usr/lib/jvm/jre
 export PATH=$PATH:$JAVA_HOME

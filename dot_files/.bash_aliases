@@ -12,7 +12,7 @@ alias vi=vim
 #alias vim=nvim
 
 alias edit=vim
-alias fix_reslove='sudo cp /etc/resolv.conf.bak /etc/resolv.conf'
+alias fix_resolve='sudo cp /etc/resolv.conf.bak /etc/resolv.conf'
 
 alias start_eclim='. /home/thief/.eclipse/org.eclipse.platform_793567567_linux_gtk_x86_64/eclimd'
 
@@ -27,7 +27,8 @@ alias seed_test='bundle exec rake db:test:load'
 #"Ruby
 alias all_tests="s cu -f progress --tags ~@wip"
 alias rtest='ruby -I"lib:test"'
-alias rsp='bundle exec rspec '
+alias rsp='RAILS_ENV=test bundle exec rspec '
+alias clean_branch="find . -name '*.orig' -delete"
 
 #"Git
 alias git_history="git fsck --lost-found | awk '{print \"git show \" $3}' | bash | less"
@@ -43,3 +44,5 @@ alias mysql_info="mysqladmin variables"
 
 #Liveworld Logstash
 alias start_logstash="cd ~/tools/logstash/ && ./bin/logstash -f ../conf/logstash-liveworld.conf"
+
+alias kill_all="kill $(ps aux | grep 'sidekiq 3.2.1 flight' | awk '{print $2}')"
