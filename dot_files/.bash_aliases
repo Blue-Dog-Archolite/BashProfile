@@ -8,6 +8,8 @@ alias ls='ls --color=auto'
 alias gti='git'
 alias vm='vagrant'
 
+eval "$(thefuck --alias fuck)"
+
 alias vi=vim
 #alias vim=nvim
 

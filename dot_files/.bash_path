@@ -8,7 +8,7 @@ export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include
 
 #Adding Silver Searcher
 export PATH=$PATH:$HOME/tools/BashProfile/Tools/the_silver_searcher
-export PATH=$PATH:$HOME/tools/BashProfile/Tools/gnome-open/
+export PATH=$PATH:$HOME/tools/BashProfile/Tools/gnome-open
 #export PATH=$PATH:$HOME/tools/phantomjs/bin
 
 #export PATH=/usr/local/mysql:/usr/local/mysql/bin:$PATH
@@ -23,7 +23,7 @@ PATH=/usr/local/heroku/bin:$PATH
 
 
 # Phabricator
-export PATH=$PATH:$HOME/tools/arcanist/bin/
+export PATH=$PATH:$HOME/tools/arcanist/bin
 
 
 #Pg sql
@@ -45,6 +45,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JAVA_HOME #/jre/lib/amd64:$JAVA_HOME/jr
 export PATH="$HOME/.linuxbrew/bin:$PATH"
 export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
-export PATH="$HOME/.rbenv/bin:$PATH"
 
+export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH="$HOME/.rbenv/shims:$PATH"

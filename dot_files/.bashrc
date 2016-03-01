@@ -75,7 +75,7 @@ parse_ruby_prompt(){
   fi
 }
 
-export PS1="\n\n$USER:\w\n\[\033[31m\]\$(parse_ruby_prompt)\[\033[00m\]::\[\033[31m\]\$(parse_git_branch) \[\033[00m\]$\[\033[00m\] "
+export PS1="\n\n$USER:\w\[\033[31m\]\n\$(parse_git_branch)\n\[\033[31m\]\$(parse_ruby_prompt)\[\033[00m\]:: \[\033[00m\]$\[\033[00m\] "
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like

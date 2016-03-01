@@ -1,0 +1,18 @@
+#!/usr/bin/env ruby
+
+puts `git checkout development`
+
+story_id = ARGV.shift.gsub('#','')
+
+story_name = ARGV.join('_')
+
+branch_name = "#{story_id}-#{story_name}"
+
+puts `git checkout servers/review`
+puts `git pull origin`
+command = "git flow hotfix start #{branch_name}"
+
+puts `#{command}`
+puts `git push origin`
+
+puts `git branch --set-upstream-to=origin/hotfix/#{branch_name} hotfix/#{branch_name}`

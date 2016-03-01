@@ -250,6 +250,7 @@ set tags=tags;/
 " associate  with ruby filetype
 au BufRead,BufNewFile ^M^W^W    setfiletype ruby
 au BufRead,BufNewFile Guardfile setfiletype ruby
+au BufRead,BufNewFile *.prawn setfiletype ruby
 
 "Indenting *******************************************************************
 set ai " Automatically set the indent of a new line (local to buffer)
