@@ -93,7 +93,7 @@ parse_ruby_prompt(){
   fi
 }
 
-export PS1="\n\n\w\[\033[31m\]\n\$(parse_git_branch)\n\[\033[31m\]\$(parse_language_prompt)\n$USER:\[\033[00m\]:: \[\033[00m\]$\[\033[00m\] "
+export PS1="\n\n\w\[\033[31m\]\n\$(parse_git_branch)\n\[\033[31m\]\$(parse_language_prompt)\[\033[00m\]\n$USER λ \[\033[00m\]$\[\033[00m\] "
 
 
 # Alias definitions.
