@@ -3,5 +3,3 @@ export RUBYPICK=_jruby_
 export EDITOR=vim
 
 export GIT_MERGE_TOOL=true
-
-export DB_NAME='the_pattern.sqlite3'

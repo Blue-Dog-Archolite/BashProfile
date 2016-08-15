@@ -65,8 +65,8 @@ parse_node_version(){
 }
 
 parse_language_prompt(){
-  if [ ! $(parse_ruby_prompt) = 'system' ]; then
-    echo $(prase_ruby_prompt)
+  if [[ ! $(parse_ruby_prompt) = 'system' ]]; then
+    echo $(parse_ruby_prompt)
   else
     echo $(parse_node_version)
   fi
@@ -88,7 +88,8 @@ parse_ruby_prompt(){
   fi
 }
 
-export PS1="\n\n$USER:\w\[\033[31m\]\n\$(parse_git_branch)\n\[\033[31m\]\$(parse_language_prompt)\[\033[00m\]:: \[\033[00m\]$\[\033[00m\] "
+export PS1="\n\n\w\[\033[31m\]\n\$(parse_git_branch)\n\[\033[31m\]\$(parse_language_prompt)\n$USER:\[\033[00m\]:: \[\033[00m\]$\[\033[00m\] "
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -133,12 +134,12 @@ fi
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #source ~/.nvm/nvm.sh
-export NVM_DIR="$HOME/.nvm"
-export NODE_ENV=development
+if [ -f "$HOME/.nvm" ]; then
+  export NVM_DIR="$HOME/.nvm"
+  export NODE_ENV=development
+  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+  source "$(brew --prefix nvm)/nvm.sh"
+  eval "$(grunt --completion=bash)"
+fi
 
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 eval "$(rbenv init -)"
-
-source "$(brew --prefix nvm)/nvm.sh"
-
-eval "$(grunt --completion=bash)"
