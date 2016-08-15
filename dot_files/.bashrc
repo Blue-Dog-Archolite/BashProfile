@@ -59,6 +59,19 @@ parse_svn_repository_root() {
   svn info 2>/dev/null | grep -e '^Repository Root:*' | sed -e 's#^Repository Root: *\(.*\)#\1\/#g '
 }
 
+parse_node_version(){
+  version_string=$(node --version)
+  echo "Node#$version_string"
+}
+
+parse_language_prompt(){
+  if [ ! $(parse_ruby_prompt) = 'system' ]; then
+    echo $(prase_ruby_prompt)
+  else
+    echo $(parse_node_version)
+  fi
+}
+
 parse_ruby_prompt(){
   version_string=$(rbenv version-name)
   [ -f "$(pwd)/.rbenv-gemsets" ] && gemset_string=" ⟡ $(rbenv gemset active | cut -d' ' -f1)"
@@ -75,7 +88,7 @@ parse_ruby_prompt(){
   fi
 }
 
-export PS1="\n\n$USER:\w\[\033[31m\]\n\$(parse_git_branch)\n\[\033[31m\]\$(parse_ruby_prompt)\[\033[00m\]:: \[\033[00m\]$\[\033[00m\] "
+export PS1="\n\n$USER:\w\[\033[31m\]\n\$(parse_git_branch)\n\[\033[31m\]\$(parse_language_prompt)\[\033[00m\]:: \[\033[00m\]$\[\033[00m\] "
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -109,13 +122,23 @@ if [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
 fi
 
- if [ -f ~/.git-completion.bash ]; then
-   . ~/.git-completion.bash
- fi
+if [ -f ~/.git-completion.bash ]; then
+ . ~/.git-completion.bash
+fi
+
+if [ -f $(brew --prefix)/etc/bash_completion ]; then
+     . $(brew --prefix)/etc/bash_completion
+fi
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
 #source ~/.nvm/nvm.sh
-export NVM_DIR="/home/thief/.nvm"
+export NVM_DIR="$HOME/.nvm"
+export NODE_ENV=development
+
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 eval "$(rbenv init -)"
+
+source "$(brew --prefix nvm)/nvm.sh"
+
+eval "$(grunt --completion=bash)"

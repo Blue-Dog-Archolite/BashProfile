@@ -6,6 +6,10 @@
 *.exe
 *.o
 *.so
+
+# NVM setup
+.nvmrc
+tags
  
 # Packages #
 ############

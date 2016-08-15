@@ -17,6 +17,7 @@
 --noDUMB
 --ignore-dir=public/assets
 --ignore-dir=test/reports
+--ignore-dir=build
 --ignore-dir=doc/
 --ignore-dir=coverage
 --ignore-dir=db/
