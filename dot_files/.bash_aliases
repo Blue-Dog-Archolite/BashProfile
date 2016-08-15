@@ -4,7 +4,7 @@
 alias ll='clear && ls -Gal'
 alias la='ls -GA'
 alias l='ls -GCF'
-alias ls='ls --color=auto'
+#alias ls='ls --color=auto'
 alias gti='git'
 alias vm='vagrant'
 
@@ -22,6 +22,8 @@ alias scp='rsync -e ssh -rlzvP'
 alias ctags='/usr/bin/ctags'
 alias ct="ctags -R --exclude=*.js . `echo $GEM_HOME| sed 's/:/ /g'`"
 
+alias ag='ag --path-to-agignore ~/.agignore'
+
 #"Rails
 alias start_reddis='redis-server /home/thief/tools/redis-stable/redis.conf'
 alias seed_test='bundle exec rake db:test:load'
@@ -31,6 +33,7 @@ alias all_tests="s cu -f progress --tags ~@wip"
 alias rtest='ruby -I"lib:test"'
 alias rsp='RAILS_ENV=test bundle exec rspec '
 alias clean_branch="find . -name '*.orig' -delete"
+alias update_locate='sudo /usr/libexec/locate.updatedb'
 
 #"Git
 alias git_history="git fsck --lost-found | awk '{print \"git show \" $3}' | bash | less"
@@ -43,8 +46,3 @@ alias tail_log='tail -fn0 log/*.log'
 
 #mysql help
 alias mysql_info="mysqladmin variables"
-
-#Liveworld Logstash
-alias start_logstash="cd ~/tools/logstash/ && ./bin/logstash -f ../conf/logstash-liveworld.conf"
-
-alias kill_all="kill $(ps aux | grep 'sidekiq 3.2.1 flight' | awk '{print $2}')"

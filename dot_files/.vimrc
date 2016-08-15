@@ -11,54 +11,55 @@ Plugin 'gmarik/Vundle.vim'
 
 " markdown
 Plugin 'greyblake/vim-preview'
+Bundle "shime/vim-livedown"
 
 " Color Scheme
+Plugin 'altercation/solarized'
+Plugin 'chriskempson/base16-vim'
+Plugin 'chriskempson/tomorrow-theme'
+Plugin 'freeo/vim-kalisi'
 Plugin 'twerth/ir_black'
 Plugin 'vim-scripts/Wombat'
-Plugin 'freeo/vim-kalisi'
 Plugin 'w0ng/vim-hybrid'
-Plugin 'chriskempson/base16-vim'
-Plugin 'altercation/solarized'
-Plugin 'chriskempson/tomorrow-theme'
 
 " Floobits
 Plugin 'floobits/floobits-neovim'
 
-Bundle 'Raimondi/delimitMate'
-Bundle 'bling/vim-airline'
-Bundle 'gabesoft/vim-ags'
-Bundle 'rhysd/committia.vim'
-Bundle 'tpope/vim-commentary'
-Bundle 'slim-template/vim-slim'
-Bundle 'ervandew/eclim'
-" Bundle 'rking/ag.vim'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'kien/ctrlp.vim'
-Bundle 'vim-scripts/L9'
-Bundle 'vim-scripts/FuzzyFinder'
-Bundle 'vim-scripts/matchit.zip'
 Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'scrooloose/syntastic'
-Bundle 'majutsushi/tagbar'
-Bundle 'tomtom/tlib_vim'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'scrooloose/nerdtree'
+Bundle 'Raimondi/delimitMate'
+Bundle 'Valloric/YouCompleteMe'
+Bundle 'bling/vim-airline'
+Bundle 'burnettk/vim-angular'
+Bundle 'eiginn/netrw'
+Bundle 'ervandew/eclim'
+Bundle 'gabesoft/vim-ags'
+Bundle 'gcmt/wildfire.vim'
 Bundle 'groenewege/vim-less'
-Bundle 'tpope/vim-fugitive'
+Bundle 'jlanzarotta/bufexplorer'
+Bundle 'kchmck/vim-coffee-script'
+Bundle 'kien/ctrlp.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'rhysd/committia.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'scrooloose/syntastic'
+Bundle 'skalnik/vim-vroom'
+Bundle 'slim-template/vim-slim'
+Bundle 'thoughtbot/vim-rspec'
+Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-abolish.git'
+Bundle 'tpope/vim-bundler'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-endwise'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'skalnik/vim-vroom'
-Bundle 'gcmt/wildfire.vim'
-Bundle 'eiginn/netrw'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align'
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'jlanzarotta/bufexplorer'
+Bundle 'vim-scripts/FuzzyFinder'
+Bundle 'vim-scripts/L9'
+Bundle 'vim-scripts/matchit.zip'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -237,6 +238,12 @@ call Tabstyle_spaces()
 set ts=2  " Tabs are 2 spaces
 set bs=2  " Backspace over everything in insert mode
 set shiftwidth=2  " Tabs under smart indenting
+
+" Set javascript indents for 4
+autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype coffeescript setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
+
 
 "Ctags and other shortcuts
 "***********************************************
