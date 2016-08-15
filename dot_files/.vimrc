@@ -54,12 +54,12 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-haml'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-surround'
+Bundle 'vadv/vim-chef'
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/Align'
 Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/matchit.zip'
-Bundle 'vadv/vim-chef'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
