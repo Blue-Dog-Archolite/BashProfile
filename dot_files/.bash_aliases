@@ -3,12 +3,18 @@
 #"Term
 alias ll='clear && ls -Gal'
 alias la='ls -GA'
-alias l='ls -GCF'
-#alias ls='ls --color=auto'
+
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  alias ls='ls -GCF'
+else
+  alias ls='ls -al --color=auto'
+fi
+
 alias gti='git'
 alias vm='/opt/vagrant/bin/vagrant'
 alias pgs='ps aux | grep $@'
 
+eval "$(thefuck --alias ffs)"
 eval "$(thefuck --alias fuck)"
 
 alias vi=vim

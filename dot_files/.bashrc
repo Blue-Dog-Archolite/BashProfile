@@ -43,6 +43,11 @@ xterm*|rxvt*)
     ;;
 esac
 
+
+command_exists () {
+      type "$1" &> /dev/null ;
+  }
+
 parse_git_branch() {
    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
@@ -131,15 +136,17 @@ if [ -f $(brew --prefix)/etc/bash_completion ]; then
      . $(brew --prefix)/etc/bash_completion
 fi
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+export NVM_DIR="$HOME/.nvm"
+export NODE_ENV=development
 
-#source ~/.nvm/nvm.sh
-if [ -f "$HOME/.nvm" ]; then
-  export NVM_DIR="$HOME/.nvm"
-  export NODE_ENV=development
-  [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+if command_exists brew ; then
   source "$(brew --prefix nvm)/nvm.sh"
+fi
+
+if command_exists grunt; then
   eval "$(grunt --completion=bash)"
 fi
 
-eval "$(rbenv init -)"
+if command_exists rbenv ; then
+  eval "$(rbenv init -)"
+fi
