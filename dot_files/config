@@ -1,26 +1,30 @@
 Host devtest.myflighttrain.com
   HostName devtest.myflighttrain.com
   user deploy
-  IdentityFile ~/.ssh/flying_software_labs.pub
+  IdentityFile ~/.ssh/flying_software_labs
 
 Host testing.myflighttrain.com
   HostName testing.myflighttrain.com
   user deploy
-  IdentityFile ~/.ssh/flying_software_labs.pub
+  IdentityFile ~/.ssh/flying_software_labs
 
 
 Host review.myflighttrain.com
   HostName review.myflighttrain.com
   user deploy
-  IdentityFile ~/.ssh/flying_software_labs.pub
-
+  IdentityFile ~/.ssh/flying_software_labs
 
 Host 1.myflighttrain.com
   HostName prod-e1.myflighttrain.com
   user deploy
-  IdentityFile ~/.ssh/flying_software_labs.pub
+  IdentityFile ~/.ssh/flying_software_labs
 
 Host 3.myflighttrain.com
   HostName prod-e3.myflighttrain.com
   user deploy
-  IdentityFile ~/.ssh/flying_software_labs.pub
+  IdentityFile ~/.ssh/flying_software_labs
+
+host lw-peyote-stage
+  HostName 146.20.36.42
+  user rmeyer
+  IdentityFile ~/.ssh/symondandson_id_rsa

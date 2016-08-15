@@ -1,6 +1,6 @@
 require '~/tools/BashProfile/ruby_utility/safe_load'
 
-if defined?(PryDebugger)
+if defined?(PryDebugger) || defined?(PryByebug)
   Pry.commands.alias_command 'c', 'continue'
   Pry.commands.alias_command 's', 'step'
   Pry.commands.alias_command 'n', 'next'
@@ -31,7 +31,7 @@ def set_school(id=5)
 end
 
 #hack to clear the screen
-def clear
+def cls
   `reset`
 end
 
@@ -42,11 +42,11 @@ def associated_with(object_or_class)
 end
 
 #Editor configuration
-Pry.config.editor = proc { |file, line| "nvim +#{line} #{file}" }
+# Pry.config.editor = proc { |file, line| "nvim +#{line} #{file}" }
 
 # Customer exit message
 Pry.config.hooks.add_hook(:after_session, :say_bye) do
-  puts "bye-bye"
+  puts "So Say We All"
 end
 
 # Prompt with ruby version

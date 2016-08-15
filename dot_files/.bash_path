@@ -2,6 +2,10 @@ export PII_ENCRYPTION_KEY=01gVUsKc5SeUHBclWCdhExLgx8fk0E5/rMDb7S84/ftwoacJmkJl2O
 
 # Adding git flow feature shit to global path
 export PATH=$PATH:/home/thief/tools/BashProfile/git_flow_utility
+export PATH=$PATH:/home/thief/tools/terraform
+export PATH=$PATH:/home/thief/tools/bash-knife-search
+
+
 
 # Usr Local Bin
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include

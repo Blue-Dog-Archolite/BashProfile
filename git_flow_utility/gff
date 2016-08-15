@@ -9,7 +9,13 @@ puts `git checkout development`
 puts `git pull`
 puts `git checkout #{current_branch}`
 
-puts `#{command}`
-puts `git push origin`
+result = `#{command}`
+puts result
 
-puts `git push origin :feature/#{finish_name}`
+if result =~ /conflict/
+  puts 'Merge Conflicts. Resolve and Commit.'
+else
+  puts `git push origin`
+
+  puts `git push origin :feature/#{finish_name}`
+end

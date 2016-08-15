@@ -16,6 +16,7 @@
 --ignore-file=is:*.log
 --noDUMB
 --ignore-dir=public/assets
+--ignore-dir=src/
 --ignore-dir=test/reports
 --ignore-dir=build
 --ignore-dir=doc/

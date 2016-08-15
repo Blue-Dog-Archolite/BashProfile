@@ -6,7 +6,8 @@ alias la='ls -GA'
 alias l='ls -GCF'
 #alias ls='ls --color=auto'
 alias gti='git'
-alias vm='vagrant'
+alias vm='/opt/vagrant/bin/vagrant'
+alias pgs='ps aux | grep $@'
 
 eval "$(thefuck --alias fuck)"
 
@@ -46,3 +47,8 @@ alias tail_log='tail -fn0 log/*.log'
 
 #mysql help
 alias mysql_info="mysqladmin variables"
+
+alias lwssh="ssh -i ~/.ssh/symondandson_id_rsa rmeyer@$@"
+
+#sudo
+alias act_as="sudo sudo -u $@ bash -i"

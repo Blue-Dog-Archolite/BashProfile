@@ -34,7 +34,6 @@ Bundle 'eiginn/netrw'
 Bundle 'ervandew/eclim'
 Bundle 'gabesoft/vim-ags'
 Bundle 'gcmt/wildfire.vim'
-Bundle 'groenewege/vim-less'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'kchmck/vim-coffee-script'
 Bundle 'kien/ctrlp.vim'
@@ -60,6 +59,7 @@ Bundle 'vim-scripts/Align'
 Bundle 'vim-scripts/FuzzyFinder'
 Bundle 'vim-scripts/L9'
 Bundle 'vim-scripts/matchit.zip'
+Bundle 'vadv/vim-chef'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -84,7 +84,8 @@ set laststatus=2  " Always show status line.
 " #######################################################################
 " Airline Vim Tagbar Setup
 let g:airline#extensions#default#section_truncate_width = {
-      \ 'b': 110,
+      \ 'a': 30,
+      \ 'b': 150,
       \ 'x': 100,
       \ 'c': 0,
       \ 'y': 100,
