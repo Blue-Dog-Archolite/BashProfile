@@ -1,8 +1,9 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_cnt =7
 let g:netrw_dirhist_1='/home/thief/dev/flight'
 let g:netrw_dirhist_2='/home/thief/dev/flight/app'
 let g:netrw_dirhist_3='/home/thief/dev/flight/app/models'
 let g:netrw_dirhist_4='/home/thief/tools/BashProfile'
 let g:netrw_dirhist_5='/Users/robert.meyer/tanium/protect-vms/vagrant'
 let g:netrw_dirhist_6='/Users/robert.meyer/tools/BashProfile/dot_files/.vim'
+let g:netrw_dirhist_7='/home/robert-r-meyer/dev/tanium/protect'
