@@ -47,3 +47,5 @@ languages="$(parse_language_prompt)"
 user="\[\033[00m\]$USER :: \[\033[00m\]$\[\033[00m\] "
 
 export PS1="$branch\n$languages\n$user"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

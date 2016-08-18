@@ -2,9 +2,16 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+
+" Set up Plug for fzf finder
+call plug#begin('~/.vim/plugged')
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+call plug#end()
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
+
 
 " let Vundle manage Vundle, required
 Plugin 'gmarik/Vundle.vim'
@@ -167,7 +174,7 @@ set noerrorbells  " No noise.
 "**********************************************************
 let mapleader = ","
 "Use jj as escape .. Eaiser?
-imap jj <ESC>
+" imap jj <ESC>
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>r :edit!<CR>
@@ -250,7 +257,9 @@ autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
 "***********************************************
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-map <Leader>rt :!ctags --extra=+f --exclude=.git --exclude=public/assets --exclude=log -R *<CR><CR>
+map <Leader>rt :!ctags -R --extra=+f --exclude=@$HOME/.ctags_ignore .<CR><CR>
+
+" --exclude=.git --exclude=public/assets --exclude=log -R * --exclude=build --exclude=node_modules<CR><CR>
 
 "Sets the tags directory to look backwards till it finds a tags dir
 set tags=tags;/
@@ -430,7 +439,7 @@ let g:syntastic_enable_signs=1
 "" ruby extconf.rb
 "" make
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*
-map <Leader>f :CtrlP<CR>
+map <Leader>f :FZF<CR>
 
 
 " fuzzyfinder ********************************************************
