@@ -39,7 +39,8 @@ Bundle 'bling/vim-airline'
 Bundle 'burnettk/vim-angular'
 Bundle 'eiginn/netrw'
 Bundle 'ervandew/eclim'
-Bundle 'gabesoft/vim-ags'
+" Bundle 'gabesoft/vim-ags'
+Bundle 'rking/ag.vim'
 Bundle 'gcmt/wildfire.vim'
 Bundle 'jlanzarotta/bufexplorer'
 Bundle 'kchmck/vim-coffee-script'
@@ -314,8 +315,8 @@ set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 map <Leader>nh :nohlsearch<CR>
 " for different plugin
-"map <Leader>g :Ag 
-map <Leader>g :Ags 
+map <Leader>g :Ag --vimgrep 
+" map <Leader>g :Ags 
 
 " map <F8> to reindent file
 noremap <F8> mzgg=G`z

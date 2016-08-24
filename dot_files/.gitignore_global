@@ -66,3 +66,6 @@ workbench.xmi
 
 #rbenv
 .rbenv-gemsets
+
+**/.nvmrc
+.nvmrc
