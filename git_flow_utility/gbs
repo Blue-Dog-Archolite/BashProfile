@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+puts `git checkout development`
+
+story_id = ARGV.shift.gsub('#','')
+
+story_name = ARGV.join('_')
+
+branch_name = "PROT-#{story_id}/#{story_name}"
+command = "git checkout -b#{branch_name}"
+
+puts `#{command}`
+puts `git push origin`
+
+puts `git push --set-upstream origin #{branch_name}`
+

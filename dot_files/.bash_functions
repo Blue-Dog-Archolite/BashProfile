@@ -49,14 +49,14 @@ parse_ruby_prompt(){
     version_string=$(rbenv version-name)
     [ -f "$(pwd)/.rbenv-gemsets" ] && gemset_string=" ⟡ $(rbenv gemset active | cut -d' ' -f1)"
     if [ ! $version_string = '' ]; then
-      echo "\[\033\[38;5;2m\]\]$version_string$gemset_string"
+      echo "\[\033[38;5;2m\]rbenv ⟡ $version_string$gemset_string"
     fi
 
     if [ -d "$HOME/.rvm" ]; then
       # Control will enter here if $DIRECTORY exists.
       rvm_prompt=$(~/.rvm/bin/rvm-prompt)
       if [ rvm_prompt ]; then
-        echo "\[\033\[38;5;2m\]\]$rvm_prompt"
+        echo "\[\033\[38;5;2m\]$rvm_prompt"
       fi
     fi
   fi
