@@ -20,6 +20,8 @@ eval "$(thefuck --alias fuck)"
 alias vi=vim
 #alias vim=nvim
 
+alias vm='vagrant'
+
 alias edit=vim
 alias fix_resolve='sudo cp /etc/resolv.conf.bak /etc/resolv.conf'
 
