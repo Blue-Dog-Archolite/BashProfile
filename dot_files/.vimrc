@@ -251,6 +251,7 @@ set shiftwidth=2  " Tabs under smart indenting
 
 " Set javascript indents for 4
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab
+autocmd Filetype html setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype coffeescript setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
 
