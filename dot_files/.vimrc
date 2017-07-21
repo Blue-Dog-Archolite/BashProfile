@@ -5,17 +5,17 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
-" Required
-set runtimepath+=~/.vim/plugin/repos/github.com/Shougo/dein.vim
-let s:dien_basepath = expand('~/.vim/plugin/repos/github.com/Shougo/dein.vim')
+" Required:
+set runtimepath+=/home/thief/.vim/dein/repos/github.com/Shougo/dein.vim
+let s:dien_basepath = expand('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 
-" Required
-if dein#load_state(s:dien_basepath)
-  call dein#begin('/home/thief/.vim/plugin')
+" Required:
+if dein#load_state('/home/thief/.vim/dein')
+  call dein#begin('/home/thief/.vim/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/thief/.vim/plugin/repos/github.com/Shougo/dein.vim')
+  call dein#add('/home/thief/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " " markdown
   call dein#add('shime/vim-livedown')
@@ -35,7 +35,7 @@ if dein#load_state(s:dien_basepath)
   set rtp+=~/.fzf
 
   " " Floobits
-  call dein#add('Floobits/floobits-neovim')
+  " call dein#add('Floobits/floobits-neovim')
 
   " " Linters
   " call dein#add('nvie/vim-flake8')
@@ -452,12 +452,12 @@ nmap <Leader>ss :SplitjoinSplit<cr>
 " syntastic ******************************************************************
 let g:deoplete#enable_at_startup = 1
 
-" let g:python_host_prog='/usr/bin/python'
-" let g:python3_host_prog='/usr/bin/python3'
+let g:python_host_prog='/home/thief/.local/share/virtualenvs/.vim-uZrd_9Fm/bin/python'
+let g:python3_host_prog='/home/thief/.local/share/virtualenvs/.vim-uZrd_9Fm/bin/python3'
 
-" let g:syntastic_python_checkers=['flake8']
-" let g:syntastic_python_flake8_exec = 'python3'
-" let g:syntastic_python_flake8_args = ['-m', 'flake8']
+let g:syntastic_python_checkers=['flake8']
+let g:syntastic_python_flake8_exec = 'python3'
+let g:syntastic_python_flake8_args = ['-m', 'flake8']
 
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
