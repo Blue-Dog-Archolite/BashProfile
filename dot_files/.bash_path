@@ -6,7 +6,7 @@ export PATH=$PATH:$HOME/tools/terraform
 export PATH=$PATH:$HOME/tools/bash-knife-search
 
 # Usr Local Bin
-export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include:$HOME/.local/bin/:$HOME/.local/share/virtualenvs/.vim-uZrd_9Fm/bin/
 
 #Adding Silver Searcher
 export PATH=$PATH:$HOME/tools/BashProfile/Tools/the_silver_searcher

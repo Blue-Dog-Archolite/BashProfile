@@ -10,22 +10,19 @@ else
   alias ls='ls -al --color=auto'
 fi
 
-alias gti='git'
 alias vm='/opt/vagrant/bin/vagrant'
 alias pgs='ps aux | grep $@'
 
 eval "$(thefuck --alias ffs)"
 eval "$(thefuck --alias fuck)"
 
-alias vi=vim
+alias vi=/usr/bin/vi
 #alias vim=nvim
 
 alias vm='vagrant'
 
 alias edit=vim
 alias fix_resolve='sudo cp /etc/resolv.conf.bak /etc/resolv.conf'
-
-alias start_eclim='. /home/thief/.eclipse/org.eclipse.platform_793567567_linux_gtk_x86_64/eclimd'
 
 alias scp='rsync -e ssh -rlzvP'
 alias ctags='/usr/bin/ctags'
@@ -41,14 +38,13 @@ alias seed_test='bundle exec rake db:test:load'
 alias all_tests="s cu -f progress --tags ~@wip"
 alias rtest='ruby -I"lib:test"'
 alias rsp='RAILS_ENV=test bundle exec rspec '
-alias clean_branch="find . -name '*.orig' -delete"
-alias update_locate='sudo /usr/libexec/locate.updatedb'
 
 #"Git
 alias git_history="git fsck --lost-found | awk '{print \"git show \" $3}' | bash | less"
 alias mkpatch='git format-patch -o ~/Desktop/ origin'
 alias commit_and_push='git commit -m $1 && git pull && git push origin'
 alias git_show_branch_history="git reflog show --no-abbrev $1" #Will show the branch history and take one argument
+alias clean_branch="find . -name '*.orig' -delete"
 
 #tail
 alias tail_log='tail -fn0 log/*.log'
@@ -60,3 +56,6 @@ alias lwssh="ssh -i ~/.ssh/symondandson_id_rsa rmeyer@$@"
 
 #sudo
 alias act_as="sudo sudo -u $@ bash -i"
+
+#Python
+alias vactivate="pipenv shell"

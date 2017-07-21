@@ -1,78 +1,104 @@
-
-set nocompatible              " be iMproved, required
 filetype off                  " required
 
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
 
-" Set up Plug for fzf finder
-call plug#begin('~/.vim/plugged')
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
-call plug#end()
+" Required
+set runtimepath+=~/.vim/plugin/repos/github.com/Shougo/dein.vim
+let s:dien_basepath = expand('~/.vim/plugin/repos/github.com/Shougo/dein.vim')
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" Required
+if dein#load_state(s:dien_basepath)
+  call dein#begin('/home/thief/.vim/plugin')
 
+  " Let dein manage dein
+  " Required:
+  call dein#add('/home/thief/.vim/plugin/repos/github.com/Shougo/dein.vim')
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+  " " markdown
+  call dein#add('shime/vim-livedown')
 
-" markdown
-Plugin 'greyblake/vim-preview'
-Bundle "shime/vim-livedown"
+  " " Color Scheme
+  call dein#add('altercation/solarized')
+  call dein#add('chriskempson/base16-vim')
+  call dein#add('chriskempson/tomorrow-theme')
+  call dein#add('freeo/vim-kalisi')
+  call dein#add('twerth/ir_black')
+  call dein#add('vim-scripts/Wombat')
+  call dein#add('w0ng/vim-hybrid')
 
-" Color Scheme
-Plugin 'altercation/solarized'
-Plugin 'chriskempson/base16-vim'
-Plugin 'chriskempson/tomorrow-theme'
-Plugin 'freeo/vim-kalisi'
-Plugin 'twerth/ir_black'
-Plugin 'vim-scripts/Wombat'
-Plugin 'w0ng/vim-hybrid'
+  " " FZF Vim
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
+  set rtp+=~/.fzf
 
-" Floobits
-Plugin 'floobits/floobits-neovim'
+  " " Floobits
+  call dein#add('Floobits/floobits-neovim')
 
+  " " Linters
+  " call dein#add('nvie/vim-flake8')
+  " call dein#add('vim-scripts/python.vim')
 
-Bundle 'AndrewRadev/splitjoin.vim'
-Bundle 'Raimondi/delimitMate'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'bling/vim-airline'
-Bundle 'burnettk/vim-angular'
-Bundle 'eiginn/netrw'
-Bundle 'ervandew/eclim'
-Bundle 'gcmt/wildfire.vim'
-Bundle 'jlanzarotta/bufexplorer'
-Bundle 'kchmck/vim-coffee-script'
-Bundle 'kien/ctrlp.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'maksimr/vim-jsbeautify'
-Bundle 'rhysd/committia.vim'
-Bundle 'rking/ag.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'scrooloose/syntastic'
-Bundle 'skalnik/vim-vroom'
-Bundle 'slim-template/vim-slim'
-Bundle 'ternjs/tern_for_vim'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'tomtom/tlib_vim'
-Bundle 'tpope/vim-abolish.git'
-Bundle 'tpope/vim-bundler'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-haml'
-Bundle 'tpope/vim-rails'
-Bundle 'tpope/vim-surround'
-Bundle 'vadv/vim-chef'
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'vim-scripts/Align'
-Bundle 'vim-scripts/FuzzyFinder'
-Bundle 'vim-scripts/L9'
-Bundle 'vim-scripts/matchit.zip'
+  " " Completion
+  call dein#add('davidhalter/jedi-vim', {'build': 'git submodule update --init', 'rtp': ''})
+  " call dein#add('Valloric/YouCompleteMe', {'build': 'python3 ./install.py'})
+  call dein#add('vim-syntastic/syntastic')
+  call dein#add('Shougo/deoplete.nvim')
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+  " Rails / Ruby
+  " call dein#add('thoughtbot/vim-rspec')
+  " call dein#add('tpope/vim-rails')
+  " call dein#add('tpope/vim-bundler')
+  " call dein#add('vim-ruby/vim-ruby')
+
+  " " Javascript
+  " call dein#add('maksimr/vim-jsbeautify')
+
+  " " Not sure
+  " " call dein#add('eiginn/netrw')
+
+  " " Tools
+  call dein#add('AndrewRadev/splitjoin.vim')
+  call dein#add('Raimondi/delimitMate')
+  call dein#add('bling/vim-airline')
+  call dein#add('gcmt/wildfire.vim')
+  call dein#add('jlanzarotta/bufexplorer')
+  call dein#add('kien/ctrlp.vim')
+  call dein#add('vim-scripts/taglist.vim')
+  call dein#add('majutsushi/tagbar')
+  call dein#add('rhysd/committia.vim')
+  call dein#add('rking/ag.vim')
+  call dein#add('scrooloose/nerdtree')
+  call dein#add('skalnik/vim-vroom')
+  call dein#add('tomtom/tlib_vim')
+  call dein#add('tpope/vim-abolish.git')
+  call dein#add('tpope/vim-commentary')
+  call dein#add('tpope/vim-endwise')
+  call dein#add('tpope/vim-fugitive')
+  call dein#add('tpope/vim-haml')
+  call dein#add('tpope/vim-surround')
+  call dein#add('vadv/vim-chef')
+  call dein#add('vim-scripts/Align')
+  call dein#add('vim-scripts/FuzzyFinder')
+  call dein#add('vim-scripts/L9')
+  call dein#add('vim-scripts/matchit.zip')
+
+" Required
+  call dein#end()
+  call dein#save_state()
+endif
+
+" Required
+filetype plugin indent on
+syntax enable
+
+" If you want to install not installed plugins on startup.
+if dein#check_install()
+  call dein#install()
+endif
+"End dein Scripts-------------------------
 
 "Before merge of files these existed
 set cf                  " Enable error files & error jumping.
@@ -197,7 +223,7 @@ map <Leader>a :call RunAllSpecs()<CR>
 let g:rspec_command = "bundle exec rspec --drb {spec}"
 
 " Hack to fix vim-fugitive
-let g:netrw_browsex_viewer = 'gnome-open'
+" let g:netrw_browsex_viewer = 'gnome-open'
 
 " Set you complete me options
 " Use :lopen to open list window
@@ -230,6 +256,7 @@ function TrimWhiteSpace()
   ''
 :endfunction
 
+
 map <F2> :call TrimWhiteSpace()<CR>
 
 " Format hash
@@ -251,7 +278,6 @@ set shiftwidth=2  " Tabs under smart indenting
 
 " Set javascript indents for 4
 autocmd Filetype javascript setlocal ts=4 sw=4 sts=0 expandtab
-autocmd Filetype html setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype coffeescript setlocal ts=4 sw=4 sts=0 expandtab
 autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
 
@@ -318,7 +344,7 @@ set smartcase " Ignore case when searching lowercase
 map <Leader>nh :nohlsearch<CR>
 " for different plugin
 map <Leader>g :Ag --vimgrep 
-" map <Leader>g :Ags 
+" map <Leader>g :Ags
 
 " map <F8> to reindent file
 noremap <F8> mzgg=G`z
@@ -424,33 +450,29 @@ nmap <Leader>sj :SplitjoinJoin<cr>
 nmap <Leader>ss :SplitjoinSplit<cr>
 
 " syntastic ******************************************************************
+let g:deoplete#enable_at_startup = 1
+
+" let g:python_host_prog='/usr/bin/python'
+" let g:python3_host_prog='/usr/bin/python3'
+
+" let g:syntastic_python_checkers=['flake8']
+" let g:syntastic_python_flake8_exec = 'python3'
+" let g:syntastic_python_flake8_args = ['-m', 'flake8']
+
 let g:syntastic_auto_loc_list=1
 let g:syntastic_disabled_filetypes=['html']
 let g:syntastic_enable_signs=1
 let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
-" This makes things quite slow as each save runs through rubocop
-" let g:syntastic_ruby_checkers = ['rubocop']
-
-
 :map <Leader>c :Commentary<CR>
 
-" CommandT ********************************************************
-"" To compile:
-"" cd ~/cl/etc/vim/ruby/command-t
-"" ruby extconf.rb
-"" make
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*,venv/*
 map <Leader>f :FZF<CR>
 
 
-" fuzzyfinder ********************************************************
-" I'm using CommandT for main searching, but it doesn't do buffers, so I'm
-" using FuzzyFinder for that
 map <Leader>b :FufBuffer<CR>
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc'
-"
-"
+
 "set Directory for swap and backup files
 set dir=/tmp
