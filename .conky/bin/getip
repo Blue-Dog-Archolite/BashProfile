@@ -1,3 +1,0 @@
-#!/bin/bash
-
-nslookup -class=IN $1 | grep Address | grep -v 127.0 | cut -c 10-
