@@ -1,1 +1,0 @@
-# homestick-dot-files
