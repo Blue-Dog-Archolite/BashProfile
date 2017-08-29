@@ -62,3 +62,10 @@ parse_ruby_prompt(){
   fi
 }
 
+
+function cd {
+    builtin cd "$@"
+    if [ -f "Pipfile" ] ; then
+        vactivate
+    fi
+  }
