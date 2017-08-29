@@ -3,3 +3,4 @@ export RUBYPICK=_jruby_
 export EDITOR=/usr/bin/vi
 
 export GIT_MERGE_TOOL=true
+export FZF_DEFAULT_COMMAND='ag -g ""'

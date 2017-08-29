@@ -17,7 +17,7 @@ eval "$(thefuck --alias ffs)"
 eval "$(thefuck --alias fuck)"
 
 alias vi=/usr/bin/vi
-#alias vim=nvim
+alias vim=nvim
 
 alias vm='vagrant'
 
@@ -59,3 +59,10 @@ alias act_as="sudo sudo -u $@ bash -i"
 
 #Python
 alias vactivate="pipenv shell"
+
+# Angular CLI
+alias build_angular="ng build --output-path ../backend/static/ang/ --watch --output-hashing none"
+alias build_angular_production="ng build --prod --output-path ../backend/static/ang/ --watch --output-hashing none"
+
+# PGAdmin
+alias pgadmin4="python3 /home/thief/.local/share/virtualenvs/server-llK42MpH/lib/python3.5/site-packages/pgadmin4/pgAdmin4.py"
