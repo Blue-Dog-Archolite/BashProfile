@@ -466,6 +466,8 @@ let g:syntastic_check_on_open=1
 let g:syntastic_enable_signs=1
 
 :map <Leader>c :Commentary<CR>
+au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*,venv/*
 map <Leader>f :FZF<CR>
