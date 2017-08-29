@@ -1,0 +1,7 @@
+{
+  "hosts": {
+    "http://phabricator.myflighttrain.com/api/": {
+      "token": "cli-ivoqvb7ekdzzzxc6kjpwhtv43uf2"
+    }
+  }
+}

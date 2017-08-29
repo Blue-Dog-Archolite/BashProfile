@@ -1,0 +1,52 @@
+export PII_ENCRYPTION_KEY=01gVUsKc5SeUHBclWCdhExLgx8fk0E5/rMDb7S84/ftwoacJmkJl2OgVcFNIU32NdC4fFUL82ac7zTAX6b48KHM5Rrc+4NSE680FAWTX6kcGxGn9bTc8qQPY4edZ/ULsryi+rtfP0dJKG39vePCTWZx9y/jyBZYGIT7QLKPkKRs/KIcRd+PpSo2LpDBkSpENZEme5OOi6q/G7xdRWBYiC0zbFMZrUOI0sBeGrEmD2GMjPEuQ/IvCDUVn4oLLukGdo0sb1ymTtLQ9ZQFZMnEyl9ieqpYCJAlmg1LWjnIO7fFADYCz7GQW/eQ/eJjKioISac/KF64LjeVVF/9DdMccoQ==
+
+# Adding git flow feature shit to global path
+export PATH=$PATH:$HOME/tools/BashProfile/git_flow_utility
+export PATH=$PATH:$HOME/tools/terraform
+export PATH=$PATH:$HOME/tools/bash-knife-search
+
+# Usr Local Bin
+export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include:$HOME/.local/bin/:$HOME/.local/share/virtualenvs/.vim-uZrd_9Fm/bin/
+
+#Adding Silver Searcher
+export PATH=$PATH:$HOME/tools/BashProfile/Tools/the_silver_searcher
+export PATH=$PATH:$HOME/tools/BashProfile/Tools/gnome-open
+#export PATH=$PATH:$HOME/tools/phantomjs/bin
+
+#export PATH=/usr/local/mysql:/usr/local/mysql/bin:$PATH
+#export PATH=/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/X11/bin:$PATH
+
+#export PATH=$PATH:/opt/vagrant/bin
+#export PATH=$PATH:/usr/lib64/qt4/bin
+#export PATH=$PATH:$HOME/bin
+
+# heroku
+PATH=/usr/local/heroku/bin:$PATH
+
+
+# Phabricator
+export PATH=$PATH:$HOME/tools/arcanist/bin
+
+
+#Pg sql
+#export PGDATA=/usr/share/postgresql/data
+#export PATH=$PATH:$PGDATA
+
+#export SSL_CERT_DIR=/etc/pki/tls/certs
+#export SSL_CERT_FILE=/etc/pki/tls/cert.pem
+#export SSL_CERT_FILE=/etc/pki/ca-trust/extracted/openssl/ca-bundle.trust.crt
+#export SSL_CERT_DIR=/etc/pki/ca-trust/extracted/openssl/
+
+#export JAVA_HOME=/usr/lib/jvm/jre
+#export PATH=$PATH:$JAVA_HOME
+#export JRE_HOME=$JAVA_HOME/jre
+
+
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JAVA_HOME #/jre/lib/amd64:$JAVA_HOME/jre/lib/amd64/client
+
+export PATH="$HOME/.linuxbrew/bin:$PATH"
+export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH="$HOME/.rbenv/shims:$PATH"

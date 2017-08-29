@@ -1,0 +1,186 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+,m	/home/thief/.vimrc	/^nnoremap ,m :w <BAR> !lessc % > %:t:r.css<CR><space>$/;"	m	language:Vim
+;;	/home/thief/.vimrc	/^imap ;; <%= %>$/;"	m	language:Vim
+<Enter>	/home/thief/.vimrc	/^map <Enter> o<ESC>$/;"	m	language:Vim
+<F5>	/home/thief/.vimrc	/^map <F5> :!ruby %<CR>$/;"	m	language:Vim
+<F8>	/home/thief/.vimrc	/^inoremap <F8> <ESC>mzgg=G`z<Insert>$/;"	m	language:Vim
+<F8>	/home/thief/.vimrc	/^noremap <F8> mzgg=G`z$/;"	m	language:Vim
+<Leader>a	/home/thief/.vimrc	/^map <Leader>a :call RunAllSpecs()<CR>$/;"	m	language:Vim
+<Leader>b	/home/thief/.vimrc	/^map <Leader>b :FufBuffer<CR>$/;"	m	language:Vim
+<Leader>d	/home/thief/.vimrc	/^vmap <Leader>d "+d$/;"	m	language:Vim
+<Leader>f	/home/thief/.vimrc	/^map <Leader>f :FZF<CR>$/;"	m	language:Vim
+<Leader>g	/home/thief/.vimrc	/^map <Leader>g :Ag --vimgrep $/;"	m	language:Vim
+<Leader>l	/home/thief/.vimrc	/^map <Leader>l :call RunLastSpec()<CR>$/;"	m	language:Vim
+<Leader>nh	/home/thief/.vimrc	/^map <Leader>nh :nohlsearch<CR>$/;"	m	language:Vim
+<Leader>p	/home/thief/.vimrc	/^nmap <Leader>p "+p$/;"	m	language:Vim
+<Leader>P	/home/thief/.vimrc	/^nmap <Leader>P "+P$/;"	m	language:Vim
+<Leader>p	/home/thief/.vimrc	/^vmap <Leader>p "+p$/;"	m	language:Vim
+<Leader>P	/home/thief/.vimrc	/^vmap <Leader>P "+P$/;"	m	language:Vim
+<Leader>r	/home/thief/.vimrc	/^nnoremap <Leader>r :edit!<CR>$/;"	m	language:Vim
+<Leader>s	/home/thief/.vimrc	/^map <Leader>s :call RunNearestSpec()<CR>$/;"	m	language:Vim
+<Leader>sj	/home/thief/.vimrc	/^nmap <Leader>sj :SplitjoinJoin<cr>$/;"	m	language:Vim
+<Leader>ss	/home/thief/.vimrc	/^nmap <Leader>ss :SplitjoinSplit<cr>$/;"	m	language:Vim
+<Leader>t	/home/thief/.vimrc	/^map <Leader>t :call RunCurrentSpecFile()<CR>$/;"	m	language:Vim
+<Leader>w	/home/thief/.vimrc	/^nnoremap <Leader>w :w<CR>$/;"	m	language:Vim
+<Leader>y	/home/thief/.vimrc	/^vmap <Leader>y "+y$/;"	m	language:Vim
+<S-Enter>	/home/thief/.vimrc	/^map <S-Enter> O<ESC> " awesome, inserts new line without going into insert mode$/;"	m	language:Vim
+aa	/home/thief/.vimrc	/^imap aa @$/;"	m	language:Vim
+add	/home/thief/dev/mystic/server/readings/views.py	/^    def add(self, request):$/;"	m	language:Python	class:ContactProfilesViewSet
+admin	/home/thief/dev/mystic/server/readings/admin.py	/^from django.contrib import admin$/;"	i	language:Python
+all	/home/thief/dev/mystic/server/readings/views.py	/^    def all(self, request):$/;"	m	language:Python	class:ProfileViewSet
+api_view	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework.decorators import list_route, api_view, permission_classes$/;"	i	language:Python
+AssociateLocatorViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class AssociateLocatorViewSet(ListModelMixin, viewsets.GenericViewSet):$/;"	c	language:Python
+AuthTools	/home/thief/dev/mystic/server/readings/views.py	/^from readings.utilities.authorization_tools import AuthorizationTools as AuthTools$/;"	i	language:Python
+avatar	/home/thief/dev/mystic/server/readings/views.py	/^    def avatar(self, request):$/;"	m	language:Python	class:MoonViewSet
+badges	/home/thief/dev/mystic/server/readings/views.py	/^    def badges(self, request):$/;"	m	language:Python	class:ManualReadingViewSet
+Blackstar	/home/thief/dev/mystic/server/readings/views.py	/^from blackstar.service import Blackstar$/;"	i	language:Python
+by_guid	/home/thief/dev/mystic/server/readings/views.py	/^    def by_guid(self, request):$/;"	m	language:Python	class:ProfileViewSet
+Comparison	/home/thief/dev/mystic/server/readings/admin.py	/^from .models import Comparison, Transit, Profile, ThePatternUser$/;"	i	language:Python
+ComparisonViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class ComparisonViewSet(ListModelMixin, viewsets.GenericViewSet):$/;"	c	language:Python
+ContactProfilesViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class ContactProfilesViewSet(ThePatternResultSet, ListModelMixin, viewsets.GenericViewSet):$/;"	c	language:Python
+create	/home/thief/dev/mystic/server/readings/views.py	/^    def create(self, request):$/;"	m	language:Python	class:CuspViewSet
+create	/home/thief/dev/mystic/server/readings/views.py	/^    def create(self, request):$/;"	m	language:Python	class:TeaserViewSet
+create	/home/thief/dev/mystic/server/readings/views.py	/^    def create(self, request):$/;"	m	language:Python	class:WorldViewSet
+create	/home/thief/dev/mystic/server/readings/views.py	/^    def create(self, request, *args, **kwargs):$/;"	m	language:Python	class:SignUp
+CuspViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class CuspViewSet(viewsets.ViewSet):$/;"	c	language:Python
+date	/home/thief/dev/mystic/server/readings/views.py	/^from datetime import date, timedelta$/;"	i	language:Python
+delete	/home/thief/dev/mystic/server/readings/views.py	/^    def delete(self, request):$/;"	m	language:Python	class:MeViewSet
+g:airline#extensions#default#layout	/home/thief/.vimrc	/^  let g:airline#extensions#default#layout = [$/;"	v	language:Vim
+g:airline#extensions#default#section_truncate_width	/home/thief/.vimrc	/^let g:airline#extensions#default#section_truncate_width = {$/;"	v	language:Vim
+g:deoplete#enable_at_startup	/home/thief/.vimrc	/^let g:deoplete#enable_at_startup = 1$/;"	v	language:Vim
+g:fuzzy_ignore	/home/thief/.vimrc	/^let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc'$/;"	v	language:Vim
+g:rails_default_file	/home/thief/.vimrc	/^let g:rails_default_file='config\/database.yml'$/;"	v	language:Vim
+g:rspec_command	/home/thief/.vimrc	/^let g:rspec_command = "bundle exec rspec --drb {spec}"$/;"	v	language:Vim
+g:SuperTabDefaultCompletionType	/home/thief/.vimrc	/^let g:SuperTabDefaultCompletionType = "context"$/;"	v	language:Vim
+g:syntastic_auto_loc_list	/home/thief/.vimrc	/^let g:syntastic_auto_loc_list=1$/;"	v	language:Vim
+g:syntastic_check_on_open	/home/thief/.vimrc	/^let g:syntastic_check_on_open=1$/;"	v	language:Vim
+g:syntastic_disabled_filetypes	/home/thief/.vimrc	/^let g:syntastic_disabled_filetypes=['html']$/;"	v	language:Vim
+g:syntastic_enable_signs	/home/thief/.vimrc	/^let g:syntastic_enable_signs=1$/;"	v	language:Vim
+g:syntastic_enable_signs	/home/thief/.vimrc	/^let g:syntastic_enable_signs=1$/;"	v	language:Vim
+g:vroom_map_keys	/home/thief/.vimrc	/^let g:vroom_map_keys = 0$/;"	v	language:Vim
+g:wildfire_fuel_map	/home/thief/.vimrc	/^let g:wildfire_fuel_map = "<TAB>"$/;"	v	language:Vim
+g:wildfire_water_map	/home/thief/.vimrc	/^let g:wildfire_water_map = "<BS>"$/;"	v	language:Vim
+generics	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework import viewsets, generics$/;"	i	language:Python
+get	/home/thief/dev/mystic/server/readings/views.py	/^    def get(self, request):$/;"	m	language:Python	class:CuspViewSet
+get	/home/thief/dev/mystic/server/readings/views.py	/^    def get(self, request):$/;"	m	language:Python	class:WorldViewSet
+get_avatar	/home/thief/dev/mystic/server/readings/views.py	/^def get_avatar(file_data, profile: Profile):$/;"	f	language:Python
+get_object_or_404	/home/thief/dev/mystic/server/readings/views.py	/^from django.shortcuts import get_object_or_404$/;"	i	language:Python
+get_profile	/home/thief/dev/mystic/server/readings/views.py	/^def get_profile(request):$/;"	f	language:Python
+get_search	/home/thief/dev/mystic/server/readings/views.py	/^def get_search(request):$/;"	f	language:Python
+get_user_model	/home/thief/dev/mystic/server/readings/views.py	/^from django.contrib.auth import get_user_model$/;"	i	language:Python
+hh	/home/thief/.vimrc	/^imap hh =>$/;"	m	language:Vim
+Image	/home/thief/dev/mystic/server/readings/views.py	/^import PIL.Image as Image$/;"	i	language:Python
+JsonResponse	/home/thief/dev/mystic/server/readings/views.py	/^from django.http import JsonResponse$/;"	i	language:Python
+justjoined	/home/thief/dev/mystic/server/readings/views.py	/^    def justjoined(self, request):$/;"	m	language:Python	class:ContactProfilesViewSet
+kk	/home/thief/.vimrc	/^imap kk ->$/;"	m	language:Vim
+list	/home/thief/dev/mystic/server/readings/views.py	/^    def list(self, request):$/;"	m	language:Python	class:ContactProfilesViewSet
+list	/home/thief/dev/mystic/server/readings/views.py	/^    def list(self, request):$/;"	m	language:Python	class:MeViewSet
+list	/home/thief/dev/mystic/server/readings/views.py	/^    def list(self, request):$/;"	m	language:Python	class:ProfileViewSet
+list	/home/thief/dev/mystic/server/readings/views.py	/^    def list(self, request):$/;"	m	language:Python	class:VersionViewSet
+ListModelMixin	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework.mixins import ListModelMixin$/;"	i	language:Python
+list_route	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework.decorators import list_route, api_view, permission_classes$/;"	i	language:Python
+locate_associates	/home/thief/dev/mystic/server/readings/views.py	/^    def locate_associates(self, request):$/;"	m	language:Python	class:ContactProfilesViewSet
+ManualReadingViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class ManualReadingViewSet(ListModelMixin, viewsets.GenericViewSet):$/;"	c	language:Python
+manualToManual	/home/thief/dev/mystic/server/readings/views.py	/^    def manualToManual(self, request):$/;"	m	language:Python	class:ComparisonViewSet
+manualToProfile	/home/thief/dev/mystic/server/readings/views.py	/^    def manualToProfile(self, request):$/;"	m	language:Python	class:ComparisonViewSet
+mapleader	/home/thief/.vimrc	/^let mapleader = ","$/;"	v	language:Vim
+MediaUrlPresenter	/home/thief/dev/mystic/server/readings/views.py	/^        MediaUrlPresenter,    UserSerializer, SignUpSerializer$/;"	i	language:Python
+MeViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class MeViewSet(viewsets.ViewSet):$/;"	c	language:Python
+MoonViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class MoonViewSet(viewsets.ViewSet):$/;"	c	language:Python
+NERDTreeHijackNetrw	/home/thief/.vimrc	/^let NERDTreeHijackNetrw=1 " User instead of Netrw when doing an edit \/foobar$/;"	v	language:Vim
+NERDTreeMouseMode	/home/thief/.vimrc	/^let NERDTreeMouseMode=1 " Single click for everything$/;"	v	language:Vim
+NERDTreeShowHidden	/home/thief/.vimrc	/^let NERDTreeShowHidden=1$/;"	v	language:Vim
+nextTransitCluster	/home/thief/dev/mystic/server/readings/views.py	/^    def nextTransitCluster(self, request):$/;"	m	language:Python	class:ManualReadingViewSet
+nextTransitCluster	/home/thief/dev/mystic/server/readings/views.py	/^    def nextTransitCluster(self, request):$/;"	m	language:Python	class:ReadingsViewSet
+NoInsightFoundException	/home/thief/dev/mystic/server/readings/views.py	/^from blackstar.blackstar.exceptions import NoInsightFoundException$/;"	i	language:Python
+os	/home/thief/dev/mystic/server/readings/views.py	/^import os$/;"	i	language:Python
+PageNumberPagination	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework.pagination import PageNumberPagination$/;"	i	language:Python
+PatternComparison	/home/thief/dev/mystic/server/readings/views.py	/^from .pattern_comparison import PatternComparison$/;"	i	language:Python
+permissions	/home/thief/dev/mystic/server/readings/views.py	/^from the_pattern import permissions, settings$/;"	i	language:Python
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = (permissions.IsAuthenticatedOrCreate,)$/;"	v	language:Python	class:SignUp
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = (permissions.ResourceOwnerOnlyAssociatedPermissions,)$/;"	v	language:Python	class:AssociateLocatorViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [$/;"	v	language:Python	class:ComparisonViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [$/;"	v	language:Python	class:ManualReadingViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [$/;"	v	language:Python	class:MeViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [$/;"	v	language:Python	class:ReadingsViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [$/;"	v	language:Python	class:VersionViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [$/;"	v	language:Python	class:WorldViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [permissions.PostWithoutAuthenticatedUserOrReadOnlyAuthenticatedClient, ]$/;"	v	language:Python	class:UserViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [permissions.PostWithoutAuthenticatedUserOrReadOnlyAuthenticatedClient]$/;"	v	language:Python	class:ContactProfilesViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [permissions.PostWithoutAuthenticatedUserOrReadOnlyAuthenticatedClient]$/;"	v	language:Python	class:ProfileViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [permissions.ReadOnlyAuthenticatedClient]$/;"	v	language:Python	class:CuspViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [permissions.ReadOnlyAuthenticatedClient]$/;"	v	language:Python	class:MoonViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^    permission_classes = [permissions.ReadOnlyAuthenticatedClient]$/;"	v	language:Python	class:TeaserViewSet
+permission_classes	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework.decorators import list_route, api_view, permission_classes$/;"	i	language:Python
+personal	/home/thief/dev/mystic/server/readings/views.py	/^    def personal(self, request):$/;"	m	language:Python	class:ManualReadingViewSet
+personal	/home/thief/dev/mystic/server/readings/views.py	/^    def personal(self, request):$/;"	m	language:Python	class:ReadingsViewSet
+PIL	/home/thief/dev/mystic/server/readings/views.py	/^import PIL$/;"	i	language:Python
+PIL	/home/thief/dev/mystic/server/readings/views.py	/^import PIL.Image as Image$/;"	i	language:Python
+Profile	/home/thief/dev/mystic/server/readings/admin.py	/^from .models import Comparison, Transit, Profile, ThePatternUser$/;"	i	language:Python
+Profile	/home/thief/dev/mystic/server/readings/views.py	/^from .models import Profile$/;"	i	language:Python
+ProfileResultSerializer	/home/thief/dev/mystic/server/readings/views.py	/^        MediaUrlPresenter,    UserSerializer, SignUpSerializer$/;"	i	language:Python
+profiles	/home/thief/dev/mystic/server/readings/views.py	/^    def profiles(self, request):$/;"	m	language:Python	class:ComparisonViewSet
+ProfileSerializer	/home/thief/dev/mystic/server/readings/views.py	/^        MediaUrlPresenter,    UserSerializer, SignUpSerializer$/;"	i	language:Python
+profileToManual	/home/thief/dev/mystic/server/readings/views.py	/^    def profileToManual(self, request):$/;"	m	language:Python	class:ComparisonViewSet
+ProfileViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class ProfileViewSet(viewsets.ModelViewSet):$/;"	c	language:Python
+profile_manual_comparison	/home/thief/dev/mystic/server/readings/views.py	/^    def profile_manual_comparison(cls, request, flip: bool):$/;"	m	language:Python	class:ComparisonViewSet
+Q	/home/thief/.vimrc	/^nnoremap Q <nop>$/;"	m	language:Vim
+queryset	/home/thief/dev/mystic/server/readings/views.py	/^    queryset = Profile.objects.all()$/;"	v	language:Python	class:ContactProfilesViewSet
+queryset	/home/thief/dev/mystic/server/readings/views.py	/^    queryset = Profile.objects.filter(is_active=True).order_by('lastName').order_by('firstName')$/;"	v	language:Python	class:ProfileViewSet
+queryset	/home/thief/dev/mystic/server/readings/views.py	/^    queryset = ThePatternUser.objects.all()$/;"	v	language:Python	class:SignUp
+queryset	/home/thief/dev/mystic/server/readings/views.py	/^    queryset = Token.objects.all()$/;"	v	language:Python	class:AssociateLocatorViewSet
+queryset	/home/thief/dev/mystic/server/readings/views.py	/^    queryset = User.objects.all()$/;"	v	language:Python	class:UserViewSet
+ReadingsViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class ReadingsViewSet(viewsets.GenericViewSet):$/;"	c	language:Python
+RequestParameters	/home/thief/dev/mystic/server/readings/views.py	/^from utilities.request_parameters import RequestParameters$/;"	i	language:Python
+Response	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework.mixins import Response, status$/;"	i	language:Python
+RestRequest	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework.request import Request as RestRequest$/;"	i	language:Python
+retrieve	/home/thief/dev/mystic/server/readings/views.py	/^    def retrieve(self, request, pk=None):$/;"	m	language:Python	class:MeViewSet
+retrieve	/home/thief/dev/mystic/server/readings/views.py	/^    def retrieve(self, request, pk=None):$/;"	m	language:Python	class:ProfileViewSet
+retrieve	/home/thief/dev/mystic/server/readings/views.py	/^    def retrieve(self, request, pk=None):$/;"	m	language:Python	class:SignUp
+retrieve	/home/thief/dev/mystic/server/readings/views.py	/^    def retrieve(self, request, pk=None):$/;"	m	language:Python	class:VersionViewSet
+S3BotoStorage	/home/thief/dev/mystic/server/readings/views.py	/^from storages.backends.s3boto import S3BotoStorage$/;"	i	language:Python
+search	/home/thief/dev/mystic/server/readings/views.py	/^    def search(self, request):$/;"	m	language:Python	class:ContactProfilesViewSet
+search	/home/thief/dev/mystic/server/readings/views.py	/^from .search import search, search_friends$/;"	i	language:Python
+search_friends	/home/thief/dev/mystic/server/readings/views.py	/^from .search import search, search_friends$/;"	i	language:Python
+serializer_class	/home/thief/dev/mystic/server/readings/views.py	/^    serializer_class = ProfileResultSerializer$/;"	v	language:Python	class:AssociateLocatorViewSet
+serializer_class	/home/thief/dev/mystic/server/readings/views.py	/^    serializer_class = ProfileResultSerializer$/;"	v	language:Python	class:ContactProfilesViewSet
+serializer_class	/home/thief/dev/mystic/server/readings/views.py	/^    serializer_class = ProfileSerializer$/;"	v	language:Python	class:ProfileViewSet
+serializer_class	/home/thief/dev/mystic/server/readings/views.py	/^    serializer_class = SignUpSerializer$/;"	v	language:Python	class:SignUp
+serializer_class	/home/thief/dev/mystic/server/readings/views.py	/^    serializer_class = TeaserSerializer$/;"	v	language:Python	class:TeaserViewSet
+serializer_class	/home/thief/dev/mystic/server/readings/views.py	/^    serializer_class = UserSerializer$/;"	v	language:Python	class:UserViewSet
+settings	/home/thief/dev/mystic/server/readings/views.py	/^from the_pattern import permissions, settings$/;"	i	language:Python
+set_private	/home/thief/dev/mystic/server/readings/views.py	/^    def set_private(self, request):$/;"	m	language:Python	class:ProfileViewSet
+set_public	/home/thief/dev/mystic/server/readings/views.py	/^    def set_public(self, request):$/;"	m	language:Python	class:ProfileViewSet
+share_reading	/home/thief/dev/mystic/server/readings/views.py	/^def share_reading(request):$/;"	f	language:Python
+SignUp	/home/thief/dev/mystic/server/readings/views.py	/^class SignUp(generics.CreateAPIView):$/;"	c	language:Python
+SignUpSerializer	/home/thief/dev/mystic/server/readings/views.py	/^        MediaUrlPresenter,    UserSerializer, SignUpSerializer$/;"	i	language:Python
+status	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework.mixins import Response, status$/;"	i	language:Python
+Tabstyle_tabs	/home/thief/.vimrc	/^function! Tabstyle_tabs()$/;"	f	language:Vim
+TeaserSerializer	/home/thief/dev/mystic/server/readings/views.py	/^        MediaUrlPresenter,    UserSerializer, SignUpSerializer$/;"	i	language:Python
+TeaserViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class TeaserViewSet(viewsets.ViewSet):$/;"	c	language:Python
+ThePatternResultSet	/home/thief/dev/mystic/server/readings/views.py	/^class ThePatternResultSet:$/;"	c	language:Python
+ThePatternUser	/home/thief/dev/mystic/server/readings/admin.py	/^from .models import Comparison, Transit, Profile, ThePatternUser$/;"	i	language:Python
+ThePatternUser	/home/thief/dev/mystic/server/readings/views.py	/^from the_pattern.models import ThePatternUser$/;"	i	language:Python
+timedelta	/home/thief/dev/mystic/server/readings/views.py	/^from datetime import date, timedelta$/;"	i	language:Python
+Token	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework.authtoken.models import Token$/;"	i	language:Python
+tokens	/home/thief/dev/mystic/server/readings/views.py	/^    def tokens(self, request):$/;"	m	language:Python	class:AssociateLocatorViewSet
+Transit	/home/thief/dev/mystic/server/readings/admin.py	/^from .models import Comparison, Transit, Profile, ThePatternUser$/;"	i	language:Python
+transitCluster	/home/thief/dev/mystic/server/readings/views.py	/^    def transitCluster(self, request):$/;"	m	language:Python	class:ManualReadingViewSet
+transitCluster	/home/thief/dev/mystic/server/readings/views.py	/^    def transitCluster(self, request):$/;"	m	language:Python	class:ReadingsViewSet
+TrimWhiteSpace	/home/thief/.vimrc	/^function TrimWhiteSpace()$/;"	f	language:Vim
+update	/home/thief/dev/mystic/server/readings/views.py	/^    def update(self, request: RestRequest):$/;"	m	language:Python	class:MeViewSet
+update_avatar	/home/thief/dev/mystic/server/readings/views.py	/^def update_avatar(request):$/;"	f	language:Python
+update_profile_param	/home/thief/dev/mystic/server/readings/views.py	/^    def update_profile_param(cls, profile: Profile, param: str, value: str):$/;"	m	language:Python	class:MeViewSet
+update_profile_signs	/home/thief/dev/mystic/server/readings/views.py	/^    def update_profile_signs(cls, profile: Profile):$/;"	m	language:Python	class:MeViewSet
+User	/home/thief/dev/mystic/server/readings/views.py	/^User = get_user_model()$/;"	v	language:Python
+UserSerializer	/home/thief/dev/mystic/server/readings/views.py	/^        MediaUrlPresenter,    UserSerializer, SignUpSerializer$/;"	i	language:Python
+UserViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class UserViewSet(viewsets.ModelViewSet):$/;"	c	language:Python
+uuid4	/home/thief/dev/mystic/server/readings/views.py	/^from uuid import uuid4$/;"	i	language:Python
+VersionViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class VersionViewSet(viewsets.ViewSet):$/;"	c	language:Python
+viewsets	/home/thief/dev/mystic/server/readings/views.py	/^from rest_framework import viewsets, generics$/;"	i	language:Python
+WorldViewSet	/home/thief/dev/mystic/server/readings/views.py	/^class WorldViewSet(viewsets.ViewSet):$/;"	c	language:Python
+YearConstants	/home/thief/dev/mystic/server/readings/views.py	/^from blackstar.constants import YearConstants$/;"	i	language:Python
+zz	/home/thief/.vimrc	/^imap zz pdb.set_trace()$/;"	m	language:Vim
+_friendify	/home/thief/dev/mystic/server/readings/views.py	/^def _friendify(results, friends):$/;"	f	language:Python
+_just_joined_range	/home/thief/dev/mystic/server/readings/views.py	/^    def _just_joined_range(self):$/;"	m	language:Python	class:ContactProfilesViewSet
+_send_paginated_response	/home/thief/dev/mystic/server/readings/views.py	/^    def _send_paginated_response(cls, sender_self, result, queryset, request):$/;"	m	language:Python	class:ThePatternResultSet

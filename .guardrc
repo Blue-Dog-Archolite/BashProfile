@@ -1,0 +1,2 @@
+Guard.state.session.clearing(:on)
+# Guard.options[:debug]=true

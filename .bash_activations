@@ -1,0 +1,36 @@
+#!/bin/bash
+
+if [ -f ~/.rvm/scripts/rvm ]; then
+  . ~/.rvm/scripts/rvm
+fi
+
+if [ -f /etc/bash_completion ]; then
+  . /etc/bash_completion
+fi
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
+
+if command_exists brew ; then
+  source "$(brew --prefix nvm)/nvm.sh"
+
+  if [ -f $(brew --prefix)/etc/bash_completion ]; then
+    . $(brew --prefix)/etc/bash_completion
+  fi
+fi
+
+if [ -f ~/.nvm/nvm.sh ]; then
+  export NVM_DIR="$HOME/.nvm"
+  export NODE_ENV=development
+  . ~/.nvm/nvm.sh
+fi
+
+if command_exists grunt; then
+  eval "$(grunt --completion=bash)"
+fi
+
+if command_exists rbenv ; then
+  eval "$(rbenv init -)"
+fi
+

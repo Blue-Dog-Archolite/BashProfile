@@ -1,0 +1,17 @@
+[push]
+	default = current
+[user]
+	name = Blue-Dog-Archolite
+	email = blue.dog.archolite@gmail.com
+[core]
+	editor = nvim
+	excludesfile = /home/thief/.gitignore
+[merge]
+	tool = kdiff3
+[mergetool]
+	keepBackup = false
+  prompt = false
+[difftool]
+  prompt = false
+	tool = kdiff3
+
