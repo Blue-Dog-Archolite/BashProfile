@@ -6,15 +6,18 @@
 --type-add=ruby=.coffee
 --type-add=ruby=.pp
 
---type-add=DUMB=.orig
 --type-add=DUMB=.log
---type-add=DUMB=tags
+--type-add=DUMB=.orig
+--type-add=DUMB=.pyc
 --type-add=DUMB=.sql
 --type-add=DUMB=.svg
 --type-add=DUMB=.txt
+--type-add=DUMB=tags
+
 --ignore-file=is:tags
 --ignore-file=is:*.log
 --noDUMB
+
 --ignore-dir=public/assets
 --ignore-dir=src/
 --ignore-dir=test/reports
@@ -24,4 +27,3 @@
 --ignore-dir=db/
 --ignore-dir=log/
 --ignore-dir=tmp/
-
