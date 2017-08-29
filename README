@@ -1,22 +1,3 @@
 Bash And Install Scripts
 
-Listed below are the files that should be symlinked into your home directory.
-
-To get to your home directory, type `cd ~`
-
-To create a symlink use the `ln -s #{path to file}/#{file name} .`
-
- .ackrc               -> #{Install Location}/BashProfile/dot_files/.ackrc
- .bash_aliases        -> #{Install Location}/BashProfile/dot_files/.bash_aliases
- .bash_env            -> #{Install Location}/BashProfile/dot_files/.bash_env
- .bash_path           -> #{Install Location}/BashProfile/dot_files/.bash_path
- .bash_profile        -> #{Install Location}/BashProfile/dot_files/.bash_profile
- .bashrc              -> #{Install Location}/BashProfile/dot_files/.bashrc
- .git-completion.bash -> #{Install Location}/BashProfile/dot_files/.git-completion.bash
- .gitignore_global    -> #{Install Location}/BashProfile/dot_files/.gitignore_global
- .guardrc             -> #{Install Location}/BashProfile/dot_files/.guardrc
- .irbrc               -> #{Install Location}/BashProfile/dot_files/.irbrc
- .pryrc               -> #{Install Location}/BashProfile/dot_files/.pryrc
- .rubocop.yml         -> #{Install Location}/BashProfile/dot_files/.rubocop.yml
- .vim                 -> #{Install Location}/BashProfile/dot_files/.vim
- .vimrc               -> #{Install Location}/BashProfile/dot_files/.vimrc
+Migrating to Homestick
