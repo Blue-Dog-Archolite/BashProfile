@@ -6,12 +6,12 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=/home/thief/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 let s:dien_basepath = expand('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 
 " Required:
-if dein#load_state('/home/thief/.vim/dein')
-  call dein#begin('/home/thief/.vim/dein')
+if dein#load_state('$HOME/.vim/dein')
+  call dein#begin('$HOME/.vim/dein')
 
   " Let dein manage dein
   " Required:
