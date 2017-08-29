@@ -69,3 +69,13 @@ function cd {
         vactivate
     fi
   }
+
+  function vim {
+     path_to_executable=$(which nvim)
+
+    if [ -x $path_to_executable ] ; then
+      vim
+    else
+      nvim
+    fi
+  }
