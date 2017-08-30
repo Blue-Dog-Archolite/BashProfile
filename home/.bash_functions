@@ -74,8 +74,8 @@ function cd {
      path_to_executable=$(which nvim)
 
     if [ -x $path_to_executable ] ; then
-      nvim
+      nvim "$@"
     else
-      vim
+      vim "$@"
     fi
   }
