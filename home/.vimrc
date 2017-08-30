@@ -18,13 +18,14 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('/home/thief/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " Tools
-  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('AndrewRadev/splitjoin.vim')
   call dein#add('Raimondi/delimitMate')
+  call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('bling/vim-airline')
   call dein#add('gcmt/wildfire.vim')
   call dein#add('jlanzarotta/bufexplorer')
   call dein#add('kien/ctrlp.vim')
+  call dein#add('ludovicchabant/vim-gutentags')
   call dein#add('majutsushi/tagbar')
   call dein#add('rhysd/committia.vim')
   call dein#add('rking/ag.vim')
@@ -58,9 +59,9 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('w0ng/vim-hybrid')
 
   " FZF Vim
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-  call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
-  set rtp+=~/.fzf
+  " call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  " call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
+  " set rtp+=~/.fzf
 
   " Floobits
   " call dein#add('Floobits/floobits-neovim')
@@ -76,8 +77,7 @@ if dein#load_state('$HOME/.vim/dein')
   " call dein#add('Valloric/YouCompleteMe', {'build': 'python3 ./install.py'})
 
   " Rails / Ruby
-  " call dein#add('thoughtbot/vim-rspec')
-  " call dein#add('tpope/vim-rails')
+  call dein#add('thoughtbot/vim-rspec') " call dein#add('tpope/vim-rails')
   " call dein#add('tpope/vim-bundler')
   " call dein#add('vim-ruby/vim-ruby')
   " call dein#add('skalnik/vim-vroom')
