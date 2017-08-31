@@ -437,11 +437,14 @@ let g:wildfire_water_map = "<BS>"
 nmap <Leader>sj :SplitjoinJoin<cr>
 nmap <Leader>ss :SplitjoinSplit<cr>
 
-" syntastic ******************************************************************
+" Deoplete ******************************************************************
+set runtimepath+=~/.vim/dein/repos/github.com/Shougo/deoplete.nvim/
 let g:deoplete#enable_at_startup = 1
 let g:deoplete#enable_debug = 1
 let g:deoplete#enable_profile = 1
-call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
+
+" call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
+
 
 let g:python_host_prog='~/.local/share/virtualenvs/vim_virtual2-1MLs9aBQ/bin/python'
 let g:python3_host_prog='~/.local/share/virtualenvs/vim_virtual3-zt16oKX_/bin/python'
