@@ -443,8 +443,9 @@ let g:deoplete#enable_debug = 1
 let g:deoplete#enable_profile = 1
 call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
 
-let g:python_host_prog='/home/thief/.local/share/virtualenvs/.vim-uZrd_9Fm/bin/python'
-let g:python3_host_prog='/home/thief/.local/share/virtualenvs/.vim-uZrd_9Fm/bin/python3'
+let g:python_host_prog='~/.local/share/virtualenvs/vim_virtual2-1MLs9aBQ/bin/python'
+let g:python3_host_prog='~/.local/share/virtualenvs/vim_virtual3-zt16oKX_/bin/python'
+
 
 let g:syntastic_python_checkers=['python3', 'flake8']
 let g:syntastic_python_flake8_exec = 'python3'
