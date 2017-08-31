@@ -72,6 +72,7 @@ if dein#load_state('$HOME/.vim/dein')
   " Completion
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('davidhalter/jedi-vim', {'build': 'git submodule update --init', 'rtp': ''})
+  call dein#add('zchee/deoplete-jedi.nvim')
   call dein#add('ervandew/supertab')
   call dein#add('vim-syntastic/syntastic')
   " call dein#add('Valloric/YouCompleteMe', {'build': 'python3 ./install.py'})
