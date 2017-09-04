@@ -3,4 +3,14 @@ export RUBYPICK=_jruby_
 export EDITOR=/usr/bin/vi
 
 export GIT_MERGE_TOOL=true
-export FZF_DEFAULT_COMMAND='ag -g ""'
+# export FZF_DEFAULT_COMMAND='ag -g ""'
+# export FZF_DEFAULT_COMMAND='
+  # (git ls-tree -r --name-only HEAD ||
+   # find . -path "*/\.*" -prune -o -type f -print -o -type l -print |
+   #    sed s/^..//) 2> /dev/null'
+
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+export PII_ENCRYPTION_KEY=01gVUsKc5SeUHBclWCdhExLgx8fk0E5/rMDb7S84/ftwoacJmkJl2OgVcFNIU32NdC4fFUL82ac7zTAX6b48KHM5Rrc+4NSE680FAWTX6kcGxGn9bTc8qQPY4edZ/ULsryi+rtfP0dJKG39vePCTWZx9y/jyBZYGIT7QLKPkKRs/KIcRd+PpSo2LpDBkSpENZEme5OOi6q/G7xdRWBYiC0zbFMZrUOI0sBeGrEmD2GMjPEuQ/IvCDUVn4oLLukGdo0sb1ymTtLQ9ZQFZMnEyl9ieqpYCJAlmg1LWjnIO7fFADYCz7GQW/eQ/eJjKioISac/KF64LjeVVF/9DdMccoQ==
+

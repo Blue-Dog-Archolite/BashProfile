@@ -35,6 +35,7 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-endwise')
   call dein#add('tpope/vim-fugitive')
+  call dein#add('tommcdo/vim-fubitive')
   call dein#add('tpope/vim-haml')
   call dein#add('tpope/vim-surround')
   call dein#add('vim-scripts/Align')
@@ -59,9 +60,9 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('w0ng/vim-hybrid')
 
   " FZF Vim
-  " call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-  " call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
-  " set rtp+=~/.fzf
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
+  set rtp+=~/.fzf
 
   " Floobits
   " call dein#add('Floobits/floobits-neovim')
@@ -331,8 +332,6 @@ set incsearch  " Incremental search, search as you type
 set ignorecase " Ignore case when searching
 set smartcase " Ignore case when searching lowercase
 map <Leader>nh :nohlsearch<CR>
-" for different plugin
-map <Leader>g :Ag --vimgrep 
 
 " map <F8> to reindent file
 noremap <F8> mzgg=G`z
@@ -480,18 +479,32 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.ts'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 let g:closetag_shortcut = '>'
 
-
 " Map python files to run Flake8
 autocmd BufWritePost *.py call Flake8()
 
 :map <Leader>c :Commentary<CR>
 
+" " FZF Settings
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*,venv/*
 map <Leader>f :FZF<CR>
+" "
+" let g:fzf_action = {
+"   \ 'ctrl-t': 'tab split',
+"   \ 'ctrl-s': 'split',
+"   \ 'ctrl-v': 'vsplit',
+" \}
 
+map <Leader>t :Tags<CR>
+map <Leader>b :Buffers<CR>
 
-map <Leader>b :FufBuffer<CR>
+" for different AG Plugin, Working before ripgrep
+map <Leader>g :Ag --vimgrep 
+
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;*.*.pyc'
+" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+" map <Leader>g :Find 
+
+
 
 "set Directory for swap and backup files
 set dir=/tmp

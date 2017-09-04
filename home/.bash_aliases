@@ -3,3 +3,5 @@ alias find_deployment='echo $(dirname "$(find / -path "*/the_pattern/*" -type f 
 alias requirements='pip install -r requirements.txt'
 alias vactivate='pipenv shell'
 alias ll='ls -al'
+
+eval $(thefuck --alias)
