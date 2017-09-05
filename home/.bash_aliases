@@ -1,7 +1,6 @@
-alias find_deployment='cd $(dirname "$(find / -path "*/the_pattern/*" -type f -name settings.py | head -1)")/..'
-alias find_deployment='echo $(dirname "$(find / -path "*/the_pattern/*" -type f -name settings.py | head -1)")'
+alias find_deployment='cd /opt/python/current'
 alias requirements='pip install -r requirements.txt'
-alias vactivate='pipenv shell'
+alias source_env='sh /opt/python/current/env'
 alias ll='ls -al'
 
 eval $(thefuck --alias)

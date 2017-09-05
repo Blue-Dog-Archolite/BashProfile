@@ -62,20 +62,32 @@ parse_ruby_prompt(){
   fi
 }
 
+function vactivate {
+  path_to_executable=$(which pipenv)
+
+  if [ -x path_to_executable ] ; then
+    echo "Pipenv Activated"
+    pipenv shell
+  elif [ -d /opt/python/run/venv ]; then
+    echo "Virtualenv Activated"
+    source /opt/python/run/venv/bin/activate
+  fi
+}
+
 
 function cd {
-    builtin cd "$@"
-    if [ -f "Pipfile" ] ; then
-        vactivate
-    fi
-  }
+  builtin cd "$@"
+  if [ -f "Pipfile" ] ; then
+    vactivate
+  fi
+}
 
-  function vim {
-     path_to_executable=$(which nvim)
+function vim {
+  path_to_executable=$(which nvim)
 
-    if [ -x $path_to_executable ] ; then
-      nvim "$@"
-    else
-      vim "$@"
-    fi
-  }
+  if [ -x path_to_executable ] ; then
+    nvim "$@"
+  else
+    vim "$@"
+  fi
+}
