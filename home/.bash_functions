@@ -63,13 +63,9 @@ parse_ruby_prompt(){
 }
 
 function vactivate {
-  path_to_executable=$(which pipenv)
-
-  if [ -x path_to_executable ] ; then
-    echo "Pipenv Activated"
+  if [ -f "Pipfile" ] ; then
     pipenv shell
   elif [ -d /opt/python/run/venv ]; then
-    echo "Virtualenv Activated"
     source /opt/python/run/venv/bin/activate
   fi
 }
