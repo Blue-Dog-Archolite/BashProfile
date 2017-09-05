@@ -84,8 +84,8 @@ function vim {
   path_to_executable=$(which nvim)
 
   if [ -x path_to_executable ]; then
-    nvim "$@"
+    eval $($path_to_executable "$@")
   else
-    vim "$@"
+    /usr/bin/vim "$@"
   fi
 }
