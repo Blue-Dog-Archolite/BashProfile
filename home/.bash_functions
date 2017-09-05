@@ -73,9 +73,9 @@ function vactivate {
 
 function cd {
   builtin cd "$@"
-  if [ -f "Pipfile" ]; then
+  if [ -f "Pipfile" ] ; then
     vactivate
-  elif [ -f "requirements.txt" ]; then
+  elif [ -f "requirements.txt" ] ; then
     vactivate
   fi
 }
@@ -83,8 +83,8 @@ function cd {
 function vim {
   path_to_executable=$(which nvim)
 
-  if [ -x path_to_executable ]; then
-    eval $($path_to_executable "$@")
+  if [ -x "$path_to_executable" ] ; then
+    /usr/bin/nvim "$@"
   else
     /usr/bin/vim "$@"
   fi
