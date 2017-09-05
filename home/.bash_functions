@@ -63,7 +63,7 @@ parse_ruby_prompt(){
 }
 
 function vactivate {
-  if [ -f "Pipfile" ] ; then
+  if [ -f "Pipfile" ]; then
     pipenv shell
   elif [ -d /opt/python/run/venv ]; then
     source /opt/python/run/venv/bin/activate
@@ -73,7 +73,9 @@ function vactivate {
 
 function cd {
   builtin cd "$@"
-  if [ -f "Pipfile" ] ; then
+  if [ -f "Pipfile" ]; then
+    vactivate
+  elif [ -f "requirements.txt" ]; then
     vactivate
   fi
 }
@@ -81,7 +83,7 @@ function cd {
 function vim {
   path_to_executable=$(which nvim)
 
-  if [ -x path_to_executable ] ; then
+  if [ -x path_to_executable ]; then
     nvim "$@"
   else
     vim "$@"
