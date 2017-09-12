@@ -15,7 +15,7 @@ if dein#load_state('$HOME/.vim/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('/home/thief/.vim/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " Tools
   call dein#add('AndrewRadev/splitjoin.vim')
