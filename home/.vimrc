@@ -47,6 +47,8 @@ if dein#load_state('$HOME/.vim/dein')
   " Networking support and scripting plugin
   call dein#add('eiginn/netrw')
 
+  " Linters
+
   " markdown
   call dein#add('shime/vim-livedown')
 
@@ -68,18 +70,20 @@ if dein#load_state('$HOME/.vim/dein')
   " call dein#add('Floobits/floobits-neovim')
 
   " Linters
-  call dein#add('nvie/vim-flake8')
+  " call dein#add('nvie/vim-flake8')
+  call dein#add('w0rp/ale')
 
   " Completion
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('davidhalter/jedi-vim', {'build': 'git submodule update --init', 'rtp': ''})
   call dein#add('zchee/deoplete-jedi')
   call dein#add('ervandew/supertab')
-  call dein#add('vim-syntastic/syntastic')
+  " call dein#add('vim-syntastic/syntastic')
   " call dein#add('Valloric/YouCompleteMe', {'build': 'python3 ./install.py'})
 
   " Rails / Ruby
-  call dein#add('thoughtbot/vim-rspec') " call dein#add('tpope/vim-rails')
+  " call dein#add('thoughtbot/vim-rspec')
+  " call dein#add('tpope/vim-rails')
   " call dein#add('tpope/vim-bundler')
   " call dein#add('vim-ruby/vim-ruby')
   " call dein#add('skalnik/vim-vroom')
@@ -151,6 +155,10 @@ let g:airline#extensions#default#section_truncate_width = {
 "  let g:airline_section_y       (fileencoding, fileformat)
 "  let g:airline_section_z       (percentage, line number, column number)
 "  let g:airline_section_warning (syntastic, whitespace)
+"
+  " Set this. Airline will handle the rest.
+  " Enabled ALE  Airline
+  let g:airline#extensions#ale#enabled = 1
 "
 " #######################################################################
 
@@ -498,11 +506,11 @@ map <Leader>t :Tags<CR>
 map <Leader>b :Buffers<CR>
 
 " for different AG Plugin, Working before ripgrep
-map <Leader>g :Ag --vimgrep 
+map <Leader>g :Ag --vimgrep
 
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;*.*.pyc'
 " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-" map <Leader>g :Find 
+" map <Leader>g :Find
 
 
 
