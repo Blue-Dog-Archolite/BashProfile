@@ -47,8 +47,6 @@ if dein#load_state('$HOME/.vim/dein')
   " Networking support and scripting plugin
   call dein#add('eiginn/netrw')
 
-  " Linters
-
   " markdown
   call dein#add('shime/vim-livedown')
 
@@ -76,7 +74,7 @@ if dein#load_state('$HOME/.vim/dein')
   " Completion
   call dein#add('Shougo/deoplete.nvim')
   call dein#add('davidhalter/jedi-vim', {'build': 'git submodule update --init', 'rtp': ''})
-  call dein#add('zchee/deoplete-jedi')
+  " call dein#add('zchee/deoplete-jedi')
   call dein#add('ervandew/supertab')
   " call dein#add('vim-syntastic/syntastic')
   " call dein#add('Valloric/YouCompleteMe', {'build': 'python3 ./install.py'})
@@ -452,9 +450,11 @@ let g:deoplete#enable_profile = 1
 
 " call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
 
+let g:python_host_prog='/home/thief/.local/share/virtualenvs/vim_virtual2-1MLs9aBQ/bin/python2'
 
-let g:python_host_prog='~/.local/share/virtualenvs/vim_virtual2-1MLs9aBQ/bin/python'
-let g:python3_host_prog='~/.local/share/virtualenvs/vim_virtual3-zt16oKX_/bin/python'
+
+let g:python3_host_prog='/home/thief/.local/share/virtualenvs/vim_virtual3-zt16oKX_/bin/python3'
+let g:python3host_prog='/home/thief/.local/share/virtualenvs/vim_virtual3-zt16oKX_/bin/python3'
 
 
 let g:syntastic_python_checkers=['python3', 'flake8']
@@ -487,32 +487,20 @@ let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.ts'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 let g:closetag_shortcut = '>'
 
-" Map python files to run Flake8
-autocmd BufWritePost *.py call Flake8()
-
 :map <Leader>c :Commentary<CR>
 
 " " FZF Settings
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*,venv/*
 map <Leader>f :FZF<CR>
-" "
-" let g:fzf_action = {
-"   \ 'ctrl-t': 'tab split',
-"   \ 'ctrl-s': 'split',
-"   \ 'ctrl-v': 'vsplit',
-" \}
-
 map <Leader>t :Tags<CR>
 map <Leader>b :Buffers<CR>
 
 " for different AG Plugin, Working before ripgrep
-map <Leader>g :Ag --vimgrep
+map <Leader>g :Ag --vimgrep 
 
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;*.*.pyc'
 " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 " map <Leader>g :Find
-
-
 
 "set Directory for swap and backup files
 set dir=/tmp
