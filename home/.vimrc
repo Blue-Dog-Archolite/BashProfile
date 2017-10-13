@@ -23,12 +23,10 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('bling/vim-airline')
   call dein#add('gcmt/wildfire.vim')
-  call dein#add('jlanzarotta/bufexplorer')
   call dein#add('kien/ctrlp.vim')
   call dein#add('ludovicchabant/vim-gutentags')
   call dein#add('majutsushi/tagbar')
   call dein#add('rhysd/committia.vim')
-  call dein#add('rking/ag.vim')
   call dein#add('scrooloose/nerdtree')
   call dein#add('tomtom/tlib_vim')
   call dein#add('tpope/vim-abolish.git')
@@ -39,10 +37,21 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('tpope/vim-haml')
   call dein#add('tpope/vim-surround')
   call dein#add('vim-scripts/Align')
-  call dein#add('vim-scripts/FuzzyFinder')
   call dein#add('vim-scripts/L9')
   call dein#add('vim-scripts/matchit.zip')
   call dein#add('vim-scripts/taglist.vim')
+
+  " Searching
+  call dein#add('vim-scripts/FuzzyFinder')
+  call dein#add('rking/ag.vim')
+  call dein#add('jremmen/vim-ripgrep')
+  call dein#add('jlanzarotta/bufexplorer')
+  call dein#add('mileszs/ack.vim')
+
+  " FZF Vim
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
+  set rtp+=~/.fzf
 
   " Networking support and scripting plugin
   call dein#add('eiginn/netrw')
@@ -58,11 +67,6 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('twerth/ir_black')
   call dein#add('vim-scripts/Wombat')
   call dein#add('w0ng/vim-hybrid')
-
-  " FZF Vim
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-  call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
-  set rtp+=~/.fzf
 
   " Floobits
   " call dein#add('Floobits/floobits-neovim')
@@ -485,7 +489,7 @@ autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 " HTML Auto Close
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.ts'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-let g:closetag_shortcut = '>'
+" let g:closetag_shortcut = '>'
 
 :map <Leader>c :Commentary<CR>
 
@@ -495,8 +499,12 @@ map <Leader>f :FZF<CR>
 map <Leader>t :Tags<CR>
 map <Leader>b :Buffers<CR>
 
+let g:ackprg='rg --vimgrep --no-heading'
+
 " for different AG Plugin, Working before ripgrep
-map <Leader>g :Ag --vimgrep 
+" map <Leader>g :Ag --vimgrep 
+map <Leader>g :Ag 
+" map <Leader>g :Rg 
 
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;*.*.pyc'
 " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)

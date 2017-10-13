@@ -37,7 +37,7 @@ fi
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 bind -x '"\C-p": vim $(fzf);'
 
-if [ -f `which powerline-daemon` ]; then
+if command_exists powerline-daemon; then
   powerline-daemon -q
   POWERLINE_BASH_CONTINUATION=1
   POWERLINE_BASH_SELECT=1

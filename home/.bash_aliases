@@ -4,4 +4,7 @@ alias source_env='source /opt/python/current/env'
 alias source_venv='source /opt/python/run/venv/bin/activate'
 alias ll='ls -al'
 
-eval $(thefuck --alias)
+
+if command_exists thefuck ; then
+  eval $(thefuck --alias)
+fi
