@@ -64,7 +64,11 @@ parse_ruby_prompt(){
 
 function vactivate {
   if [ -f "Pipfile" ]; then
-    pipenv shell
+    path_to_executable=$(which pipenv)
+
+    if [ -x "$path_to_executable" ] ; then
+      pipenv shell
+    fi
   elif [ -d /opt/python/run/venv ]; then
     source /opt/python/run/venv/bin/activate
   fi
