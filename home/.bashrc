@@ -18,7 +18,6 @@ if [ -f ~/.bash_path ]; then
   . ~/.bash_path
 fi
 
-
 if [ -f ~/.bash_env ]; then
   . ~/.bash_env
 fi
@@ -26,5 +25,3 @@ fi
 if [ -f ~/.bash_activations ]; then
   . ~/.bash_activations
 fi
-
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash

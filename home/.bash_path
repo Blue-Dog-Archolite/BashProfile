@@ -1,14 +1,14 @@
 # Adding git flow feature shit to global path
-export PATH=$PATH:$HOME/tools/BashProfile/git_flow_utility
-export PATH=$PATH:$HOME/tools/terraform
-export PATH=$PATH:$HOME/tools/bash-knife-search
+# export PATH=$PATH:$HOME/tools/BashProfile/git_flow_utility
+# export PATH=$PATH:$HOME/tools/terraform
+# export PATH=$PATH:$HOME/tools/bash-knife-search
 
 # Usr Local Bin
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include:$HOME/.local/bin/:$HOME/.local/share/virtualenvs/.vim-uZrd_9Fm/bin/
 
 #Adding Silver Searcher
-export PATH=$PATH:$HOME/tools/BashProfile/Tools/the_silver_searcher
-export PATH=$PATH:$HOME/tools/BashProfile/Tools/gnome-open
+# export PATH=$PATH:$HOME/tools/BashProfile/Tools/the_silver_searcher
+# export PATH=$PATH:$HOME/tools/BashProfile/Tools/gnome-open
 #export PATH=$PATH:$HOME/tools/phantomjs/bin
 
 #export PATH=/usr/local/mysql:/usr/local/mysql/bin:$PATH
@@ -19,11 +19,11 @@ export PATH=$PATH:$HOME/tools/BashProfile/Tools/gnome-open
 #export PATH=$PATH:$HOME/bin
 
 # heroku
-PATH=/usr/local/heroku/bin:$PATH
+# PATH=/usr/local/heroku/bin:$PATH
 
 
 # Phabricator
-export PATH=$PATH:$HOME/tools/arcanist/bin
+# export PATH=$PATH:$HOME/tools/arcanist/bin
 
 
 #Pg sql
@@ -40,14 +40,14 @@ export PATH=$PATH:$HOME/tools/arcanist/bin
 #export JRE_HOME=$JAVA_HOME/jre
 
 
-export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JAVA_HOME #/jre/lib/amd64:$JAVA_HOME/jre/lib/amd64/client
+# export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$JAVA_HOME #/jre/lib/amd64:$JAVA_HOME/jre/lib/amd64/client
 
 # export PATH="$HOME/.linuxbrew/bin:$PATH"
 # export MANPATH="$HOME/.linuxbrew/share/man:$MANPATH"
 # export INFOPATH="$HOME/.linuxbrew/share/info:$INFOPATH"
 
-export PATH="$HOME/.rbenv/bin:$PATH"
-export PATH="$HOME/.rbenv/shims:$PATH"
-
+# export PATH="$HOME/.rbenv/bin:$PATH"
+# export PATH="$HOME/.rbenv/shims:$PATH"
 
 export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"

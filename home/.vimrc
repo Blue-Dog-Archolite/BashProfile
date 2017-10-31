@@ -69,7 +69,7 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('w0ng/vim-hybrid')
 
   " Floobits
-  " call dein#add('Floobits/floobits-neovim')
+  call dein#add('Floobits/floobits-neovim')
 
   " Linters
   " call dein#add('nvie/vim-flake8')
@@ -84,11 +84,11 @@ if dein#load_state('$HOME/.vim/dein')
   " call dein#add('Valloric/YouCompleteMe', {'build': 'python3 ./install.py'})
 
   " Rails / Ruby
-  " call dein#add('thoughtbot/vim-rspec')
-  " call dein#add('tpope/vim-rails')
-  " call dein#add('tpope/vim-bundler')
-  " call dein#add('vim-ruby/vim-ruby')
-  " call dein#add('skalnik/vim-vroom')
+  call dein#add('thoughtbot/vim-rspec')
+  call dein#add('tpope/vim-rails')
+  call dein#add('tpope/vim-bundler')
+  call dein#add('vim-ruby/vim-ruby')
+  call dein#add('skalnik/vim-vroom')
 
   " Chef
   " call dein#add('vadv/vim-chef')
