@@ -21,14 +21,15 @@ def load_blueprints
 end
 
 def load_factories
-  %w{vcr factory_girl faker ffaker}.each{|gem| safe_load_gem(gem) }
+  %w{vcr factory_girl_rails factory_bot_rails faker ffaker}.each{|gem| safe_load_gem(gem) }
 
-  FactoryGirl.reload
+  FactoryGirl.reload if defined?(FactoryGirl)
+  FactoryBot.reload if defined?(FactoryBot)
 end
 
-def set_school(id=5)
-  SchoolInstance.current_school = SchoolInstance.find(id)
-end
+#def set_school(id=5)
+#  SchoolInstance.current_school = SchoolInstance.find(id)
+#end
 
 #hack to clear the screen
 def cls
@@ -41,8 +42,8 @@ def associated_with(object_or_class)
   klass.reflect_on_all_associations.map(&:name).sort
 end
 
-#Editor configuration
-# Pry.config.editor = proc { |file, line| "nvim +#{line} #{file}" }
+##Editor configuration
+## Pry.config.editor = proc { |file, line| "nvim +#{line} #{file}" }
 
 # Customer exit message
 Pry.config.hooks.add_hook(:after_session, :say_bye) do
@@ -55,10 +56,11 @@ Pry.prompt = [proc { |obj, nest_level| "#{RUBY_VERSION} (#{obj}):#{nest_level} >
 # Name is pwd
 Pry.config.prompt_name = File.basename(Dir.pwd)
 
-# Force `reload!` to work correctly
-self.send(:include, Rails::ConsoleMethods)
+## Force `reload!` to work correctly
+## self.send(:include, Rails::ConsoleMethods)
 
 def reload!
   FactoryGirl.reload if defined?(FactoryGirl)
+  FactoryBot.reload if defined?(FactoryBot)
   super
 end

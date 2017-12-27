@@ -69,3 +69,14 @@ workbench.xmi
 
 **/.nvmrc
 .nvmrc
+.envrc
+.rbenv-gemsets
+.ruby-gems
+
+**/path/
+tags.temp
+tags.lock
+
+# rubocop
+base_rubocop.yml
+*.patch

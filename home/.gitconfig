@@ -5,7 +5,7 @@
 	email = blue.dog.archolite@gmail.com
 [core]
 	editor = nvim
-	excludesfile = /home/thief/.gitignore
+	excludesfile = /home/rmeyer/.gitignore_global
 [merge]
 	tool = kdiff3
 [mergetool]

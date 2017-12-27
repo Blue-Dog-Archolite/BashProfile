@@ -13,12 +13,7 @@ if defined?(::Bundler)
   end
 end
 
-case `RUBY_VERSION`
-when "2.0.0"
-  %w{pry pry-plus pry-rails irb/completion pp hirb map_by_method rubygems pry-byebug}.each{ |gem| safe_load_gem(gem) }
-else
-  %w{pry pry-plus pry-rails irb/completion pp hirb map_by_method rubygems}.each{ |gem| safe_load_gem(gem) }
-end
+%w{pry pry-plus pry-rails irb/completion pp hirb map_by_method rubygems pry-byebug}.each{ |gem| safe_load_gem(gem) }
 
 # Use Pry everywhere
 ::Pry.start if defined?(::Pry)

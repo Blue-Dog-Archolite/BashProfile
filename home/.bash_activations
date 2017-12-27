@@ -9,7 +9,6 @@ if [ -f ~/.rvm/bin ]; then
   export PATH="$PATH:$HOME/.rvm/bin"
 fi
 
-
 # FZF include
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -45,17 +44,22 @@ fi
 
 if command_exists rbenv ; then
   eval "$(rbenv init -)"
+  print "FUCKING ASS"
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-bind -x '"\C-p": vim $(fzf);'
 
-if command_exists powerline-daemon; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /usr/share/powerline/bash/powerline.sh
+function _update_ps1() {
+    PS1="$(powerline-shell $?)"
+}
+
+PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+
+if [ -f ~/.homesick/ ]; then
+  source "$HOME/.homesick/repos/homeshick/homeshick.sh"
+  source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 fi
 
-source "$HOME/.homesick/repos/homeshick/homeshick.sh"
-source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
+export PATH="$HOME/.nodenv/bin:$PATH"
+
+eval "$(nodenv init -)"

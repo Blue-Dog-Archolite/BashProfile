@@ -40,6 +40,7 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('vim-scripts/L9')
   call dein#add('vim-scripts/matchit.zip')
   call dein#add('vim-scripts/taglist.vim')
+  call dein#add('janko-m/vim-test')
 
   " Searching
   call dein#add('vim-scripts/FuzzyFinder')
@@ -47,9 +48,12 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('jremmen/vim-ripgrep')
   call dein#add('jlanzarotta/bufexplorer')
   call dein#add('mileszs/ack.vim')
+  call dein#add('skwp/greplace.vim')
 
   " FZF Vim
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  " call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  " call dein#add('junegunn/fzf.vim', { 'dir': '~/.fzf', 'do': './install --all' })
+  call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
   call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
   set rtp+=~/.fzf
 
@@ -174,6 +178,11 @@ set smarttab
 set expandtab
 set wrap
 
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 " Visual
 set showmatch  " Show matching brackets.
 set mat=5  " Bracket blinking.
@@ -225,6 +234,7 @@ set noerrorbells  " No noise.
 let mapleader = ","
 "Use jj as escape .. Eaiser?
 imap jj <ESC>
+imap jk <Esc>
 
 au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
 au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
@@ -360,7 +370,7 @@ else
  " colorscheme kalisi
  " colorscheme wombat
  " colorscheme ir_black
-  colorscheme hybrid
+ colorscheme hybrid
 end
 
 
@@ -454,11 +464,11 @@ let g:deoplete#enable_profile = 1
 
 " call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
 
-let g:python_host_prog='/home/thief/.local/share/virtualenvs/vim_virtual2-1MLs9aBQ/bin/python2'
+let g:python_host_prog='~/.local/share/virtualenvs/vim_virtual2-_dlr6YxM/bin/python2'
 
 
-let g:python3_host_prog='/home/thief/.local/share/virtualenvs/vim_virtual3-zt16oKX_/bin/python3'
-let g:python3host_prog='/home/thief/.local/share/virtualenvs/vim_virtual3-zt16oKX_/bin/python3'
+let g:python3_host_prog='~/.local/share/virtualenvs/vim_virtual3-Yt_UBO1Y/bin/python3'
+let g:python3host_prog='~/.local/share/virtualenvs/vim_virtual3-Yt_UBO1Y/bin/python3'
 
 
 let g:syntastic_python_checkers=['python3', 'flake8']
@@ -479,6 +489,9 @@ let g:flake8_warning_marker='WW'   " set warning marker to 'WW
 
 " Supertab go down not up
 let g:SuperTabDefaultCompletionType = "<c-n>"
+" let g:SuperTabMappingForward = '<c-space>'
+" let g:SuperTabMappingBackward = '<s-c-space>'
+
 
 " TypeScript
 let g:nvim_typescript#javascript_support = 1
@@ -493,22 +506,23 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 
 :map <Leader>c :Commentary<CR>
 
+command! Buffers call fzf#run(fzf#wrap(
+    \ {'source': map(range(1, bufnr('$')), 'bufname(v:val)')}))
+
 " " FZF Settings
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*,venv/*
 map <Leader>f :FZF<CR>
 map <Leader>t :Tags<CR>
 map <Leader>b :Buffers<CR>
 
-let g:ackprg='rg --vimgrep --no-heading'
 
-" for different AG Plugin, Working before ripgrep
-" map <Leader>g :Ag --vimgrep 
-map <Leader>g :Ag 
-" map <Leader>g :Rg 
+" ripgrep
+let g:ackprg='rg --vimgrep --no-heading'
+map <Leader>g :Rg 
 
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;*.*.pyc'
-" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-" map <Leader>g :Find
+" command! -bang -nargs=* Find call FZF#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+" map <Leader>g :Find 
 
 "set Directory for swap and backup files
 set dir=/tmp
