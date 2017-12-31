@@ -4,11 +4,6 @@ if [ -f ~/.rvm/scripts/rvm ]; then
   . ~/.rvm/scripts/rvm
 fi
 
-if [ -f ~/.rvm/bin ]; then
-  # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-  export PATH="$PATH:$HOME/.rvm/bin"
-fi
-
 # FZF include
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
@@ -38,28 +33,45 @@ if [ -f ~/.nvm/nvm.sh ]; then
   [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 fi
 
-if command_exists grunt; then
+if command_exists grunt ; then
   eval "$(grunt --completion=bash)"
 fi
 
 if command_exists rbenv ; then
   eval "$(rbenv init -)"
-  print "FUCKING ASS"
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-function _update_ps1() {
-    PS1="$(powerline-shell $?)"
-}
+if command_exists powerline-shell ; then 
+  function _update_ps1() {
+      PS1="$(powerline-shell $?)"
+  }
 
-PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+  if [ "$TERM" != "linux" ]; then
+      PROMPT_COMMAND="_update_ps1; $PROMPT_COMMAND"
+  fi
+fi
 
-if [ -f ~/.homesick/ ]; then
+if [ -f "$HOME/.homesick/" ] ; then
   source "$HOME/.homesick/repos/homeshick/homeshick.sh"
   source "$HOME/.homesick/repos/homeshick/completions/homeshick-completion.bash"
 fi
 
-export PATH="$HOME/.nodenv/bin:$PATH"
+if [ -d "$HOME/.nodenv/" ] ; then
+  export PATH="$HOME/.nodenv/bin:$PATH"
+  eval "$(nodenv init -)"
+fi
 
-eval "$(nodenv init -)"
+if command_exists direnv ; then
+  eval "$(direnv hook bash)"
+end
+
+if [ -d "$HOME/.rvm"]  ; then
+  [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+fi
+
+if [ -d "$HOME/.rvm" ] ; then
+  # Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+  export PATH="$PATH:$HOME/.rvm/bin"
+fi
