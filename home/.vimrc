@@ -6,16 +6,28 @@ if &compatible
 endif
 
 " Required:
-set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
-let s:dien_basepath = expand('~/.vim/dein/repos/github.com/Shougo/dein.vim')
+" set runtimepath+=/home/rmeyer/.vim/dein/repos/github.com/Shougo/dein.vim
+" let s:dien_basepath = expand('/home/rmeyer/.vim/dein/repos/github.com/Shougo/dein.vim')
 
 " Required:
-if dein#load_state('$HOME/.vim/dein')
-  call dein#begin('$HOME/.vim/dein')
+" if dein#load_state('~/.vim/dein')
+"  call dein#begin('~/.vim/dein')
 
   " Let dein manage dein
   " Required:
-  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
+"  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
+
+
+" Required:
+set runtimepath+=$HOME/.vim/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('$HOME/rmeyer/.vim')
+  call dein#begin('$HOME/rmeyer/.vim')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('$HOME/.vim/repos/github.com/Shougo/dein.vim')
 
   " Tools
   call dein#add('AndrewRadev/splitjoin.vim')
@@ -51,10 +63,12 @@ if dein#load_state('$HOME/.vim/dein')
   call dein#add('skwp/greplace.vim')
 
   " FZF Vim
-  " call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
   " call dein#add('junegunn/fzf.vim', { 'dir': '~/.fzf', 'do': './install --all' })
+  " call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
+  " call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
   call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
-  call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
+
   set rtp+=~/.fzf
 
   " Networking support and scripting plugin
@@ -526,3 +540,4 @@ let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;
 
 "set Directory for swap and backup files
 set dir=/tmp
+
