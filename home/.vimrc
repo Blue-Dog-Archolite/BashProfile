@@ -22,8 +22,8 @@ endif
 set runtimepath+=$HOME/.vim/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('$HOME/rmeyer/.vim')
-  call dein#begin('$HOME/rmeyer/.vim')
+if dein#load_state('$HOME/.vim')
+  call dein#begin('$HOME/.vim')
 
   " Let dein manage dein
   " Required:
@@ -63,10 +63,6 @@ if dein#load_state('$HOME/rmeyer/.vim')
   call dein#add('skwp/greplace.vim')
 
   " FZF Vim
-  call dein#add('junegunn/fzf.vim', { 'depends': 'fzf' })
-  " call dein#add('junegunn/fzf.vim', { 'dir': '~/.fzf', 'do': './install --all' })
-  " call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
-  " call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
   call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
 
   set rtp+=~/.fzf

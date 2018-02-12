@@ -22,8 +22,6 @@ if [ -f ~/.bash_env ]; then
   . ~/.bash_env
 fi
 
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
-
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
