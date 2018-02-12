@@ -1,0 +1,11 @@
+Host git-as-bd
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/personal_rsa.pub
+  IdentitiesOnly yes
+
+Host git-as-pd
+  HostName github.com
+  User git
+  IdentityFile ~/.ssh/id_rsa.pub
+  IdentitiesOnly yes
