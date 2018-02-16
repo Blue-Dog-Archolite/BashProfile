@@ -6,8 +6,12 @@ fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "$HOME/.vim/dein/repos/github.com/junegunn/fzf/shell/completion.bash" 2> /dev/null
+if [[ ! "$PATH" == $HOME/.vim/dein/repos/github.com/junegunn/fzf/shell* ]]; then
+  [[ $- == *i* ]] && source "$HOME/.vim/dein/repos/github.com/junegunn/fzf/shell/completion.bash" 2> /dev/null
+fi
 
 # Key bindings
 # ------------
-source "$HOME/.vim/dein/repos/github.com/junegunn/fzf/shell/key-bindings.bash"
+if [[ ! "$PATH" == $HOME/.vim/dein/repos/github.com/junegunn/fzf/sell* ]]; then
+  source "$HOME/.vim/dein/repos/github.com/junegunn/fzf/shell/key-bindings.bash"
+fi

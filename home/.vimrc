@@ -5,29 +5,17 @@ if &compatible
   set nocompatible               " Be iMproved
 endif
 
+" Let dein manage dein
 " Required:
-" set runtimepath+=/home/rmeyer/.vim/dein/repos/github.com/Shougo/dein.vim
-" let s:dien_basepath = expand('/home/rmeyer/.vim/dein/repos/github.com/Shougo/dein.vim')
+set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-" if dein#load_state('~/.vim/dein')
-"  call dein#begin('~/.vim/dein')
+if dein#load_state('~/.vim/dein/')
+  call dein#begin('~/.vim/dein/')
 
   " Let dein manage dein
   " Required:
-"  call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
-
-
-" Required:
-set runtimepath+=$HOME/.vim/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('$HOME/.vim')
-  call dein#begin('$HOME/.vim')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('$HOME/.vim/repos/github.com/Shougo/dein.vim')
+  call dein#add($HOME.'/.vim/dein/repos/github.com/Shougo/dein.vim')
 
   " Tools
   call dein#add('AndrewRadev/splitjoin.vim')
@@ -45,7 +33,7 @@ if dein#load_state('$HOME/.vim')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-endwise')
   call dein#add('tpope/vim-fugitive')
-  call dein#add('tommcdo/vim-fubitive')
+  " call dein#add('tommcdo/vim-fubitive')
   call dein#add('tpope/vim-haml')
   call dein#add('tpope/vim-surround')
   call dein#add('vim-scripts/Align')
@@ -73,7 +61,7 @@ if dein#load_state('$HOME/.vim')
   " markdown
   call dein#add('shime/vim-livedown')
 
-  " " Color Scheme
+  " Color Scheme
   call dein#add('altercation/solarized')
   call dein#add('chriskempson/base16-vim')
   call dein#add('chriskempson/tomorrow-theme')
@@ -82,20 +70,17 @@ if dein#load_state('$HOME/.vim')
   call dein#add('vim-scripts/Wombat')
   call dein#add('w0ng/vim-hybrid')
 
-  " Floobits
-  call dein#add('Floobits/floobits-neovim')
+"   " Floobits
+"   call dein#add('Floobits/floobits-neovim')
 
   " Linters
-  " call dein#add('nvie/vim-flake8')
   call dein#add('w0rp/ale')
 
   " Completion
   call dein#add('Shougo/deoplete.nvim')
-  call dein#add('davidhalter/jedi-vim', {'build': 'git submodule update --init', 'rtp': ''})
-  " call dein#add('zchee/deoplete-jedi')
+  " call dein#add('davidhalter/jedi-vim', {'build': 'git submodule update --init', 'rtp': ''})
+  call dein#add('zchee/deoplete-jedi')
   call dein#add('ervandew/supertab')
-  " call dein#add('vim-syntastic/syntastic')
-  " call dein#add('Valloric/YouCompleteMe', {'build': 'python3 ./install.py'})
 
   " Rails / Ruby
   call dein#add('thoughtbot/vim-rspec')
@@ -104,8 +89,8 @@ if dein#load_state('$HOME/.vim')
   call dein#add('vim-ruby/vim-ruby')
   call dein#add('skalnik/vim-vroom')
 
-  " Chef
-  " call dein#add('vadv/vim-chef')
+"   " Chef
+"   " call dein#add('vadv/vim-chef')
 
   " Javascript
   call dein#add('jelera/vim-javascript-syntax')
@@ -246,8 +231,8 @@ let mapleader = ","
 imap jj <ESC>
 imap jk <Esc>
 
-au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
-au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
+" au VimEnter * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Escape'
+" au VimLeave * !xmodmap -e 'clear Lock' -e 'keycode 0x42 = Caps_Lock'
 
 nnoremap <Leader>w :w<CR>
 nnoremap <Leader>r :edit!<CR>
@@ -305,7 +290,7 @@ autocmd Filetype python setlocal ts=4 sw=4 sts=0 expandtab
 "***********************************************
 map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
 map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-map <Leader>rt :!ctags -R --extra=+f --exclude=@$HOME/.ctags_ignore .<CR><CR>
+map <Leader>rt :!ctags -R --extra=+f --exclude=@/home/rmeyer/.ctags_ignore .<CR><CR>
 
 " --exclude=.git --exclude=public/assets --exclude=log -R * --exclude=build --exclude=node_modules<CR><CR>
 
@@ -474,11 +459,11 @@ let g:deoplete#enable_profile = 1
 
 " call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
 
-let g:python_host_prog='~/.local/share/virtualenvs/vim_virtual2-_dlr6YxM/bin/python2'
+let g:python_host_prog=$HOME.'/.local/share/virtualenvs/vim2/bin/python2'
 
 
-let g:python3_host_prog='~/.local/share/virtualenvs/vim_virtual3-Yt_UBO1Y/bin/python3'
-let g:python3host_prog='~/.local/share/virtualenvs/vim_virtual3-Yt_UBO1Y/bin/python3'
+let g:python3_host_prog=$HOME.'/.local/share/virtualenvs/vim3/bin/python3'
+let g:python3host_prog=$HOME.'/.local/share/virtualenvs/vim3/bin/python3'
 
 
 let g:syntastic_python_checkers=['python3', 'flake8']
@@ -536,4 +521,3 @@ let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;
 
 "set Directory for swap and backup files
 set dir=/tmp
-
