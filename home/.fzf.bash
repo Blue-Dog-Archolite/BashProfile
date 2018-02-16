@@ -1,13 +1,13 @@
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == */home/rmeyer/.vim/repos/github.com/junegunn/fzf/bin* ]]; then
-  export PATH="$PATH:/home/rmeyer/.vim/repos/github.com/junegunn/fzf/bin"
+if [[ ! "$PATH" == $HOME/.vim/dein/repos/github.com/junegunn/fzf/bin* ]]; then
+  export PATH="$PATH:$HOME/.vim/dein/repos/github.com/junegunn/fzf/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "/home/rmeyer/.vim/repos/github.com/junegunn/fzf/shell/completion.bash" 2> /dev/null
+[[ $- == *i* ]] && source "$HOME/.vim/dein/repos/github.com/junegunn/fzf/shell/completion.bash" 2> /dev/null
 
 # Key bindings
 # ------------
-source "/home/rmeyer/.vim/repos/github.com/junegunn/fzf/shell/key-bindings.bash"
+source "$HOME/.vim/dein/repos/github.com/junegunn/fzf/shell/key-bindings.bash"

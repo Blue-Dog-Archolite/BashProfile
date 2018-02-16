@@ -65,3 +65,11 @@ if command_exists direnv ; then
   eval "$(direnv hook bash)"
 fi
 
+if [ -f '/home/linuxbrew/.linuxbrew/etc/profile.d/z.sh' ] ; then
+  source /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
+fi
+
+
+if command_exists thefuck ; then
+  eval $(thefuck --alias)
+fi
