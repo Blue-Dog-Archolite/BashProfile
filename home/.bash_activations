@@ -5,7 +5,9 @@ if [ -f ~/.rvm/scripts/rvm ]; then
 fi
 
 # FZF include
-[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+if command_exists fzf ; then
+  [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+fi
 
 if [ -f /etc/bash_completion ]; then
   . /etc/bash_completion
@@ -67,9 +69,4 @@ fi
 
 if [ -f '/home/linuxbrew/.linuxbrew/etc/profile.d/z.sh' ] ; then
   source /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
-fi
-
-
-if command_exists thefuck ; then
-  eval $(thefuck --alias)
 fi

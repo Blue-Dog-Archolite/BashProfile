@@ -10,7 +10,7 @@ if command_exists thefuck ; then
 fi
 
 
-alias pgadmin="python3 /home/rmeyer/.local/share/virtualenvs/server-kE6b1NDp/lib/python3.6/site-packages/pgadmin4/pgAdmin4.py &"
+alias pgadmin="python3 $HOME/.local/share/virtualenvs/server-kE6b1NDp/lib/python3.6/site-packages/pgadmin4/pgAdmin4.py &"
 
 alias tl="bundle exec testrbl -I test"
 alias br='bundle exec rake'
