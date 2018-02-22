@@ -7,15 +7,15 @@ endif
 
 " Let dein manage dein
 " Required:
-set runtimepath+=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath+=$HOME/tools/dein/repos/github.com/Shougo/dein.vim
 
 " Required:
-if dein#load_state('~/.vim/dein/')
-  call dein#begin('~/.vim/dein/')
+if dein#load_state($HOME.'/tools/dein')
+  call dein#begin($HOME.'/tools/dein/')
 
   " Let dein manage dein
   " Required:
-  call dein#add($HOME.'/.vim/dein/repos/github.com/Shougo/dein.vim')
+  call dein#add($HOME.'/tools/dein/repos/github.com/Shougo/dein.vim')
 
   " Tools
   call dein#add('AndrewRadev/splitjoin.vim')
@@ -51,7 +51,9 @@ if dein#load_state('~/.vim/dein/')
   call dein#add('skwp/greplace.vim')
 
   " FZF Vim
-  call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
+  " call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
+  call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
+  call dein#add('junegunn/fzf.vim', { 'depends': 'junegunn/fzf' })
 
   set rtp+=~/.fzf
 
@@ -114,6 +116,7 @@ syntax enable
 " If you want to install not installed plugins on startup.
 if dein#check_install()
   call dein#install()
+  call dein#update()
 endif
 "End dein Scripts-------------------------
 

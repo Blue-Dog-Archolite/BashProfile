@@ -6,6 +6,7 @@
     "set_term_title",
     "virtual_env",
     "rbenv",
+    "ruby_version",
     "git",
     "newline",
     "username",
