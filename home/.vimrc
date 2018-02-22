@@ -52,10 +52,10 @@ if dein#load_state($HOME.'/tools/dein')
 
   " FZF Vim
   " call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
-  call dein#add('junegunn/fzf', { 'build': './install', 'rtp': '' })
-  call dein#add('junegunn/fzf.vim', { 'depends': 'junegunn/fzf' })
+  call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
+  call dein#add('junegunn/fzf.vim')
 
-  set rtp+=~/.fzf
+  set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
 
   " Networking support and scripting plugin
   call dein#add('eiginn/netrw')
@@ -464,7 +464,6 @@ let g:deoplete#enable_profile = 1
 
 let g:python_host_prog=$HOME.'/.local/share/virtualenvs/vim2/bin/python2'
 
-
 let g:python3_host_prog=$HOME.'/.local/share/virtualenvs/vim3/bin/python3'
 let g:python3host_prog=$HOME.'/.local/share/virtualenvs/vim3/bin/python3'
 
@@ -487,8 +486,6 @@ let g:flake8_warning_marker='WW'   " set warning marker to 'WW
 
 " Supertab go down not up
 let g:SuperTabDefaultCompletionType = "<c-n>"
-" let g:SuperTabMappingForward = '<c-space>'
-" let g:SuperTabMappingBackward = '<s-c-space>'
 
 
 " TypeScript
@@ -500,7 +497,6 @@ autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
 " HTML Auto Close
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.ts'
 let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
-" let g:closetag_shortcut = '>'
 
 :map <Leader>c :Commentary<CR>
 
@@ -515,12 +511,14 @@ map <Leader>b :Buffers<CR>
 
 
 " ripgrep
+set grepprg=rg\ --vimgrep
 let g:ackprg='rg --vimgrep --no-heading'
 map <Leader>g :Rg 
 
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;*.*.pyc'
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
 " command! -bang -nargs=* Find call FZF#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
-" map <Leader>g :Find 
+map <Leader>g :Find 
 
 "set Directory for swap and backup files
 set dir=/tmp
