@@ -1,12 +1,13 @@
 [push]
 	default = current
 [user]
-	name = Blue-Dog-Archolite
+	name = Robert R. Meyer
 	email = blue.dog.archolite@gmail.com
 [core]
 	editor = nvim
 	excludesfile = /home/rmeyer/.gitignore_global
 [merge]
+	tool = kdiff3
 	tool = kdiff3
 [mergetool]
 	keepBackup = false

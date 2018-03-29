@@ -80,3 +80,7 @@ tags.lock
 # rubocop
 base_rubocop.yml
 *.patch
+rubocop.yml
+
+/new_crypted/
+/ignore*/

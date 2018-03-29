@@ -51,7 +51,6 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('skwp/greplace.vim')
 
   " FZF Vim
-  " call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
   call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
   call dein#add('junegunn/fzf.vim')
 
@@ -80,7 +79,6 @@ if dein#load_state($HOME.'/tools/dein')
 
   " Completion
   call dein#add('Shougo/deoplete.nvim')
-  " call dein#add('davidhalter/jedi-vim', {'build': 'git submodule update --init', 'rtp': ''})
   call dein#add('zchee/deoplete-jedi')
   call dein#add('ervandew/supertab')
 
@@ -101,6 +99,9 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('HerringtonDarkholme/yats.vim')
   call dein#add('Quramy/vim-js-pretty-template')
   call dein#add('Quramy/tsuquyomi') " , { 'build': './make', 'rtp': '' })
+
+  " Help to remember
+  " call dein#add('urbainvaes/vim-remembrall')
 
 
   " Required
@@ -516,7 +517,7 @@ let g:ackprg='rg --vimgrep --no-heading'
 map <Leader>g :Rg 
 
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;*.*.pyc'
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" --glob "!.git/" '.shellescape(<q-args>), 1, <bang>0)
 " command! -bang -nargs=* Find call FZF#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 map <Leader>g :Find 
 

@@ -70,3 +70,7 @@ fi
 if [ -f '/home/linuxbrew/.linuxbrew/etc/profile.d/z.sh' ] ; then
   source /home/linuxbrew/.linuxbrew/etc/profile.d/z.sh
 fi
+
+if [ -f "$HOME/.bin/tmuxinator.bash" ] ; then
+  source ~/.bin/tmuxinator.bash ;
+fi

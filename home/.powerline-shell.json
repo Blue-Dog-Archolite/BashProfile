@@ -2,19 +2,19 @@
   "theme": "solarized_dark",
   "segments":
   [
-    "newline",
-    "set_term_title",
-    "virtual_env",
-    "rbenv",
-    "ruby_version",
-    "git",
-    "newline",
     "username",
     "hostname",
     "ssh",
     "cwd",
     "hg",
     "jobs",
+    "newline",
+    "set_term_title",
+    "virtual_env",
+    "rbenv",
+    "ruby_version",
+    "git",
     "root"
-  ]
+  ],
+  "Nope": ["ruby_version"]
 }

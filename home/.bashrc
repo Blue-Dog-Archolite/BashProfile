@@ -29,3 +29,7 @@ fi
 if [ -f ~/.bash_activations ]; then
   . ~/.bash_activations
 fi
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+eval $(thefuck --alias)
