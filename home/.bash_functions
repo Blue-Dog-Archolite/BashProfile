@@ -22,15 +22,15 @@ function cd {
   fi
 }
 
-function vim {
-  path_to_executable=$(which nvim)
+# function vim {
+#   path_to_executable=$(which nvim)
 
-  if [ -x "$path_to_executable" ] ; then
-    /usr/bin/nvim "$@"
-  else
-    /usr/bin/vim "$@"
-  fi
-}
+#   if [ -x "$path_to_executable" ] ; then
+#     /usr/bin/nvim "$@"
+#   else
+#     /usr/bin/vim "$@"
+#   fi
+# }
 
 SSH_ENV="$HOME/.ssh/environment"
 
