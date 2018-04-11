@@ -15,6 +15,5 @@
     "ruby_version",
     "git",
     "root"
-  ],
-  "Nope": ["ruby_version"]
+  ]
 }

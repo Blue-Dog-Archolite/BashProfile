@@ -1,7 +1,7 @@
 # ~/.tmuxinator/pager-duty.yml
 
 name: pager-duty
-root: ~/dev/pagerduty/web
+root: ~/dev/pager-duty/web
 
 # Optional tmux socket
 # socket_name: foo
