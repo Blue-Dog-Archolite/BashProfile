@@ -22,7 +22,7 @@ on_project_restart: ssh-add -D ; ssh-add ~/.ssh/pager_duty
 on_project_stop: ssh-add D
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: rvm use 2.2.8@master
+pre_window: rbenv gemset 2.2.4 master
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
