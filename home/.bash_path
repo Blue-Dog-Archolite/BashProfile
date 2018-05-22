@@ -1,20 +1,21 @@
+#!/bin/bash
 # Usr Local Bin
 export PATH=$PATH:/opt/local/bin:/opt/local/sbin:/usr/local/sbin:/usr/include:$HOME/.local/bin/:$HOME/.local/share/virtualenvs/.vim-uZrd_9Fm/bin/
 
-export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
-export XDG_DATA_DIRS="/home/linuxbrew/.linuxbrew/share:$XDG_DATA_DIRS"
+command_exists () {
+  type "$1" &> /dev/null ;
+}
 
+if command_exists brew; then
+  export PATH="$(brew --prefix)/bin:$PATH"
+fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$HOME/bin:$PATH"
 fi
 
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
 export PATH="$HOME/.nodenv/bin:$PATH"
-export PATH='/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin':"$PATH"
 
 
 if [ ! -d "/usr/share/rvm" ] ; then
