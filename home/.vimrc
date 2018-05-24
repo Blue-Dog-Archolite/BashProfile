@@ -51,10 +51,12 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('skwp/greplace.vim')
 
   " FZF Vim
-  call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
+  " call dein#add('junegunn/fzf', { 'build': './install --all', 'rtp': '' })
+  call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
   call dein#add('junegunn/fzf.vim')
 
-  set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+  " set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+  set rtp+=/home/rmeyer/.linuxbrew/bin/fzf
 
   " Networking support and scripting plugin
   call dein#add('eiginn/netrw')
@@ -501,8 +503,8 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 
 :map <Leader>c :Commentary<CR>
 
-command! Buffers call fzf#run(fzf#wrap(
-    \ {'source': map(range(1, bufnr('$')), 'bufname(v:val)')}))
+" command! Buffers call fzf#run(fzf#wrap(
+"     \ {'source': map(range(1, bufnr('$')), 'bufname(v:val)')}))
 
 " " FZF Settings
 set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*,venv/*
