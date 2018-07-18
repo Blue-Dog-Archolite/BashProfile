@@ -43,7 +43,7 @@ if command_exists rbenv ; then
   eval "$(rbenv init -)"
 fi
 
-if command_exists powerline-shell ; then 
+if command_exists powerline-shell ; then
   function _update_ps1() {
       PS1="$(powerline-shell $?)"
   }
@@ -75,7 +75,7 @@ if [ -f "$HOME/.bin/tmuxinator.bash" ] ; then
   source ~/.bin/tmuxinator.bash ;
 fi
 
-#initialize Z (https://github.com/rupa/z) 
+#initialize Z (https://github.com/rupa/z)
 if [ -f "$HOME/tools/z.sh" ] ; then
   . ~/tools/z.sh
 fi
