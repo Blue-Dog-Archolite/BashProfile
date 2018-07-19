@@ -33,7 +33,6 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('tpope/vim-commentary')
   call dein#add('tpope/vim-endwise')
   call dein#add('tpope/vim-fugitive')
-  " call dein#add('tommcdo/vim-fubitive')
   call dein#add('tpope/vim-haml')
   call dein#add('tpope/vim-surround')
   call dein#add('vim-scripts/Align')
@@ -55,7 +54,14 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
   call dein#add('junegunn/fzf.vim')
 
-  " set rtp+=/home/linuxbrew/.linuxbrew/opt/fzf
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    " call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  let g:deoplete#enable_at_startup = 1
+
+
+  " Specify FZF bash location
   set rtp+=/home/rmeyer/.linuxbrew/bin/fzf
 
   " Networking support and scripting plugin
