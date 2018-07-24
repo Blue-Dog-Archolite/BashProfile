@@ -54,13 +54,6 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('junegunn/fzf', { 'build': './install', 'merged': 0 })
   call dein#add('junegunn/fzf.vim')
 
-  if !has('nvim')
-    call dein#add('roxma/nvim-yarp')
-    " call dein#add('roxma/vim-hug-neovim-rpc')
-  endif
-  let g:deoplete#enable_at_startup = 1
-
-
   " Specify FZF bash location
   set rtp+=/home/rmeyer/.linuxbrew/bin/fzf
 
@@ -101,12 +94,19 @@ if dein#load_state($HOME.'/tools/dein')
 "   " call dein#add('vadv/vim-chef')
 
   " Javascript
-  call dein#add('jelera/vim-javascript-syntax')
-  call dein#add('maksimr/vim-jsbeautify')
-  call dein#add('mhartington/nvim-typescript')
-  call dein#add('HerringtonDarkholme/yats.vim')
-  call dein#add('Quramy/vim-js-pretty-template')
-  call dein#add('Quramy/tsuquyomi') " , { 'build': './make', 'rtp': '' })
+  " call dein#add('jelera/vim-javascript-syntax')
+  " call dein#add('maksimr/vim-jsbeautify')
+  " call dein#add('mhartington/nvim-typescript')
+  " call dein#add('HerringtonDarkholme/yats.vim')
+  " call dein#add('Quramy/vim-js-pretty-template')
+  " call dein#add('Quramy/tsuquyomi') " , { 'build': './make', 'rtp': '' })
+
+  if !has('nvim')
+    call dein#add('roxma/nvim-yarp')
+    call dein#add('roxma/vim-hug-neovim-rpc')
+  endif
+  let g:deoplete#enable_at_startup = 1
+
 
   " Help to remember
   " call dein#add('urbainvaes/vim-remembrall')
@@ -278,6 +278,7 @@ highlight Pmenu ctermbg=238 gui=bold
 
 " Removes trailing spaces
 autocmd BufWritePre *.rb :%s/\s\+$//e
+
 function TrimWhiteSpace()
   %s/\s*$//
   ''
@@ -500,8 +501,18 @@ let g:SuperTabDefaultCompletionType = "<c-n>"
 " TypeScript
 let g:nvim_typescript#javascript_support = 1
 
-" let g:syntastic_typescript_tslint_args = "--config ~/dev/mystic/editor/tslint.json"
 autocmd BufNewFile,BufRead *.ts setlocal filetype=typescript
+
+" Ale ES Linter
+let g:ale_fixers = {
+\   'javascript': ['eslint'],
+\}
+" let g:ale_completion_enabled = 1
+let g:ale_sign_column_always = 1
+" let g:ale_lint_on_enter = 1
+
+" let g:ale_fix_on_save = 1
+
 
 " HTML Auto Close
 let g:closetag_filenames = '*.html,*.xhtml,*.phtml, *.ts'
@@ -513,7 +524,7 @@ let g:closetag_xhtml_filenames = '*.xhtml,*.jsx'
 "     \ {'source': map(range(1, bufnr('$')), 'bufname(v:val)')}))
 
 " " FZF Settings
-set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*,venv/*
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip,*.orig,*/public/assets/*,venv/*,node_modules/*
 map <Leader>f :FZF<CR>
 map <Leader>t :Tags<CR>
 map <Leader>b :Buffers<CR>
@@ -525,9 +536,18 @@ let g:ackprg='rg --vimgrep --no-heading'
 map <Leader>g :Rg 
 
 let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;*.*.pyc'
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --color "always" --glob "!.git/" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" --glob "!node_modules/*" --glob "!.git/*" --glob "!node_modules"'.shellescape(<q-args>), 1, <bang>0)
 " command! -bang -nargs=* Find call FZF#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 map <Leader>g :Find 
 
 "set Directory for swap and backup files
 set dir=/tmp
+
+" Put these lines at the very end of your vimrc file.
+
+" Load all plugins now.
+" Plugins need to be added to runtimepath before helptags can be generated.
+packloadall
+" Load all of the helptags now, after plugins have been loaded.
+" All messages and errors will be ignored.
+silent! helptags ALL
