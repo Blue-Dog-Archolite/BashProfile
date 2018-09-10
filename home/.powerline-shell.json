@@ -2,12 +2,15 @@
   "theme": "solarized_dark",
   "segments":
   [
+    "newline",
     "username",
     "hostname",
     "ssh",
     "cwd",
     "hg",
     "jobs",
+    "newline",
+    "git",
     "newline",
     "set_term_title",
     "virtual_env",

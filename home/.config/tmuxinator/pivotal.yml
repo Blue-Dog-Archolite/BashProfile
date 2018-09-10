@@ -52,4 +52,5 @@ windows:
       panes:
         - npm run dev
         - npm run watch
-  - bash: echo "hello"
+  - bash: docker start mysql1
+  - logs: tail -fn0 logs/*
