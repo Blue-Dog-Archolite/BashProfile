@@ -1,0 +1,21 @@
+#!/usr/bin/env ruby
+
+current_branch = `git rev-parse --abbrev-ref HEAD`
+finish_name = current_branch.split('/').last
+command = "git flow feature finish #{finish_name}"
+
+
+puts `git checkout development`
+puts `git pull`
+puts `git checkout #{current_branch}`
+
+result = `#{command}`
+puts result
+
+if result =~ /conflict/
+  puts 'Merge Conflicts. Resolve and Commit.'
+else
+  puts `git push origin`
+
+  puts `git push origin :feature/#{finish_name}`
+end

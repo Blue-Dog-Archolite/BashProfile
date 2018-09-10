@@ -1,0 +1,12 @@
+tags
+*.log
+
+public/assets
+src/
+test/reports
+build/
+doc/
+coverage
+db/
+log/
+tmp/

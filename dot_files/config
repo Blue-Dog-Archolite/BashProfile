@@ -1,0 +1,10 @@
+host bastion
+  user ec2-user
+  HostName ec2-54-242-214-67.compute-1.amazonaws.com
+  IdentityFile ~/.ssh/admin_access.pem 
+
+
+host go
+  user ec2-user
+  HostName ec2-54-242-214-67.compute-1.amazonaws.com
+  IdentityFile ~/.ssh/admin_access.pem 

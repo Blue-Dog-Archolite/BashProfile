@@ -1,2 +1,4 @@
 home/.config
 !home/.config/nvim/**
+dot_files/\.vim
+tags
