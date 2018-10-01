@@ -44,6 +44,10 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('vim-scripts/taglist.vim')
   call dein#add('janko-m/vim-test')
 
+  " Keybindings
+  call dein#add('liuchengxu/vim-which-key')
+  call dein#add('easymotion/vim-easymotion')
+
   " Searching
   call dein#add('vim-scripts/FuzzyFinder')
   call dein#add('rking/ag.vim')
@@ -77,7 +81,7 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('w0ng/vim-hybrid')
 
   " Floobits
-  " call dein#add('Floobits/floobits-neovim')
+  call dein#add('Floobits/floobits-neovim')
 
   " Linters
   call dein#add('w0rp/ale')
@@ -331,14 +335,20 @@ function TrimWhiteSpace()
 
   "Ctags and other shortcuts
   "***********************************************
+  function CtagsForGlutenTags()
+    silent !ctags -R --exclude=$HOME/.ctags .
+  endfunction
+
   map <C-\> :tab split<CR>:exec("tag ".expand("<cword>"))<CR>
   map <A-]> :vsp <CR>:exec("tag ".expand("<cword>"))<CR>
-  map <Leader>rt :!ctags -R --extra=+f --exclude=/home/rmeyer/.ctags_ignore .<CR><CR>
-
-  " --exclude=.git --exclude=public/assets --exclude=log -R * --exclude=build --exclude=node_modules<CR><CR>
+  map <Leader>rt :call CtagsForGlutenTags()<CR>
 
   "Sets the tags directory to look backwards till it finds a tags dir
   set tags=tags;/
+
+  " g-tags working directory list
+  let g:gutentags_file_list_command = 'rg --files'
+  let g:gutentags_ctags_extra_args = ['--exclude=$HOME/.ctags']
 
   " associate  with ruby filetype
   au BufRead,BufNewFile ^M^W^W    setfiletype ruby
@@ -496,9 +506,28 @@ function TrimWhiteSpace()
 
   " Deoplete ******************************************************************
   set runtimepath+=~/.vim/dein/repos/github.com/Shougo/deoplete.nvim/
+
   let g:deoplete#enable_at_startup = 1
+  let g:deoplete#enable_camel_case = 1
   let g:deoplete#enable_debug = 1
+  let g:deoplete#enable_ignore_case = 1
   let g:deoplete#enable_profile = 1
+  let g:deoplete#enable_refresh_always = 1
+  let g:deoplete#enable_smart_case = 1
+  let g:deoplete#max_abbr_width = 0
+  let g:deoplete#max_menu_width = 0
+  let g:deoplete#omni#input_patterns = get(g:,'deoplete#omni#input_patterns',{})
+
+  let g:tern_request_timeout = 1
+  let g:tern_request_timeout = 6000
+  let g:tern#command = ["tern"]
+  let g:tern#arguments = ["--persistent"]
+
+  let g:deoplete#sources#tss#javascript_support = 1
+
+  let g:tsuquyomi_javascript_support = 1
+  let g:tsuquyomi_auto_open = 1
+  let g:tsuquyomi_disable_quickfix = 1
 
   " call deoplete#enable_logging('DEBUG', '/tmp/deoplete.log')
 

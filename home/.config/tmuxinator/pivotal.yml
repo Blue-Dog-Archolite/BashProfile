@@ -22,7 +22,7 @@ on_project_start: ssh-add ~/.ssh/taos
 on_project_stop: ssh-add -d ~/.ssh/taos
 
 # Runs in each window and pane before window/pane specific commands. Useful for setting up interpreter versions.
-pre_window: nvm use 10.4.1
+pre_window: nvm_use
 
 # Pass command line options to tmux. Useful for specifying a different tmux.conf.
 # tmux_options: -f ~/.tmux.mac.conf
@@ -52,5 +52,5 @@ windows:
       panes:
         - npm run dev
         - npm run watch
-  - bash: docker start mysql1
+  - bash: echo "None"
   - logs: tail -fn0 logs/*

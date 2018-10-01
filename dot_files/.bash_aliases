@@ -26,7 +26,7 @@ alias fix_resolve='sudo cp /etc/resolv.conf.bak /etc/resolv.conf'
 
 alias scp='rsync -e ssh -rlzvP'
 alias ctags='/usr/bin/ctags'
-alias ct="ctags -R --exclude=*.js . `echo $GEM_HOME| sed 's/:/ /g'`"
+alias ct = "ctags -R --exclude=$HOME.ctags ."
 
 alias ag='ag --path-to-agignore ~/.agignore'
 

@@ -23,7 +23,9 @@ if [ -f ~/.bash_env ]; then
 fi
 
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-  source /etc/profile.d/vte.sh
+  if [ -d /etc/profile/ ] ; then 
+    source /etc/profile.d/vte.sh
+  fi
 fi
 
 if [ -f ~/.bash_activations ]; then
