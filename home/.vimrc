@@ -44,6 +44,10 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('vim-scripts/taglist.vim')
   call dein#add('janko-m/vim-test')
 
+
+  " Ansible
+  call dein#add('pearofducks/ansible-vim', { 'do': 'cd ./UltiSnips; ./generate.py'})
+
   " Keybindings
   call dein#add('liuchengxu/vim-which-key')
   call dein#add('easymotion/vim-easymotion')
@@ -81,7 +85,7 @@ if dein#load_state($HOME.'/tools/dein')
   call dein#add('w0ng/vim-hybrid')
 
   " Floobits
-  call dein#add('Floobits/floobits-neovim')
+  " call dein#add('Floobits/floobits-neovim')
 
   " Linters
   call dein#add('w0rp/ale')
@@ -590,14 +594,16 @@ function TrimWhiteSpace()
   " ripgrep
   set grepprg=rg\ --vimgrep
   let g:ackprg='rg --vimgrep --no-heading'
-  " map <Leader>g :Rg 
+  " map <Leader>g :Rg
 
   let g:fuzzy_ignore = '.o;.obj;.bak;.exe;.pyc;.pyo;.DS_Store;.db;.orig;.sql;.doc;*.*.pyc'
-  command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" --glob "!node_modules/*" --glob "!.git/*" --glob "!node_modules" '.shellescape(<q-args>), 1, <bang>0)
-  " command! -bang -nargs=* Find call FZF#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+  command! -bang -nargs=* Find call fzf#vim#grep('ripgrep.rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --color "always" --glob "!node_modules/*" --glob "!.git/*" --glob "!node_modules" '.shellescape(<q-args>) , 1, <bang>0)
+  " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow '.shellescape(<q-args>), 1, <bang>0)
   " command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --fixed-strings --ignore-case --hidden '.shellescape(<q-args>), 1, <bang>0)
-  " command! -bang -nargs=* Find call fzf#vim#rg(<q-args>, '--text --fixed-string --ignore-case --no-ignore" --hidden --follow', {'window': 'enew'})
-  map <Leader>g :Find 
+
+  " Possible fix for using snap install ripgrep --classic
+  " command! -bang -nargs=* Find call fzf#vim#grep('ripgrep.rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!node_modules" --glob "!.git/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
+  map <Leader>g :Find
 
   "set Directory for swap and backup files
   set dir=/tmp
